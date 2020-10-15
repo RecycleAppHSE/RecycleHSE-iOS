@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pkA-Lc-goR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 1-->
+        <scene sceneID="6om-CE-Ovq">
+            <objects>
+                <viewController id="7S3-MR-Btb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wej-T3-fG9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qF3-KN-Pxi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="Rqo-bc-pam"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0M-LJ-HBh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-770" y="682"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jtN-6D-8BJ">
+            <objects>
+                <tabBarController id="pkA-Lc-goR" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b5C-2I-FRi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="main"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jXS-zr-ion" kind="relationship" relationship="viewControllers" id="24H-59-O5e"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mka-lf-DAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-770" y="682"/>
+        </scene>
+        <!--Карты-->
+        <scene sceneID="Opw-xg-VVL">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocR-CM-yLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="jXS-zr-ion" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Карты" image="tabmap" id="JbZ-xD-0ya"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zpk-Um-vPQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YgR-rI-QQQ" kind="relationship" relationship="rootViewController" id="bIv-4M-7uJ"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="55" y="382"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="3oj-fx-81u">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" id="YgR-rI-QQQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1YE-yu-B46"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejP-fM-xHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="566" y="382"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabmap" width="24" height="24"/>
+        <namedColor name="main">
+            <color red="0.10980392156862745" green="0.5490196078431373" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

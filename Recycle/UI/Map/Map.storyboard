@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fyq-xJ-MRn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="oN0-PA-UEX">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="Fyq-xJ-MRn" customClass="MapViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CQA-tM-UPF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZeO-Cy-jpy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="K6x-wd-tXp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZeO-Cy-jpy" firstAttribute="top" secondItem="CQA-tM-UPF" secondAttribute="top" id="0Cg-Yd-Q3c"/>
+                            <constraint firstItem="ZeO-Cy-jpy" firstAttribute="trailing" secondItem="K6x-wd-tXp" secondAttribute="trailing" id="DIN-c2-YIk"/>
+                            <constraint firstItem="ZeO-Cy-jpy" firstAttribute="leading" secondItem="K6x-wd-tXp" secondAttribute="leading" id="JUi-6u-KI3"/>
+                            <constraint firstAttribute="bottom" secondItem="ZeO-Cy-jpy" secondAttribute="bottom" id="qX2-Au-CZv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ZeO-Cy-jpy" id="M2j-5y-txj"/>
+                        <segue destination="Svp-IG-qs6" kind="presentation" identifier="pointInfo" id="Ewu-pS-GG4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lu7-i6-uYI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118.84057971014494" y="107.8125"/>
+        </scene>
+        <!--PointInfo-->
+        <scene sceneID="ZZi-s4-gkt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PointInfo" id="Svp-IG-qs6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JBe-B8-JHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="711" y="13"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
