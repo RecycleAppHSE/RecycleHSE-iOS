@@ -15,6 +15,8 @@
 		B00FD21925360CFB00225771 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00FD21125360C8F00225771 /* MapKit.framework */; };
 		B00FD22F2536219B00225771 /* WasteTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00FD22E2536219B00225771 /* WasteTypesView.swift */; };
 		B00FD2382536224800225771 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B00FD2372536224800225771 /* SnapKit */; };
+		B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B043CBEA2538FD2000807EA8 /* Profile.storyboard */; };
+		B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043CBEF253901B500807EA8 /* ProfileViewController.swift */; };
 		B0645759253623AE00A2CA6E /* WasteTypeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0645758253623AE00A2CA6E /* WasteTypeCellModel.swift */; };
 		B064575E2536241D00A2CA6E /* WasteTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064575D2536241D00A2CA6E /* WasteTypeModel.swift */; };
 		B064576A25362A1200A2CA6E /* PointInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064576925362A1200A2CA6E /* PointInfoViewController.swift */; };
@@ -35,15 +37,9 @@
 		B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066547C25358BBF001C17A8 /* WasteTypeCell.swift */; };
 		B066548525358C6D001C17A8 /* WasteTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B066548425358C6D001C17A8 /* WasteTypeCell.xib */; };
 		B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066548F253595A3001C17A8 /* PointAnnotationView.swift */; };
-		B09C627C2536DACC004F933D /* UBottomSheetCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C62712536DACC004F933D /* UBottomSheetCoordinatorDelegate.swift */; };
-		B09C627D2536DACC004F933D /* PassThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C62722536DACC004F933D /* PassThroughView.swift */; };
-		B09C627E2536DACC004F933D /* UBottomSheetCoordinatorDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C62732536DACC004F933D /* UBottomSheetCoordinatorDataSource.swift */; };
-		B09C627F2536DACC004F933D /* UBottomSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C62742536DACC004F933D /* UBottomSheetCoordinator.swift */; };
-		B09C62812536DACC004F933D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C62762536DACC004F933D /* Extensions.swift */; };
-		B09C62822536DACC004F933D /* Animatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C62772536DACC004F933D /* Animatable.swift */; };
-		B09C62832536DACC004F933D /* Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C62782536DACC004F933D /* Draggable.swift */; };
-		B09C62842536DACC004F933D /* DefaultSheetAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C62792536DACC004F933D /* DefaultSheetAnimator.swift */; };
-		B09C62852536DACC004F933D /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = B09C627B2536DACC004F933D /* .gitkeep */; };
+		B0A977B02538F7B40085531F /* UIView+XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A977AF2538F7B40085531F /* UIView+XibLoadable.swift */; };
+		B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A977B42538F8E80085531F /* BubbleButton.swift */; };
+		B0A977BA2538F8F50085531F /* BubbleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A977B92538F8F50085531F /* BubbleButton.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +67,8 @@
 		B00FD20B253606D900225771 /* PointCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointCalloutView.xib; sourceTree = "<group>"; };
 		B00FD21125360C8F00225771 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B00FD22E2536219B00225771 /* WasteTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypesView.swift; sourceTree = "<group>"; };
+		B043CBEA2538FD2000807EA8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		B043CBEF253901B500807EA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B0645758253623AE00A2CA6E /* WasteTypeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCellModel.swift; sourceTree = "<group>"; };
 		B064575D2536241D00A2CA6E /* WasteTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeModel.swift; sourceTree = "<group>"; };
 		B064576925362A1200A2CA6E /* PointInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInfoViewController.swift; sourceTree = "<group>"; };
@@ -97,15 +95,9 @@
 		B066547C25358BBF001C17A8 /* WasteTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCell.swift; sourceTree = "<group>"; };
 		B066548425358C6D001C17A8 /* WasteTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteTypeCell.xib; sourceTree = "<group>"; };
 		B066548F253595A3001C17A8 /* PointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotationView.swift; sourceTree = "<group>"; };
-		B09C62712536DACC004F933D /* UBottomSheetCoordinatorDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBottomSheetCoordinatorDelegate.swift; sourceTree = "<group>"; };
-		B09C62722536DACC004F933D /* PassThroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassThroughView.swift; sourceTree = "<group>"; };
-		B09C62732536DACC004F933D /* UBottomSheetCoordinatorDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBottomSheetCoordinatorDataSource.swift; sourceTree = "<group>"; };
-		B09C62742536DACC004F933D /* UBottomSheetCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBottomSheetCoordinator.swift; sourceTree = "<group>"; };
-		B09C62762536DACC004F933D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		B09C62772536DACC004F933D /* Animatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animatable.swift; sourceTree = "<group>"; };
-		B09C62782536DACC004F933D /* Draggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draggable.swift; sourceTree = "<group>"; };
-		B09C62792536DACC004F933D /* DefaultSheetAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSheetAnimator.swift; sourceTree = "<group>"; };
-		B09C627B2536DACC004F933D /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		B0A977AF2538F7B40085531F /* UIView+XibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+XibLoadable.swift"; sourceTree = "<group>"; };
+		B0A977B42538F8E80085531F /* BubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
+		B0A977B92538F8F50085531F /* BubbleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubbleButton.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				B00FD1F5253601B600225771 /* UIColor+App.swift */,
+				B0A977AF2538F7B40085531F /* UIView+XibLoadable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,6 +159,15 @@
 				B00FD22E2536219B00225771 /* WasteTypesView.swift */,
 			);
 			path = WasteTypesView;
+			sourceTree = "<group>";
+		};
+		B043CBE92538FD1400807EA8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B043CBEA2538FD2000807EA8 /* Profile.storyboard */,
+				B043CBEF253901B500807EA8 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		B0645768253629D100A2CA6E /* PointInfo */ = {
@@ -266,6 +268,7 @@
 		B066547925358B8C001C17A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B043CBE92538FD1400807EA8 /* Profile */,
 				B066545125358610001C17A8 /* Map */,
 				B0645768253629D100A2CA6E /* PointInfo */,
 				B066547A25358B93001C17A8 /* Common */,
@@ -276,7 +279,7 @@
 		B066547A25358B93001C17A8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B09C626F2536DACC004F933D /* UBottomSheet */,
+				B0A977A92538F7540085531F /* Buttons */,
 				B00FD22D2536218F00225771 /* WasteTypesView */,
 				B066547B25358B9C001C17A8 /* WasteTypeCell */,
 			);
@@ -303,36 +306,21 @@
 			path = PointAnnotationView;
 			sourceTree = "<group>";
 		};
-		B09C626F2536DACC004F933D /* UBottomSheet */ = {
+		B0A977A92538F7540085531F /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				B09C62702536DACC004F933D /* Classes */,
-				B09C627A2536DACC004F933D /* Assets */,
+				B0A977AA2538F7870085531F /* BubbleButton */,
 			);
-			path = UBottomSheet;
+			path = Buttons;
 			sourceTree = "<group>";
 		};
-		B09C62702536DACC004F933D /* Classes */ = {
+		B0A977AA2538F7870085531F /* BubbleButton */ = {
 			isa = PBXGroup;
 			children = (
-				B09C62712536DACC004F933D /* UBottomSheetCoordinatorDelegate.swift */,
-				B09C62722536DACC004F933D /* PassThroughView.swift */,
-				B09C62732536DACC004F933D /* UBottomSheetCoordinatorDataSource.swift */,
-				B09C62742536DACC004F933D /* UBottomSheetCoordinator.swift */,
-				B09C62762536DACC004F933D /* Extensions.swift */,
-				B09C62772536DACC004F933D /* Animatable.swift */,
-				B09C62782536DACC004F933D /* Draggable.swift */,
-				B09C62792536DACC004F933D /* DefaultSheetAnimator.swift */,
+				B0A977B92538F8F50085531F /* BubbleButton.xib */,
+				B0A977B42538F8E80085531F /* BubbleButton.swift */,
 			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		B09C627A2536DACC004F933D /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				B09C627B2536DACC004F933D /* .gitkeep */,
-			);
-			path = Assets;
+			path = BubbleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,11 +434,12 @@
 			files = (
 				B066548525358C6D001C17A8 /* WasteTypeCell.xib in Resources */,
 				B06457722536464A00A2CA6E /* PointInfo.storyboard in Resources */,
+				B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */,
 				B066542B25358604001C17A8 /* LaunchScreen.storyboard in Resources */,
 				B066542825358604001C17A8 /* Assets.xcassets in Resources */,
+				B0A977BA2538F8F50085531F /* BubbleButton.xib in Resources */,
 				B00FD1FB253601EC00225771 /* Colors.xcassets in Resources */,
 				B066542625358601001C17A8 /* Main.storyboard in Resources */,
-				B09C62852536DACC004F933D /* .gitkeep in Resources */,
 				B066545E2535866D001C17A8 /* Map.storyboard in Resources */,
 				B00FD20C253606D900225771 /* PointCalloutView.xib in Resources */,
 			);
@@ -480,26 +469,21 @@
 				B066541F25358601001C17A8 /* AppDelegate.swift in Sources */,
 				B064575E2536241D00A2CA6E /* WasteTypeModel.swift in Sources */,
 				B00FD1F6253601B600225771 /* UIColor+App.swift in Sources */,
-				B09C627D2536DACC004F933D /* PassThroughView.swift in Sources */,
 				B06457802536810E00A2CA6E /* RecyclePointViewModel.swift in Sources */,
 				B0645759253623AE00A2CA6E /* WasteTypeCellModel.swift in Sources */,
 				B066546D25358A82001C17A8 /* RecyclePoint.swift in Sources */,
 				B06654672535873F001C17A8 /* LocationManager.swift in Sources */,
 				B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */,
 				B064576A25362A1200A2CA6E /* PointInfoViewController.swift in Sources */,
-				B09C627C2536DACC004F933D /* UBottomSheetCoordinatorDelegate.swift in Sources */,
+				B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */,
 				B00FD204253606BE00225771 /* PointCalloutView.swift in Sources */,
 				B00FD22F2536219B00225771 /* WasteTypesView.swift in Sources */,
-				B09C62812536DACC004F933D /* Extensions.swift in Sources */,
-				B09C62842536DACC004F933D /* DefaultSheetAnimator.swift in Sources */,
 				B066547525358AB2001C17A8 /* WasteType.swift in Sources */,
+				B0A977B02538F7B40085531F /* UIView+XibLoadable.swift in Sources */,
 				B066542125358601001C17A8 /* SceneDelegate.swift in Sources */,
-				B09C627F2536DACC004F933D /* UBottomSheetCoordinator.swift in Sources */,
-				B09C62822536DACC004F933D /* Animatable.swift in Sources */,
-				B09C627E2536DACC004F933D /* UBottomSheetCoordinatorDataSource.swift in Sources */,
+				B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */,
 				B06654562535862D001C17A8 /* MapViewController.swift in Sources */,
 				B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */,
-				B09C62832536DACC004F933D /* Draggable.swift in Sources */,
 				B00FD1ED2535FE8600225771 /* PointAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

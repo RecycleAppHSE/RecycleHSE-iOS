@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pkA-Lc-goR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -37,6 +38,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="jXS-zr-ion" kind="relationship" relationship="viewControllers" id="24H-59-O5e"/>
+                        <segue destination="g1X-WG-Yr2" kind="relationship" relationship="viewControllers" id="pLR-9k-cL1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mka-lf-DAX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -46,7 +48,6 @@
         <!--Карты-->
         <scene sceneID="Opw-xg-VVL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ocR-CM-yLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="jXS-zr-ion" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Карты" image="tabmap" id="JbZ-xD-0ya"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zpk-Um-vPQ">
@@ -57,8 +58,9 @@
                         <segue destination="YgR-rI-QQQ" kind="relationship" relationship="rootViewController" id="bIv-4M-7uJ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocR-CM-yLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="382"/>
+            <point key="canvasLocation" x="9" y="360"/>
         </scene>
         <!--Map-->
         <scene sceneID="3oj-fx-81u">
@@ -68,7 +70,34 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ejP-fM-xHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="566" y="382"/>
+            <point key="canvasLocation" x="622" y="360"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="64B-NP-qEs">
+            <objects>
+                <navigationController id="g1X-WG-Yr2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="YlT-YM-4Kb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Fy9-jf-8GK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="y8Y-Vy-PMN" kind="relationship" relationship="rootViewController" id="rCu-Fx-yJI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WSO-UI-tIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9" y="1112"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="5UQ-Gd-2jH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="y8Y-Vy-PMN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5aW-eF-GMc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="djQ-fZ-x2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="622" y="1112"/>
         </scene>
     </scenes>
     <resources>
