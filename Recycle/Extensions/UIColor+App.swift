@@ -13,4 +13,5 @@ extension UIColor {
     static let textGray = UIColor(named: "textGray")
     static let wasteBackground = UIColor(named: "wasteBackground")
     static let background = UIColor(named: "background")
+    static let bubbleBackground = UIColor(named: "bubbleBackground")
 }

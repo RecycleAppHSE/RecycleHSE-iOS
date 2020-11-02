@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PointInfoViewController: UIViewController {
     
@@ -20,10 +21,14 @@ class PointInfoViewController: UIViewController {
     
     @IBOutlet weak var wasteTypesView: WasteTypesView!
     
+    
+    
     // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        geocoder.reverseGeocodeLocation(<#T##location: CLLocation##CLLocation#>, completionHandler: <#T##CLGeocodeCompletionHandler##CLGeocodeCompletionHandler##([CLPlacemark]?, Error?) -> Void#>)
         
         let cellModels: [WasteTypeCellModel] = [
             .init(waste: .glass,
