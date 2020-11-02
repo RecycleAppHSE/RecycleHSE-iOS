@@ -35,6 +35,8 @@ struct WasteTypeModel {
             return "Одежда"
         case .lamps:
             return "Лампы"
+        default:
+            return type.rawValue
         }
     }
     
@@ -52,6 +54,8 @@ struct WasteTypeModel {
             return #imageLiteral(resourceName: "clothes-mini")
         case .lamps:
             return #imageLiteral(resourceName: "lamps-mini")
+        default:
+            return #imageLiteral(resourceName: "cancel")
         }
     }
 }

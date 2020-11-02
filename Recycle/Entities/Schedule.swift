@@ -9,6 +9,6 @@ import Foundation
 
 struct Schedule: Decodable {
     
-    let from: String
-    let to: String
+    let from: String?
+    let to: String?
 }

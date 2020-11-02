@@ -9,7 +9,7 @@ import Foundation
 
 protocol PointService {
     
-    func point(with id: String) -> RecyclePoint?
+    func point(with id: Int) -> RecyclePoint?
     
     func loadPoints(_ callback: @escaping ResultCallback<[RecyclePoint]>)
 }
@@ -18,7 +18,7 @@ class PointServiceImp {
     
     let api: ApiClient
     
-    var pointStore: [String : RecyclePoint] = [:]
+    var pointStore: [Int : RecyclePoint] = [:]
     
     init(api: ApiClient) {
         self.api = api
@@ -27,25 +27,31 @@ class PointServiceImp {
 
 extension PointServiceImp: PointService {
     
-    func point(with id: String) -> RecyclePoint? {
+    func point(with id: Int) -> RecyclePoint? {
         pointStore[id]
     }
     
     func loadPoints(_ callback: @escaping ResultCallback<[RecyclePoint]>) {
         api.request("point") {
-            [weak self] (result: Result<[RecyclePoint], Error>) in
+            [weak self] (result: Result<PointsResponse, Error>) in
             switch result {
-            case .success(let points):
+            case .success(let response):
                 self?.pointStore = [:]
+                let points = response.points
                 for point in points {
                     self?.pointStore[point.id] = point
                 }
-            case .failure:
-                break
+                callback(.success(points))
+            case .failure(let error):
+                callback(.failure(error))
             }
-            
-            callback(result)
         }
     }
 }
 
+private extension PointServiceImp {
+        
+    struct PointsResponse: Decodable {
+        let points: [RecyclePoint]
+    }
+}

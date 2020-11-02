@@ -40,7 +40,8 @@ extension Resolver {
         
         add(type: ApiClient.self) {
             return ApiClientImp(
-                decoder: self.resolve()
+                decoder: self.resolve(),
+                store: self.resolve()
             )
         }
         

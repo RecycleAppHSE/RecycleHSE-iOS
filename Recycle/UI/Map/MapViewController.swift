@@ -23,7 +23,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        createUser()
+        createUserIfNeeded()
         
         setupLocation()
         setupMap()
@@ -62,7 +62,7 @@ extension MapViewController: PointCalloutViewDelegate {
     
     func didSelectCallout(with annotation: MKAnnotation?) {
         let annotation = annotation as? PointAnnotation
-        let id = annotation?.id ?? ""
+        let id = annotation?.id ?? 0
         guard let point = pointService.point(with: id) else {
             return
         }
@@ -75,8 +75,16 @@ extension MapViewController: PointCalloutViewDelegate {
 
 private extension MapViewController {
     
-    func createUser() {
-        userService.createUser { _ in }
+    func createUserIfNeeded() {
+        userService.createUserIfNeeded { [weak self] result in
+            switch result {
+            case .success:
+                self?.loadPoints()
+            case .failure(let error):
+                break
+                // TODO: showError
+            }
+        }
     }
     
     func setupMap() {
@@ -84,6 +92,15 @@ private extension MapViewController {
         
         mapView.register(PointAnnotationView.self, forAnnotationViewWithReuseIdentifier: annotationId)
         
+        
+    }
+    
+    func setupLocation() {
+        locationManager.delegate = self
+        locationManager.requestAuth()
+    }
+    
+    func loadPoints() {
         pointService.loadPoints { [weak self] result in
             switch result {
             case .success(let points):
@@ -96,10 +113,5 @@ private extension MapViewController {
                 break
             }
         }
-    }
-    
-    func setupLocation() {
-        locationManager.delegate = self
-        locationManager.requestAuth()
     }
 }

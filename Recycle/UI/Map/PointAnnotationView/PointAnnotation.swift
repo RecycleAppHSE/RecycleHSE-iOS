@@ -11,7 +11,7 @@ class PointAnnotation: NSObject, MKAnnotation {
     
     // MARK: - Properties
     
-    let id: String
+    let id: Int
     let coordinate: CLLocationCoordinate2D
     
     let wasteImages: [UIImage]

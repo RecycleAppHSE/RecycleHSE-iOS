@@ -13,11 +13,14 @@ import Foundation
 class ApiClientImp {
     
     let decoder: JSONDecoder
+    let store: KeyValueStore
     
-    let baseUrl = "http://165.227.116.231:8080/"
+    let baseUrl = "http://165.227.166.231:8080/"
     
-    init(decoder: JSONDecoder) {
+    init(decoder: JSONDecoder,
+         store: KeyValueStore) {
         self.decoder = decoder
+        self.store = store
     }
 }
 
@@ -32,8 +35,18 @@ extension ApiClientImp: ApiClient {
         
         // TODO: handle body
         
+        let headers: HTTPHeaders = .init([
+            .init(name: "USER_ID", value: String(store.userId ?? 0))
+        ])
+        
         let url = baseUrl + path
-        AF.request(path, method: method, parameters: params).responseDecodable(of: T.self) { response in
+        
+        AF.request(
+            url,
+            method: method,
+            parameters: params,
+            headers: headers
+        ).validate().responseDecodable(of: T.self, decoder: decoder) { response in
             guard let value = response.value else {
                 let error = response.error ?? AFError.invalidURL(url: path)
                 callback?(.failure(error))

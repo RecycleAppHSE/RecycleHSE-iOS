@@ -16,10 +16,10 @@ enum RecyclePointStatus: String, Decodable {
 
 struct RecyclePoint: Decodable {
     
-    let id: String
+    let id: Int
     let organization: String
-    let phoneNumber: String
-    let webSite: URL
+    let phoneNumber: String?
+    let webSite: URL?
     let wasteTypes: [WasteType]
     
     let latitude: Double

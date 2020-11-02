@@ -9,7 +9,7 @@ import Foundation
 
 protocol KeyValueStore: AnyObject {
     
-    var userId: String? { get set }
+    var userId: Int? { get set }
 }
 
 class KeyValueStoreImp {
@@ -23,9 +23,9 @@ class KeyValueStoreImp {
 
 extension KeyValueStoreImp : KeyValueStore{
     
-    var userId: String? {
+    var userId: Int? {
         get {
-            defaults.string(forKey: "userId")
+            defaults.integer(forKey: "userId")
         }
         set {
             defaults.setValue(newValue, forKey: "userId")

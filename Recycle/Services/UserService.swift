@@ -9,7 +9,7 @@ import Foundation
 
 protocol UserService {
     
-    func createUser(_ callback: ResultCallback<Void>?)
+    func createUserIfNeeded(_ callback: ResultCallback<Void>?)
 }
 
 class UserServiceImp {
@@ -27,10 +27,15 @@ class UserServiceImp {
 extension UserServiceImp: UserService {
     
     private struct UserResponse: Decodable {
-        let userId: String
+        let userId: Int
     }
     
-    func createUser(_ callback: ResultCallback<Void>?) {
+    func createUserIfNeeded(_ callback: ResultCallback<Void>?) {
+        guard store.userId == nil else {
+            callback?(.success)
+            return
+        }
+        
         api.request("new_user", method: .get) { [weak self] (result: Result<UserResponse, Error>) in
             switch result {
             case .success(let response):
