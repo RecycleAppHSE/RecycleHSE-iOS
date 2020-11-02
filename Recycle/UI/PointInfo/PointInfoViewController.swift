@@ -21,14 +21,16 @@ class PointInfoViewController: UIViewController {
     
     @IBOutlet weak var wasteTypesView: WasteTypesView!
     
+    var geocoder = CLGeocoder()
     
+    var point: RecyclePoint!
     
     // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        geocoder.reverseGeocodeLocation(<#T##location: CLLocation##CLLocation#>, completionHandler: <#T##CLGeocodeCompletionHandler##CLGeocodeCompletionHandler##([CLPlacemark]?, Error?) -> Void#>)
+        loadTitle()
         
         let cellModels: [WasteTypeCellModel] = [
             .init(waste: .glass,
@@ -63,5 +65,18 @@ class PointInfoViewController: UIViewController {
     
     @IBAction func closeTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension PointInfoViewController {
+    
+    func loadTitle() {
+        let location = CLLocation(latitude: point.latitude, longitude: point.longitude)
+        
+        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
+            let placemark = placemarks?.first
+            
+            self?.titleLabel.text = placemark?.name
+        }
     }
 }

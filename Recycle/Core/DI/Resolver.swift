@@ -1,4 +1,6 @@
 
+import Foundation
+
 class Resolver{
   
     static let shared = Resolver()
@@ -7,6 +9,10 @@ class Resolver{
     func add<Component>(type: Component.Type, _ factory: @escaping () -> Component) {
         factoryDict[String(describing: type.self)] = factory
     }
+    
+    func resolve<Component>() -> Component {
+        resolve(Component.self)
+    }
 
     func resolve<Component>(_ type: Component.Type) -> Component {
         let component: Component = factoryDict[String(describing:Component.self)]?() as! Component
@@ -14,15 +20,4 @@ class Resolver{
     }
 }
 
-extension Resolver {
-    
-    func registerDependencies() {
-        add(type: LocationManager.self) {
-            return LocationManagerImp()
-        }
-        
-        add(type: ApiClient.self) {
-            return ApiClientImp()
-        }
-    }
-}
+

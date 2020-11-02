@@ -57,7 +57,9 @@ private extension PointAnnotationView {
         
         guard let annotation = annotation as? PointAnnotation else { return }
         
-        calloutView.configure(images: annotation.wasteImages)
+        calloutView.configure(
+            images: annotation.wasteImages
+        )
         detailCalloutAccessoryView = calloutView
         
         let button = UIButton(type: .detailDisclosure)

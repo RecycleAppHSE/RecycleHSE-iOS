@@ -19,7 +19,7 @@ class PointCalloutView: UIView, XibLoadable {
     
     weak var delegate: PointCalloutViewDelegate?
     
-    var annotation: MKAnnotation?
+    var annotation: PointAnnotation?
     
     @IBOutlet weak var contentView: UIView!
     

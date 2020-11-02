@@ -13,12 +13,17 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    let locationManager: LocationManager = LocationManagerImp()
+    @Inject var locationManager: LocationManager
+    @Inject var userService: UserService
+    @Inject var pointService: PointService
     
     let annotationId = "point_annotation_identifier"
+    var points: [RecyclePoint] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createUser()
         
         setupLocation()
         setupMap()
@@ -41,6 +46,7 @@ extension MapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        
         didSelectCallout(with: view.annotation)
     }
 }
@@ -55,18 +61,41 @@ extension MapViewController: LocationManagerDelegate {
 extension MapViewController: PointCalloutViewDelegate {
     
     func didSelectCallout(with annotation: MKAnnotation?) {
-        performSegue(withIdentifier: "pointInfo", sender: self)
+        let annotation = annotation as? PointAnnotation
+        let id = annotation?.id ?? ""
+        guard let point = pointService.point(with: id) else {
+            return
+        }
+        
+        let vc = PointInfoViewController()
+        vc.point = point
+        present(vc, animated: true)
     }
 }
 
 private extension MapViewController {
+    
+    func createUser() {
+        userService.createUser { _ in }
+    }
     
     func setupMap() {
         mapView.delegate = self
         
         mapView.register(PointAnnotationView.self, forAnnotationViewWithReuseIdentifier: annotationId)
         
-        mapView.addAnnotations(PointAnnotation.test)
+        pointService.loadPoints { [weak self] result in
+            switch result {
+            case .success(let points):
+                let annotations = points.map {
+                    PointAnnotation(point: $0)
+                }
+                self?.mapView.addAnnotations(annotations)
+                
+            case .failure(let error):
+                break
+            }
+        }
     }
     
     func setupLocation() {

@@ -24,6 +24,11 @@
 		B062B2C525509DAC00F56049 /* Resolver+Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2C425509DAC00F56049 /* Resolver+Registration.swift */; };
 		B062B2CE25509ED200F56049 /* ResultCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2CD25509ED200F56049 /* ResultCallback.swift */; };
 		B062B2D92550A00000F56049 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2D82550A00000F56049 /* ApiClient.swift */; };
+		B062B2ED2550A7DD00F56049 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2EC2550A7DD00F56049 /* Schedule.swift */; };
+		B062B2F22550AE2600F56049 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2F12550AE2600F56049 /* UserService.swift */; };
+		B062B2FE2550AF7F00F56049 /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2FD2550AF7F00F56049 /* KeyValueStore.swift */; };
+		B062B3032550B10C00F56049 /* Result+Values.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B3022550B10C00F56049 /* Result+Values.swift */; };
+		B062B3082550B3C000F56049 /* PointService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B3072550B3C000F56049 /* PointService.swift */; };
 		B0645759253623AE00A2CA6E /* WasteTypeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0645758253623AE00A2CA6E /* WasteTypeCellModel.swift */; };
 		B064575E2536241D00A2CA6E /* WasteTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064575D2536241D00A2CA6E /* WasteTypeModel.swift */; };
 		B064576A25362A1200A2CA6E /* PointInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B064576925362A1200A2CA6E /* PointInfoViewController.swift */; };
@@ -82,6 +87,11 @@
 		B062B2C425509DAC00F56049 /* Resolver+Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Registration.swift"; sourceTree = "<group>"; };
 		B062B2CD25509ED200F56049 /* ResultCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCallback.swift; sourceTree = "<group>"; };
 		B062B2D82550A00000F56049 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		B062B2EC2550A7DD00F56049 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		B062B2F12550AE2600F56049 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		B062B2FD2550AF7F00F56049 /* KeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
+		B062B3022550B10C00F56049 /* Result+Values.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Values.swift"; sourceTree = "<group>"; };
+		B062B3072550B3C000F56049 /* PointService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointService.swift; sourceTree = "<group>"; };
 		B0645758253623AE00A2CA6E /* WasteTypeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCellModel.swift; sourceTree = "<group>"; };
 		B064575D2536241D00A2CA6E /* WasteTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeModel.swift; sourceTree = "<group>"; };
 		B064576925362A1200A2CA6E /* PointInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointInfoViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +156,7 @@
 			children = (
 				B00FD1F5253601B600225771 /* UIColor+App.swift */,
 				B0A977AF2538F7B40085531F /* UIView+XibLoadable.swift */,
+				B062B3022550B10C00F56049 /* Result+Values.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,6 +200,7 @@
 			children = (
 				B066546C25358A82001C17A8 /* RecyclePoint.swift */,
 				B066547425358AB2001C17A8 /* WasteType.swift */,
+				B062B2EC2550A7DD00F56049 /* Schedule.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -209,6 +221,15 @@
 				B062B2CD25509ED200F56049 /* ResultCallback.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B062B30C2550B49200F56049 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				B062B2D82550A00000F56049 /* ApiClient.swift */,
+				B062B2A2255098E800F56049 /* ApiClientImp.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		B0645768253629D100A2CA6E /* PointInfo */ = {
@@ -294,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				B06654662535873F001C17A8 /* LocationManager.swift */,
+				B062B2F12550AE2600F56049 /* UserService.swift */,
+				B062B3072550B3C000F56049 /* PointService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -301,10 +324,10 @@
 		B066546B25358A77001C17A8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B062B2D82550A00000F56049 /* ApiClient.swift */,
-				B062B2A2255098E800F56049 /* ApiClientImp.swift */,
+				B062B30C2550B49200F56049 /* Api */,
 				B062B2CC25509ECB00F56049 /* Helpers */,
 				B062B2B025509C3D00F56049 /* DI */,
+				B062B2FD2550AF7F00F56049 /* KeyValueStore.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -312,9 +335,9 @@
 		B066547925358B8C001C17A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B043CBE92538FD1400807EA8 /* Profile */,
 				B066545125358610001C17A8 /* Map */,
 				B0645768253629D100A2CA6E /* PointInfo */,
+				B043CBE92538FD1400807EA8 /* Profile */,
 				B066547A25358B93001C17A8 /* Common */,
 			);
 			path = UI;
@@ -514,6 +537,8 @@
 			files = (
 				B062B2B225509C4C00F56049 /* Resolver.swift in Sources */,
 				B066541F25358601001C17A8 /* AppDelegate.swift in Sources */,
+				B062B3082550B3C000F56049 /* PointService.swift in Sources */,
+				B062B2F22550AE2600F56049 /* UserService.swift in Sources */,
 				B064575E2536241D00A2CA6E /* WasteTypeModel.swift in Sources */,
 				B00FD1F6253601B600225771 /* UIColor+App.swift in Sources */,
 				B06457802536810E00A2CA6E /* RecyclePointViewModel.swift in Sources */,
@@ -521,6 +546,7 @@
 				B062B2BA25509C8A00F56049 /* InjectPropertyWrapper.swift in Sources */,
 				B066546D25358A82001C17A8 /* RecyclePoint.swift in Sources */,
 				B06654672535873F001C17A8 /* LocationManager.swift in Sources */,
+				B062B3032550B10C00F56049 /* Result+Values.swift in Sources */,
 				B062B2D92550A00000F56049 /* ApiClient.swift in Sources */,
 				B062B2C525509DAC00F56049 /* Resolver+Registration.swift in Sources */,
 				B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */,
@@ -532,10 +558,12 @@
 				B0A977B02538F7B40085531F /* UIView+XibLoadable.swift in Sources */,
 				B066542125358601001C17A8 /* SceneDelegate.swift in Sources */,
 				B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */,
+				B062B2FE2550AF7F00F56049 /* KeyValueStore.swift in Sources */,
 				B062B2CE25509ED200F56049 /* ResultCallback.swift in Sources */,
 				B06654562535862D001C17A8 /* MapViewController.swift in Sources */,
 				B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */,
 				B00FD1ED2535FE8600225771 /* PointAnnotation.swift in Sources */,
+				B062B2ED2550A7DD00F56049 /* Schedule.swift in Sources */,
 				B062B2A3255098E800F56049 /* ApiClientImp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
