@@ -35,7 +35,7 @@ final class PointClusterView: MKAnnotationView {
     func image(annotation: MKClusterAnnotation, count: Int) -> UIImage? {
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 40.0, height: 40.0))
         image = renderer.image { _ in
-            UIColor.purple.setFill()
+            UIColor.main?.setFill()
             UIBezierPath(ovalIn: CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)).fill()
             let attributes: [NSAttributedString.Key: Any] = [
                 NSAttributedString.Key.foregroundColor: UIColor.white,

@@ -18,8 +18,7 @@ class MapViewController: UIViewController {
     @Inject var pointService: PointService
     
     let annotationId = MKMapViewDefaultAnnotationViewReuseIdentifier
-    let clusterId = String(describing: PointClusterView.self)
-    //let clusterId = MKMapViewDefaultClusterAnnotationViewReuseIdentifier
+    let clusterId = MKMapViewDefaultClusterAnnotationViewReuseIdentifier
         
     var points: [RecyclePoint] = []
 
@@ -60,7 +59,7 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: LocationManagerDelegate {
     
     func didUpdateLocation(_ location: CLLocation) {
-        // TODO: set user location
+        // TODO: move pin
     }
 }
 
@@ -99,6 +98,12 @@ private extension MapViewController {
         mapView.register(PointAnnotationView.self, forAnnotationViewWithReuseIdentifier: annotationId)
         
         mapView.register(PointClusterView.self, forAnnotationViewWithReuseIdentifier: clusterId)
+        
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 4000000)
+        mapView.setCameraZoomRange(zoomRange, animated: false)
+        
+        let moscow = CLLocation(latitude: 55.7558, longitude: 37.6173)
+        mapView.centerToLocation(moscow)
     }
     
     func setupLocation() {

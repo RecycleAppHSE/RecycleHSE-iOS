@@ -36,11 +36,11 @@ struct WasteTypeModel {
         case .lamps:
             return "Лампы"
         case .toxic:
-            return "Опасные отходы"
+            return "Опасные\nотходы"
         case .appliances:
-            return "Бытовая техника"
+            return "Бытовая\nтехника"
         case .tetraPack:
-            return "Tetra Pak"
+            return "Tetra\nPak"
         case .batteries:
             return "Батарейки"
             
