@@ -17,7 +17,9 @@ class MapViewController: UIViewController {
     @Inject var userService: UserService
     @Inject var pointService: PointService
     
-    let annotationId = "point_annotation_identifier"
+    let annotationId = MKMapViewDefaultAnnotationViewReuseIdentifier
+    let clusterId = MKMapViewDefaultClusterAnnotationViewReuseIdentifier
+        
     var points: [RecyclePoint] = []
 
     override func viewDidLoad() {
@@ -33,16 +35,20 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let pointAnnotation = annotation as? PointAnnotation else {
+        
+        switch annotation {
+        case let pointAnnotation as PointAnnotation:
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId, for: annotation) as? PointAnnotationView
+            
+            view?.calloutView.delegate = self
+            view?.calloutView.annotation = pointAnnotation
+            return view
+        case is MKClusterAnnotation:
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: clusterId, for: annotation)
+            return view
+        default:
             return nil
         }
-        
-        let view = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) as? PointAnnotationView
-        
-        view?.calloutView.delegate = self
-        view?.calloutView.annotation = pointAnnotation
-        
-        return view
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -67,7 +73,7 @@ extension MapViewController: PointCalloutViewDelegate {
             return
         }
         
-        let vc = PointInfoViewController()
+        let vc: PointInfoViewController = create()
         vc.point = point
         present(vc, animated: true)
     }
@@ -92,7 +98,7 @@ private extension MapViewController {
         
         mapView.register(PointAnnotationView.self, forAnnotationViewWithReuseIdentifier: annotationId)
         
-        
+        mapView.register(PointClusterView.self, forAnnotationViewWithReuseIdentifier: clusterId)
     }
     
     func setupLocation() {

@@ -15,7 +15,7 @@ final class PointAnnotationView: MKAnnotationView {
     // MARK: Initialization
     
     override var annotation: MKAnnotation? {
-        didSet {
+        willSet {
             configureDetailView()
         }
     }
@@ -27,6 +27,7 @@ final class PointAnnotationView: MKAnnotationView {
         centerOffset = CGPoint(x: 0, y: -frame.size.height / 2)
 
         setupCircleView()
+        clusteringIdentifier = String(describing: PointClusterView.self)
         
     }
 
