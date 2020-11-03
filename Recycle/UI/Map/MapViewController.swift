@@ -18,7 +18,8 @@ class MapViewController: UIViewController {
     @Inject var pointService: PointService
     
     let annotationId = MKMapViewDefaultAnnotationViewReuseIdentifier
-    let clusterId = MKMapViewDefaultClusterAnnotationViewReuseIdentifier
+    let clusterId = String(describing: PointClusterView.self)
+    //let clusterId = MKMapViewDefaultClusterAnnotationViewReuseIdentifier
         
     var points: [RecyclePoint] = []
 
@@ -44,7 +45,7 @@ extension MapViewController: MKMapViewDelegate {
             view.calloutView.annotation = pointAnnotation
             return view
         case is MKClusterAnnotation:
-            return PointClusterView(annotation: annotation, reuseIdentifier: clusterId)
+            return mapView.dequeueReusableAnnotationView(withIdentifier: clusterId)
         default:
             return nil
         }
@@ -107,18 +108,26 @@ private extension MapViewController {
     
     func loadPoints() {
         pointService.loadPoints { [weak self] result in
+            
             switch result {
             case .success(let points):
-                
-                let annotations = points.map {
-                    PointAnnotation(point: $0)
-                }
-                
-                self?.mapView.addAnnotations(annotations)
-                
+                self?.handle(points: points)
             case .failure(let error):
                 break
             }
         }
+    }
+    
+    func handle(points: [RecyclePoint]) {
+        let annotations = points.prefix(5000).map {
+            PointAnnotation(point: $0)
+        }
+        
+        mapView.addAnnotations(annotations)
+        
+//        let queue = DispatchQueue.global(qos: .userInteractive)
+//        queue.async { [weak self] in
+//
+//        }
     }
 }

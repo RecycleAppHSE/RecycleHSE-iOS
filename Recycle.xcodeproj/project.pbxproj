@@ -51,6 +51,8 @@
 		B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066548F253595A3001C17A8 /* PointAnnotationView.swift */; };
 		B08A61862550CF3F00F4288B /* PointClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61852550CF3F00F4288B /* PointClusterView.swift */; };
 		B08A618E2550D55000F4288B /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */; };
+		B08A61B32550F6E700F4288B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61B22550F6E700F4288B /* User.swift */; };
+		B08A61B82550F8B100F4288B /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61B72550F8B100F4288B /* EmptyResponse.swift */; };
 		B0A977B02538F7B40085531F /* UIView+XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A977AF2538F7B40085531F /* UIView+XibLoadable.swift */; };
 		B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A977B42538F8E80085531F /* BubbleButton.swift */; };
 		B0A977BA2538F8F50085531F /* BubbleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A977B92538F8F50085531F /* BubbleButton.xib */; };
@@ -122,6 +124,8 @@
 		B066548F253595A3001C17A8 /* PointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotationView.swift; sourceTree = "<group>"; };
 		B08A61852550CF3F00F4288B /* PointClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointClusterView.swift; sourceTree = "<group>"; };
 		B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
+		B08A61B22550F6E700F4288B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B08A61B72550F8B100F4288B /* EmptyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
 		B0A977AF2538F7B40085531F /* UIView+XibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+XibLoadable.swift"; sourceTree = "<group>"; };
 		B0A977B42538F8E80085531F /* BubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
 		B0A977B92538F8F50085531F /* BubbleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubbleButton.xib; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				B066546C25358A82001C17A8 /* RecyclePoint.swift */,
 				B066547425358AB2001C17A8 /* WasteType.swift */,
 				B062B2EC2550A7DD00F56049 /* Schedule.swift */,
+				B08A61B22550F6E700F4288B /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				B062B2CD25509ED200F56049 /* ResultCallback.swift */,
+				B08A61B72550F8B100F4288B /* EmptyResponse.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -575,12 +581,14 @@
 				B066542125358601001C17A8 /* SceneDelegate.swift in Sources */,
 				B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */,
 				B062B2FE2550AF7F00F56049 /* KeyValueStore.swift in Sources */,
+				B08A61B82550F8B100F4288B /* EmptyResponse.swift in Sources */,
 				B062B2CE25509ED200F56049 /* ResultCallback.swift in Sources */,
 				B06654562535862D001C17A8 /* MapViewController.swift in Sources */,
 				B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */,
 				B00FD1ED2535FE8600225771 /* PointAnnotation.swift in Sources */,
 				B062B2ED2550A7DD00F56049 /* Schedule.swift in Sources */,
 				B062B2A3255098E800F56049 /* ApiClientImp.swift in Sources */,
+				B08A61B32550F6E700F4288B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

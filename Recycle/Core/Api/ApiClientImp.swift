@@ -33,7 +33,7 @@ extension ApiClientImp: ApiClient {
         body: Body?,
         _ callback: ResultCallback<T>?) {
         
-        // TODO: handle body
+        let encoding: ParameterEncoding = body != nil ? JSONEncoding.default : URLEncoding.default
         
         let headers: HTTPHeaders = .init([
             .init(name: "USER_ID", value: String(store.userId ?? 0))
@@ -45,6 +45,7 @@ extension ApiClientImp: ApiClient {
             url,
             method: method,
             parameters: params,
+            encoding: encoding,
             headers: headers
         ).validate().responseDecodable(of: T.self, decoder: decoder) { response in
             guard let value = response.value else {

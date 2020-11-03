@@ -18,10 +18,48 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var confirmedButton: BubbleButton!
     @IBOutlet weak var allButton: BubbleButton!
     
+    @Inject var userService: UserService
+    
     // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupView()
+        loadUser()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadUser()
+    }
+    
+    // MARK: - Actions
+    
+    
+}
+
+extension ProfileViewController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n", currentName.contains("\n")  {
+            textView.resignFirstResponder()
+            userService.updateName(currentName) { _ in }
+        }
+        
+        return true
+    }
+}
+
+private extension ProfileViewController {
+    
+    var currentName: String {
+        nameTextView.text
+    }
+    
+    func setupView() {
+        nameTextView.delegate = self
+        nameTextView.returnKeyType = .done
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         
@@ -30,7 +68,23 @@ class ProfileViewController: UIViewController {
         allButton.title = "Все"
     }
     
-    // MARK: - Actions
+    func loadUser() {
+        userService.getUser { [weak self] result in
+            switch result {
+            case .success(let user):
+                self?.display(user: user)
+            case .failure(let error):
+                break
+            }
+        }
+    }
     
-    
+    func display(user: User) {
+        nameTextView.text = user.name
+        
+        let ids = user.correctionIds
+        confirmedButton.count = ids.approvedCount
+        notConfirmedButton.count = ids.notApprovedCount
+        allButton.count = ids.totalCount
+    }
 }
