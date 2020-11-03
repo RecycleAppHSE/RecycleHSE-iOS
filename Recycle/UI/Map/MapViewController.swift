@@ -38,14 +38,13 @@ extension MapViewController: MKMapViewDelegate {
         
         switch annotation {
         case let pointAnnotation as PointAnnotation:
-            let view = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId, for: annotation) as? PointAnnotationView
             
-            view?.calloutView.delegate = self
-            view?.calloutView.annotation = pointAnnotation
+            let view = PointAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
+            view.calloutView.delegate = self
+            view.calloutView.annotation = pointAnnotation
             return view
         case is MKClusterAnnotation:
-            let view = mapView.dequeueReusableAnnotationView(withIdentifier: clusterId, for: annotation)
-            return view
+            return PointClusterView(annotation: annotation, reuseIdentifier: clusterId)
         default:
             return nil
         }
@@ -110,9 +109,11 @@ private extension MapViewController {
         pointService.loadPoints { [weak self] result in
             switch result {
             case .success(let points):
+                
                 let annotations = points.map {
                     PointAnnotation(point: $0)
                 }
+                
                 self?.mapView.addAnnotations(annotations)
                 
             case .failure(let error):

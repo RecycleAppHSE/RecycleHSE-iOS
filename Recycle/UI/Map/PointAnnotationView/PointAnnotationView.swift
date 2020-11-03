@@ -14,11 +14,11 @@ final class PointAnnotationView: MKAnnotationView {
 
     // MARK: Initialization
     
-    override var annotation: MKAnnotation? {
-        willSet {
-            configureDetailView()
-        }
-    }
+//    override var annotation: MKAnnotation? {
+//        willSet {
+//            configureDetailView()
+//        }
+//    }
 
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -27,13 +27,29 @@ final class PointAnnotationView: MKAnnotationView {
         centerOffset = CGPoint(x: 0, y: -frame.size.height / 2)
 
         setupCircleView()
+        
+        let button = UIButton(type: .detailDisclosure)
+        button.setImage(#imageLiteral(resourceName: "rightArrow"), for: .normal)
+        button.tintColor = .black
+        button.frame = .init(x: 0, y: 0, width: 20, height: 20)
+        rightCalloutAccessoryView = button
+        
+        canShowCallout = true
+        detailCalloutAccessoryView = calloutView
+        
         clusteringIdentifier = String(describing: PointClusterView.self)
         
+        displayPriority = .defaultLow
     }
 
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForDisplay() {
+        super.prepareForDisplay()
+        configureDetailView()
     }
 
     // MARK: Setup
@@ -54,19 +70,10 @@ final class PointAnnotationView: MKAnnotationView {
 private extension PointAnnotationView {
     
     func configureDetailView() {
-        canShowCallout = true
-        
         guard let annotation = annotation as? PointAnnotation else { return }
         
         calloutView.configure(
             images: annotation.wasteImages
         )
-        detailCalloutAccessoryView = calloutView
-        
-        let button = UIButton(type: .detailDisclosure)
-        button.setImage(#imageLiteral(resourceName: "rightArrow"), for: .normal)
-        button.tintColor = .black
-        button.frame = .init(x: 0, y: 0, width: 20, height: 20)
-        rightCalloutAccessoryView = button
     }
 }

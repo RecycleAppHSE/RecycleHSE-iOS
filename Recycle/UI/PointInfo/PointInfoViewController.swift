@@ -32,31 +32,9 @@ class PointInfoViewController: UIViewController {
         
         loadTitle()
         
-        let cellModels: [WasteTypeCellModel] = [
-            .init(waste: .glass,
-                  isSelected: true,
-                  mode: .readOnly),
-            
-            .init(waste: .clothes,
-                  isSelected: false,
-                  mode: .readOnly),
-            
-            .init(waste: .lamps,
-                  isSelected: true,
-                  mode: .readOnly),
-            
-            .init(waste: .metal,
-                  isSelected: true,
-                  mode: .readOnly),
-            
-            .init(waste: .paper,
-                  isSelected: false,
-                  mode: .readOnly),
-            
-            .init(waste: .plastic,
-                  isSelected: true,
-                  mode: .readOnly)
-        ]
+        let cellModels: [WasteTypeCellModel] = point.wasteTypes.map {
+            .init(wasteType: $0)
+        }
 
         wasteTypesView.configure(with: cellModels)
     }
@@ -73,10 +51,15 @@ extension PointInfoViewController {
     func loadTitle() {
         let location = CLLocation(latitude: point.latitude, longitude: point.longitude)
         
-        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
-            let placemark = placemarks?.first
+        geocoder.reverseGeocodeLocation(location, preferredLocale: .current) { [weak self] (placemarks, error) in
+            guard let placemark = placemarks?.first else { return }
             
-            self?.titleLabel.text = placemark?.name
+            let country = placemark.country ?? ""
+            let city = placemark.locality ?? ""
+            let street = placemark.thoroughfare ?? ""
+            let house = placemark.subThoroughfare ?? ""
+            
+            self?.titleLabel.text = "\(country) \(city) \(street) \(house)"
         }
     }
 }
