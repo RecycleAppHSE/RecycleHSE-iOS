@@ -21,7 +21,15 @@ class PointInfoViewController: UIViewController {
     
     @IBOutlet weak var wasteTypesView: WasteTypesView!
     
-    var geocoder = CLGeocoder()
+    @IBOutlet weak var phoneButton: UIButton!
+    
+    @IBOutlet weak var websiteButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
+    @IBOutlet weak var correctionsButton: UIButton!
+    
+    
+    @Inject var appHelper: AppHelper
+    @Inject var geocoder: CLGeocoder
     
     var point: RecyclePoint!
     
@@ -31,18 +39,26 @@ class PointInfoViewController: UIViewController {
         super.viewDidLoad()
         
         loadTitle()
-        
-        let cellModels: [WasteTypeCellModel] = point.wasteTypes.map {
-            .init(wasteType: $0)
-        }
-
-        wasteTypesView.configure(with: cellModels)
+        configureWasteTypes()
+        configureTexts()
     }
     
     // MARK: - Actions
     
     @IBAction func closeTapped(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func phoneTapped(_ sender: UIButton) {
+        appHelper.call(to: point.phoneNumber)
+    }
+    
+    @IBAction func emailTapped(_ sender: UIButton) {
+        appHelper.sendEmail(to: sender.currentTitle)
+    }
+    
+    @IBAction func linkTapped(_ sender: UIButton) {
+        appHelper.open(url: point.webSite)
     }
 }
 
@@ -51,9 +67,9 @@ extension PointInfoViewController {
     func loadTitle() {
         let location = CLLocation(latitude: point.latitude, longitude: point.longitude)
         
-        // 55.806085, 37.559281
-        let location1 = CLLocation(latitude: 55.806085, longitude: 37.559281)
-        geocoder.reverseGeocodeLocation(location1) { [weak self] (placemarks, error) in
+        //let location1 = CLLocation(latitude: 55.806085, longitude: 37.559281)
+        
+        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
             guard let placemark = placemarks?.first else { return }
             
             let country = placemark.country ?? ""
@@ -61,7 +77,43 @@ extension PointInfoViewController {
             let street = placemark.thoroughfare ?? ""
             let house = placemark.subThoroughfare ?? ""
             
-            self?.titleLabel.text = "\(country) \(city) \(street) \(house)"
+            self?.titleLabel.text = "\(street) \(house)"
         }
+    }
+    
+    func configureWasteTypes() {
+        let cellModels: [WasteTypeCellModel] = point.wasteTypes.map {
+            .init(wasteType: $0, hideTitle: false)
+        }
+
+        wasteTypesView.configure(with: cellModels)
+    }
+    
+    func configureTexts() {
+        organizationLabel.text = point.organization
+        
+        let statusViewModel = StatusViewModel(status: point.status)
+        statusImageView.image = statusViewModel.image
+        statusImageView.backgroundColor = statusViewModel.color
+        statusLabel.text = statusViewModel.text
+        statusLabel.textColor = statusViewModel.color
+        
+        let phone = point.phoneNumber
+        phoneButton.setTitle(phone, for: .normal)
+        
+        let link = point.webSite?.absoluteString
+        websiteButton.setTitle(link, for: .normal)
+        
+        emailButton.setTitle("test@email.ru", for: .normal)
+        
+        for button in [phoneButton, websiteButton, emailButton] {
+            if button?.currentTitle == nil {
+                button?.isEnabled = false
+                button?.setTitle("Нет", for: .normal)
+            }
+        }
+        
+        let correctionsTitle = "История исправлений (\(point.correctionsCount) актуальных)"
+        correctionsButton.setTitle(correctionsTitle, for: .normal)
     }
 }

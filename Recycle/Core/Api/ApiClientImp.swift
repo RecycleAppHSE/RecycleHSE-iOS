@@ -13,13 +13,16 @@ import Foundation
 class ApiClientImp {
     
     let decoder: JSONDecoder
+    let encoder: JSONEncoder
     let store: KeyValueStore
     
     let baseUrl = "http://165.227.166.231:8080/"
     
     init(decoder: JSONDecoder,
+         encoder: JSONEncoder,
          store: KeyValueStore) {
         self.decoder = decoder
+        self.encoder = encoder
         self.store = store
     }
 }
@@ -33,8 +36,6 @@ extension ApiClientImp: ApiClient {
         body: Body?,
         _ callback: ResultCallback<T>?) {
         
-        let encoding: ParameterEncoding = body != nil ? JSONEncoding.default : URLEncoding.default
-        
         let headers: HTTPHeaders = .init([
             .init(name: "USER_ID", value: String(store.userId ?? 0))
         ])
@@ -44,8 +45,8 @@ extension ApiClientImp: ApiClient {
         AF.request(
             url,
             method: method,
-            parameters: params,
-            encoding: encoding,
+            parameters: body,
+            encoder: JSONParameterEncoder(encoder: encoder),
             headers: headers
         ).validate().responseDecodable(of: T.self, decoder: decoder) { response in
             guard let value = response.value else {

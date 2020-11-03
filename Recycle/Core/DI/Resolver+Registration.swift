@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import CoreLocation
+import UIKit
 
 extension Resolver {
     
@@ -30,7 +32,17 @@ extension Resolver {
             )
         }
         
+        add(type: AppHelper.self) {
+            AppHelperImp(
+                application: UIApplication.shared
+            )
+        }
+        
         // MARK: - Core
+        
+        add(type: CLGeocoder.self) {
+            CLGeocoder()
+        }
 
         add(type: JSONDecoder.self) {
             let decoder = JSONDecoder()
@@ -38,9 +50,16 @@ extension Resolver {
             return decoder
         }
         
+        add(type: JSONEncoder.self) {
+            let encoder = JSONEncoder()
+            encoder.keyEncodingStrategy = .convertToSnakeCase
+            return encoder
+        }
+        
         add(type: ApiClient.self) {
             return ApiClientImp(
                 decoder: self.resolve(),
+                encoder: self.resolve(),
                 store: self.resolve()
             )
         }

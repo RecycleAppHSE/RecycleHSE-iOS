@@ -49,6 +49,8 @@
 		B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066547C25358BBF001C17A8 /* WasteTypeCell.swift */; };
 		B066548525358C6D001C17A8 /* WasteTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B066548425358C6D001C17A8 /* WasteTypeCell.xib */; };
 		B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066548F253595A3001C17A8 /* PointAnnotationView.swift */; };
+		B07CDAFF2551821B0068C9E5 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDAFE2551821B0068C9E5 /* StatusViewModel.swift */; };
+		B07CDB04255186370068C9E5 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDB03255186370068C9E5 /* AppHelper.swift */; };
 		B08A61862550CF3F00F4288B /* PointClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61852550CF3F00F4288B /* PointClusterView.swift */; };
 		B08A618E2550D55000F4288B /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */; };
 		B08A61B32550F6E700F4288B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61B22550F6E700F4288B /* User.swift */; };
@@ -122,6 +124,8 @@
 		B066547C25358BBF001C17A8 /* WasteTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCell.swift; sourceTree = "<group>"; };
 		B066548425358C6D001C17A8 /* WasteTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WasteTypeCell.xib; sourceTree = "<group>"; };
 		B066548F253595A3001C17A8 /* PointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointAnnotationView.swift; sourceTree = "<group>"; };
+		B07CDAFE2551821B0068C9E5 /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
+		B07CDB03255186370068C9E5 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		B08A61852550CF3F00F4288B /* PointClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointClusterView.swift; sourceTree = "<group>"; };
 		B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		B08A61B22550F6E700F4288B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -329,6 +333,7 @@
 				B06654662535873F001C17A8 /* LocationManager.swift */,
 				B062B2F12550AE2600F56049 /* UserService.swift */,
 				B062B3072550B3C000F56049 /* PointService.swift */,
+				B07CDB03255186370068C9E5 /* AppHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				B0A977A92538F7540085531F /* Buttons */,
 				B00FD22D2536218F00225771 /* WasteTypesView */,
 				B066547B25358B9C001C17A8 /* WasteTypeCell */,
+				B07CDAFE2551821B0068C9E5 /* StatusViewModel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -556,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B062B2B225509C4C00F56049 /* Resolver.swift in Sources */,
+				B07CDAFF2551821B0068C9E5 /* StatusViewModel.swift in Sources */,
 				B066541F25358601001C17A8 /* AppDelegate.swift in Sources */,
 				B062B3082550B3C000F56049 /* PointService.swift in Sources */,
 				B062B2F22550AE2600F56049 /* UserService.swift in Sources */,
@@ -585,6 +592,7 @@
 				B062B2CE25509ED200F56049 /* ResultCallback.swift in Sources */,
 				B06654562535862D001C17A8 /* MapViewController.swift in Sources */,
 				B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */,
+				B07CDB04255186370068C9E5 /* AppHelper.swift in Sources */,
 				B00FD1ED2535FE8600225771 /* PointAnnotation.swift in Sources */,
 				B062B2ED2550A7DD00F56049 /* Schedule.swift in Sources */,
 				B062B2A3255098E800F56049 /* ApiClientImp.swift in Sources */,

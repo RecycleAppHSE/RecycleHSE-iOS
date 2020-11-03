@@ -24,10 +24,11 @@ struct WasteTypeCellModel {
     
     // MARK: - Init
     
-    init(wasteType: WasteType) {
-        self.image = WasteTypeModel(type: wasteType).image
-        title = ""
-        titleColor = nil
+    init(wasteType: WasteType, hideTitle: Bool) {
+        let wasteModel = WasteTypeModel(type: wasteType)
+        self.image = wasteModel.image
+        title = wasteModel.title
+        titleColor = hideTitle ? .clear : .textGray
         tickImage = nil
         hideTick = true
         backgroundColor = .clear
