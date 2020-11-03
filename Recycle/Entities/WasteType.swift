@@ -19,6 +19,7 @@ enum WasteType: String, Decodable {
     toxic,
     appliances, // Техника
     batteries,
+        
     tires, // шины
     caps, 
     other

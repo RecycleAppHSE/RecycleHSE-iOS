@@ -30,6 +30,25 @@ class MapViewController: UIViewController {
         setupLocation()
         setupMap()
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func zoomInTapped(_ sender: UIButton) {
+        mapView.zoomMap(byFactor: 0.5)
+    }
+    
+    @IBAction func zoomOutTapped(_ sender: Any) {
+        mapView.zoomMap(byFactor: 2.0)
+    }
+    
+    @IBAction func userLocationTapped(_ sender: Any) {
+        guard let location = locationManager.location else { return }
+        mapView.centerToLocation(location)
+    }
+    
+    @IBAction func filterTapped(_ sender: Any) {
+    }
+    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -86,8 +105,9 @@ private extension MapViewController {
             case .success:
                 self?.loadPoints()
             case .failure(let error):
-                break
-                // TODO: showError
+                self?.show(error: error) { [weak self] in
+                    self?.createUserIfNeeded()
+                }
             }
         }
     }
@@ -118,7 +138,9 @@ private extension MapViewController {
             case .success(let points):
                 self?.handle(points: points)
             case .failure(let error):
-                break
+                self?.show(error: error, repeatCallback: {
+                    self?.loadPoints()
+                })
             }
         }
     }
@@ -135,4 +157,6 @@ private extension MapViewController {
 //
 //        }
     }
+    
+    
 }

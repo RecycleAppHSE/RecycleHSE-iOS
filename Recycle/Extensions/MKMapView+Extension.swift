@@ -18,4 +18,12 @@ extension MKMapView {
       longitudinalMeters: regionRadius)
     setRegion(coordinateRegion, animated: true)
   }
+    
+    func zoomMap(byFactor delta: Double) {
+        var span: MKCoordinateSpan = region.span
+        span.latitudeDelta *= delta
+        span.longitudeDelta *= delta
+        region.span = span
+        setRegion(region, animated: true)
+    }
 }

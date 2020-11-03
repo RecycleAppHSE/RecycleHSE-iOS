@@ -43,9 +43,12 @@ struct WasteTypeModel {
             return "Tetra\nPak"
         case .batteries:
             return "Батарейки"
-            
-        default:
-            return type.rawValue
+        case .tires:
+            return "Шины"
+        case .caps:
+            return "Крышки"
+        case .other:
+            return "Прочее"
         }
     }
     
@@ -69,7 +72,9 @@ struct WasteTypeModel {
             return #imageLiteral(resourceName: "washing-machine-mini")
         case .batteries:
             return #imageLiteral(resourceName: "power-mini")
-        default:
+        case .tetraPack:
+            return #imageLiteral(resourceName: "milk-mini")
+        case .tires, .caps, .other:
             return #imageLiteral(resourceName: "cancel")
         }
     }

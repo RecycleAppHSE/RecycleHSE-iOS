@@ -72,8 +72,6 @@ extension PointInfoViewController {
         geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
             guard let placemark = placemarks?.first else { return }
             
-            let country = placemark.country ?? ""
-            let city = placemark.locality ?? ""
             let street = placemark.thoroughfare ?? ""
             let house = placemark.subThoroughfare ?? ""
             

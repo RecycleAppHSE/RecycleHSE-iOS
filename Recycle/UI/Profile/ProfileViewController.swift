@@ -44,7 +44,14 @@ extension ProfileViewController: UITextViewDelegate {
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n", currentName.contains("\n")  {
             textView.resignFirstResponder()
-            userService.updateName(currentName) { _ in }
+            userService.updateName(currentName) { [weak self] result in
+                switch result {
+                case .success:
+                    return
+                case .failure(let error):
+                    self?.show(error: error)
+                }
+            }
         }
         
         return true
@@ -74,7 +81,9 @@ private extension ProfileViewController {
             case .success(let user):
                 self?.display(user: user)
             case .failure(let error):
-                break
+                self?.show(error: error, repeatCallback: {
+                    self?.loadUser()
+                })
             }
         }
     }

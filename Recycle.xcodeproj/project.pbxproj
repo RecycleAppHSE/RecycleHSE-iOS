@@ -52,6 +52,7 @@
 		B07CDAFF2551821B0068C9E5 /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDAFE2551821B0068C9E5 /* StatusViewModel.swift */; };
 		B07CDB04255186370068C9E5 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDB03255186370068C9E5 /* AppHelper.swift */; };
 		B07CDB0925518E4D0068C9E5 /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDB0825518E4D0068C9E5 /* MKMapView+Extension.swift */; };
+		B07CDB0E25519BC40068C9E5 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDB0D25519BC40068C9E5 /* ErrorManager.swift */; };
 		B08A61862550CF3F00F4288B /* PointClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61852550CF3F00F4288B /* PointClusterView.swift */; };
 		B08A618E2550D55000F4288B /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */; };
 		B08A61B32550F6E700F4288B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61B22550F6E700F4288B /* User.swift */; };
@@ -128,6 +129,7 @@
 		B07CDAFE2551821B0068C9E5 /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		B07CDB03255186370068C9E5 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		B07CDB0825518E4D0068C9E5 /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
+		B07CDB0D25519BC40068C9E5 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		B08A61852550CF3F00F4288B /* PointClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointClusterView.swift; sourceTree = "<group>"; };
 		B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		B08A61B22550F6E700F4288B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				B00FD22D2536218F00225771 /* WasteTypesView */,
 				B066547B25358B9C001C17A8 /* WasteTypeCell */,
 				B07CDAFE2551821B0068C9E5 /* StatusViewModel.swift */,
+				B07CDB0D25519BC40068C9E5 /* ErrorManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				B0645759253623AE00A2CA6E /* WasteTypeCellModel.swift in Sources */,
 				B062B2BA25509C8A00F56049 /* InjectPropertyWrapper.swift in Sources */,
 				B066546D25358A82001C17A8 /* RecyclePoint.swift in Sources */,
+				B07CDB0E25519BC40068C9E5 /* ErrorManager.swift in Sources */,
 				B07CDB0925518E4D0068C9E5 /* MKMapView+Extension.swift in Sources */,
 				B06654672535873F001C17A8 /* LocationManager.swift in Sources */,
 				B062B3032550B10C00F56049 /* Result+Values.swift in Sources */,
