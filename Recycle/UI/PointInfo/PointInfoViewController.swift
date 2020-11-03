@@ -51,7 +51,9 @@ extension PointInfoViewController {
     func loadTitle() {
         let location = CLLocation(latitude: point.latitude, longitude: point.longitude)
         
-        geocoder.reverseGeocodeLocation(location, preferredLocale: .current) { [weak self] (placemarks, error) in
+        // 55.806085, 37.559281
+        let location1 = CLLocation(latitude: 55.806085, longitude: 37.559281)
+        geocoder.reverseGeocodeLocation(location1, preferredLocale: .current) { [weak self] (placemarks, error) in
             guard let placemark = placemarks?.first else { return }
             
             let country = placemark.country ?? ""
