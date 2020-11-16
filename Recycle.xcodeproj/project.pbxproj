@@ -15,6 +15,10 @@
 		B00FD21925360CFB00225771 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00FD21125360C8F00225771 /* MapKit.framework */; };
 		B00FD22F2536219B00225771 /* WasteTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00FD22E2536219B00225771 /* WasteTypesView.swift */; };
 		B00FD2382536224800225771 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B00FD2372536224800225771 /* SnapKit */; };
+		B03BCD8725631E8F00214F79 /* SearchPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD8625631E8F00214F79 /* SearchPointController.swift */; };
+		B03BCD9025631F6D00214F79 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD8F25631F6D00214F79 /* SearchCell.swift */; };
+		B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD9725631F9500214F79 /* SearchCellModel.swift */; };
+		B03BCD9D25631F9C00214F79 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03BCD9C25631F9C00214F79 /* SearchCell.xib */; };
 		B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B043CBEA2538FD2000807EA8 /* Profile.storyboard */; };
 		B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043CBEF253901B500807EA8 /* ProfileViewController.swift */; };
 		B062B2A3255098E800F56049 /* ApiClientImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2A2255098E800F56049 /* ApiClientImp.swift */; };
@@ -87,6 +91,10 @@
 		B00FD20B253606D900225771 /* PointCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointCalloutView.xib; sourceTree = "<group>"; };
 		B00FD21125360C8F00225771 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B00FD22E2536219B00225771 /* WasteTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypesView.swift; sourceTree = "<group>"; };
+		B03BCD8625631E8F00214F79 /* SearchPointController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPointController.swift; sourceTree = "<group>"; };
+		B03BCD8F25631F6D00214F79 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		B03BCD9725631F9500214F79 /* SearchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellModel.swift; sourceTree = "<group>"; };
+		B03BCD9C25631F9C00214F79 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		B043CBEA2538FD2000807EA8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B043CBEF253901B500807EA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B062B2A2255098E800F56049 /* ApiClientImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientImp.swift; sourceTree = "<group>"; };
@@ -204,6 +212,25 @@
 			path = WasteTypesView;
 			sourceTree = "<group>";
 		};
+		B03BCD8525631D2900214F79 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B03BCD8E25631F5D00214F79 /* SearchCell */,
+				B03BCD8625631E8F00214F79 /* SearchPointController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B03BCD8E25631F5D00214F79 /* SearchCell */ = {
+			isa = PBXGroup;
+			children = (
+				B03BCD9C25631F9C00214F79 /* SearchCell.xib */,
+				B03BCD8F25631F6D00214F79 /* SearchCell.swift */,
+				B03BCD9725631F9500214F79 /* SearchCellModel.swift */,
+			);
+			path = SearchCell;
+			sourceTree = "<group>";
+		};
 		B043CBE92538FD1400807EA8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +247,7 @@
 				B066547425358AB2001C17A8 /* WasteType.swift */,
 				B062B2EC2550A7DD00F56049 /* Schedule.swift */,
 				B08A61B22550F6E700F4288B /* User.swift */,
+				B062B2CC25509ECB00F56049 /* Helpers */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -347,7 +375,6 @@
 			isa = PBXGroup;
 			children = (
 				B062B30C2550B49200F56049 /* Api */,
-				B062B2CC25509ECB00F56049 /* Helpers */,
 				B062B2B025509C3D00F56049 /* DI */,
 				B062B2FD2550AF7F00F56049 /* KeyValueStore.swift */,
 			);
@@ -357,6 +384,7 @@
 		B066547925358B8C001C17A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B03BCD8525631D2900214F79 /* Search */,
 				B066545125358610001C17A8 /* Map */,
 				B0645768253629D100A2CA6E /* PointInfo */,
 				B043CBE92538FD1400807EA8 /* Profile */,
@@ -543,6 +571,7 @@
 				B066542625358601001C17A8 /* Main.storyboard in Resources */,
 				B066545E2535866D001C17A8 /* Map.storyboard in Resources */,
 				B00FD20C253606D900225771 /* PointCalloutView.xib in Resources */,
+				B03BCD9D25631F9C00214F79 /* SearchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +614,7 @@
 				B062B3032550B10C00F56049 /* Result+Values.swift in Sources */,
 				B08A61862550CF3F00F4288B /* PointClusterView.swift in Sources */,
 				B062B2D92550A00000F56049 /* ApiClient.swift in Sources */,
+				B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */,
 				B062B2C525509DAC00F56049 /* Resolver+Registration.swift in Sources */,
 				B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */,
 				B064576A25362A1200A2CA6E /* PointInfoViewController.swift in Sources */,
@@ -596,7 +626,9 @@
 				B066542125358601001C17A8 /* SceneDelegate.swift in Sources */,
 				B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */,
 				B062B2FE2550AF7F00F56049 /* KeyValueStore.swift in Sources */,
+				B03BCD9025631F6D00214F79 /* SearchCell.swift in Sources */,
 				B08A61B82550F8B100F4288B /* EmptyResponse.swift in Sources */,
+				B03BCD8725631E8F00214F79 /* SearchPointController.swift in Sources */,
 				B062B2CE25509ED200F56049 /* ResultCallback.swift in Sources */,
 				B06654562535862D001C17A8 /* MapViewController.swift in Sources */,
 				B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */,

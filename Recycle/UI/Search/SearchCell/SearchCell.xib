@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SearchTableViewCell" customModule="Recycle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="276" height="77"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="H M" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmf-Wz-8Lo">
+                    <rect key="frame" x="8" y="15.999999999999998" width="260" height="26.333333333333329"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26.333333333333329" id="qHi-g3-lyo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Москва, россияМосква, россияМосква, россияМосква, россия" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGC-Jp-Dix">
+                    <rect key="frame" x="8" y="39.333333333333336" width="260" height="22.666666666666664"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="DcL-I5-Ebx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" name="textGray"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Jmf-Wz-8Lo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="6fh-It-2wO"/>
+                <constraint firstItem="zGC-Jp-Dix" firstAttribute="top" secondItem="Jmf-Wz-8Lo" secondAttribute="bottom" constant="-3" id="6kq-Hh-8g2"/>
+                <constraint firstItem="Jmf-Wz-8Lo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="GXQ-Tx-3wq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jmf-Wz-8Lo" secondAttribute="trailing" constant="8" id="RQi-LN-Zl5"/>
+                <constraint firstItem="zGC-Jp-Dix" firstAttribute="leading" secondItem="Jmf-Wz-8Lo" secondAttribute="leading" id="Y2Z-IK-U9D"/>
+                <constraint firstItem="zGC-Jp-Dix" firstAttribute="trailing" secondItem="Jmf-Wz-8Lo" secondAttribute="trailing" id="Zxa-oJ-5h8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zGC-Jp-Dix" secondAttribute="bottom" constant="15" id="soH-7B-2Go"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addressLabel" destination="zGC-Jp-Dix" id="YDG-Rg-pqG"/>
+                <outlet property="titleNameLabel" destination="Jmf-Wz-8Lo" id="m9E-FI-yuV"/>
+            </connections>
+            <point key="canvasLocation" x="-252" y="239"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="textGray">
+            <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

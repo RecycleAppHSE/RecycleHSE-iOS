@@ -88,7 +88,7 @@ extension PointInfoViewController {
     }
     
     func configureTexts() {
-        organizationLabel.text = point.organization
+        organizationLabel.text = point.name
         
         let statusViewModel = StatusViewModel(status: point.status)
         statusImageView.image = statusViewModel.image

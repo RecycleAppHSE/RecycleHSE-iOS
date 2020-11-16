@@ -47,6 +47,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func filterTapped(_ sender: Any) {
+        // TODO: present filter screen
     }
     
 }
