@@ -21,16 +21,16 @@ struct RecyclePoint: Decodable {
     let address: String?
     let phoneNumber: String?
     let webSite: URL?
-    let wasteTypes: [WasteType]
+    var wasteTypes: [WasteType]
     
     let latitude: Double
     let longitude: Double
     
-    let status: RecyclePointStatus
+    var status: RecyclePointStatus
     let lastUpdated: Date
     
     let schedule: Schedule?
-    let correctionsCount: Int
+    var correctionsCount: Int
      
     static let empty: RecyclePoint = {
         RecyclePoint(id: 0, name: "", address: nil, phoneNumber: nil, webSite: nil, wasteTypes: [], latitude: 0, longitude: 0, status: .closed, lastUpdated: Date(), schedule: nil, correctionsCount: 0)

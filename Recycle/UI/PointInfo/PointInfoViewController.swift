@@ -32,15 +32,14 @@ class PointInfoViewController: UIViewController {
     @Inject var geocoder: CLGeocoder
     
     var point: RecyclePoint!
+    weak var delegate: PointUpdaterDelegate?
     
     // MARK: - Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadTitle()
-        configureWasteTypes()
-        configureTexts()
+        configureViews()
     }
     
     // MARK: - Actions
@@ -64,6 +63,7 @@ class PointInfoViewController: UIViewController {
     @IBAction func correctionTapped(_ sender: UIButton) {
         let vc: CorrectionModeViewController = create()
         vc.point = point
+        vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
     
@@ -118,7 +118,23 @@ extension PointInfoViewController {
     }
 }
 
+extension PointInfoViewController: PointUpdaterDelegate {
+    
+    func didUpdatePoint(_ point: RecyclePoint) {
+        self.point = point
+        configureViews()
+        
+        delegate?.didUpdatePoint(point)
+    }
+}
+
 private extension PointInfoViewController {
+    
+    func configureViews() {
+        loadTitle()
+        configureWasteTypes()
+        configureTexts()
+    }
     
     func loadAddress() {
         let location = CLLocation(

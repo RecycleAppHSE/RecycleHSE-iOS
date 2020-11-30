@@ -27,6 +27,9 @@
 		B05EF012257579DE002533B3 /* WasteTypeCorrectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EF011257579DE002533B3 /* WasteTypeCorrectionViewController.swift */; };
 		B05EF01A257579EE002533B3 /* WasteTypeCorrection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05EF019257579EE002533B3 /* WasteTypeCorrection.storyboard */; };
 		B05EF02225757CF9002533B3 /* CorrectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EF02125757CF9002533B3 /* CorrectionService.swift */; };
+		B05EF02E257594AF002533B3 /* PointUpdaterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EF02D257594AF002533B3 /* PointUpdaterDelegate.swift */; };
+		B05EF039257597D2002533B3 /* StatusCorrectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EF038257597D2002533B3 /* StatusCorrectionViewController.swift */; };
+		B05EF03E257597D8002533B3 /* StatusCorrection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05EF03D257597D8002533B3 /* StatusCorrection.storyboard */; };
 		B062B2A3255098E800F56049 /* ApiClientImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2A2255098E800F56049 /* ApiClientImp.swift */; };
 		B062B2AC25509A0B00F56049 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B062B2AB25509A0B00F56049 /* Alamofire */; };
 		B062B2B225509C4C00F56049 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2B125509C4C00F56049 /* Resolver.swift */; };
@@ -110,6 +113,9 @@
 		B05EF011257579DE002533B3 /* WasteTypeCorrectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCorrectionViewController.swift; sourceTree = "<group>"; };
 		B05EF019257579EE002533B3 /* WasteTypeCorrection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WasteTypeCorrection.storyboard; sourceTree = "<group>"; };
 		B05EF02125757CF9002533B3 /* CorrectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionService.swift; sourceTree = "<group>"; };
+		B05EF02D257594AF002533B3 /* PointUpdaterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointUpdaterDelegate.swift; sourceTree = "<group>"; };
+		B05EF038257597D2002533B3 /* StatusCorrectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCorrectionViewController.swift; sourceTree = "<group>"; };
+		B05EF03D257597D8002533B3 /* StatusCorrection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusCorrection.storyboard; sourceTree = "<group>"; };
 		B062B2A2255098E800F56049 /* ApiClientImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientImp.swift; sourceTree = "<group>"; };
 		B062B2B125509C4C00F56049 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		B062B2B925509C8A00F56049 /* InjectPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectPropertyWrapper.swift; sourceTree = "<group>"; };
@@ -276,6 +282,8 @@
 		B05EF02925758FA9002533B3 /* StatusCorrection */ = {
 			isa = PBXGroup;
 			children = (
+				B05EF03D257597D8002533B3 /* StatusCorrection.storyboard */,
+				B05EF038257597D2002533B3 /* StatusCorrectionViewController.swift */,
 			);
 			path = StatusCorrection;
 			sourceTree = "<group>";
@@ -446,6 +454,7 @@
 				B066547B25358B9C001C17A8 /* WasteTypeCell */,
 				B07CDAFE2551821B0068C9E5 /* StatusViewModel.swift */,
 				B07CDB0D25519BC40068C9E5 /* ErrorManager.swift */,
+				B05EF02D257594AF002533B3 /* PointUpdaterDelegate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -614,6 +623,7 @@
 				B05EF00925757356002533B3 /* CorrectionMode.storyboard in Resources */,
 				B0A977BA2538F8F50085531F /* BubbleButton.xib in Resources */,
 				B00FD1FB253601EC00225771 /* Colors.xcassets in Resources */,
+				B05EF03E257597D8002533B3 /* StatusCorrection.storyboard in Resources */,
 				B066542625358601001C17A8 /* Main.storyboard in Resources */,
 				B05EF01A257579EE002533B3 /* WasteTypeCorrection.storyboard in Resources */,
 				B066545E2535866D001C17A8 /* Map.storyboard in Resources */,
@@ -664,10 +674,12 @@
 				B062B2D92550A00000F56049 /* ApiClient.swift in Sources */,
 				B05EF02225757CF9002533B3 /* CorrectionService.swift in Sources */,
 				B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */,
+				B05EF02E257594AF002533B3 /* PointUpdaterDelegate.swift in Sources */,
 				B062B2C525509DAC00F56049 /* Resolver+Registration.swift in Sources */,
 				B05EF00125757344002533B3 /* CorrectionModeViewController.swift in Sources */,
 				B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */,
 				B064576A25362A1200A2CA6E /* PointInfoViewController.swift in Sources */,
+				B05EF039257597D2002533B3 /* StatusCorrectionViewController.swift in Sources */,
 				B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */,
 				B00FD204253606BE00225771 /* PointCalloutView.swift in Sources */,
 				B00FD22F2536219B00225771 /* WasteTypesView.swift in Sources */,

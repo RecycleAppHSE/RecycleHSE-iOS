@@ -12,6 +12,7 @@ final class WasteTypeCorrectionViewController: UIViewController {
     var point: RecyclePoint = .empty
     
     @Inject var service: CorrectionService
+    weak var delegate: PointUpdaterDelegate?
 
     @IBOutlet weak var wasteTypesView: WasteTypesView!
     
@@ -33,10 +34,16 @@ final class WasteTypeCorrectionViewController: UIViewController {
     @IBAction func correctTapped(_ sender: UIButton) {
         let types = wasteTypesView.selectedTypes
         let id = point.id
+        var point = self.point
         
         service.suggestCorrection(id: id, types: types) { [weak self] result in
             switch result {
             case .success(let id):
+                point.wasteTypes = types
+                point.correctionsCount += 1
+                
+                self?.delegate?.didUpdatePoint(point)
+                
                 self?.dismiss(animated: true, completion: {
                     // show success
                 })
