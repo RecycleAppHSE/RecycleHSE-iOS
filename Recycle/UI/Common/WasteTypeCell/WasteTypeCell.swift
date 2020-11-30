@@ -22,6 +22,7 @@ class WasteTypeCell: UICollectionViewCell {
         super.awakeFromNib()
         
         containerView.layer.cornerRadius = 12
+        textLabel.adjustsFontSizeToFitWidth = true
     }
     
     func configure(with cellModel: WasteTypeCellModel) {

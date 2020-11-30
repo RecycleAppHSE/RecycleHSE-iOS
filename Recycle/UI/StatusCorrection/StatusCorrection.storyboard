@@ -134,7 +134,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bA3-hm-wIu">
                                         <rect key="frame" x="0.0" y="70" width="414" height="70"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="aXc-nb-yjN">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross-mini" translatesAutoresizingMaskIntoConstraints="NO" id="aXc-nb-yjN">
                                                 <rect key="frame" x="12" y="26" width="18" height="18"/>
                                                 <color key="backgroundColor" name="error"/>
                                                 <constraints>
@@ -186,7 +186,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5O-om-x05">
                                         <rect key="frame" x="0.0" y="140" width="414" height="70"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="BWr-MS-sdc">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross-mini" translatesAutoresizingMaskIntoConstraints="NO" id="BWr-MS-sdc">
                                                 <rect key="frame" x="12" y="26" width="18" height="18"/>
                                                 <color key="backgroundColor" name="error"/>
                                                 <constraints>
@@ -267,7 +267,7 @@
     </scenes>
     <resources>
         <image name="cancel" width="30" height="30"/>
-        <image name="cross" width="14" height="14"/>
+        <image name="cross-mini" width="10" height="10"/>
         <image name="tick" width="24" height="18"/>
         <image name="tick-mini" width="10" height="9"/>
         <namedColor name="background">

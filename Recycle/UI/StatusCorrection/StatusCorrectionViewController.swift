@@ -40,10 +40,9 @@ final class StatusCorrectionViewController: UIViewController {
     }
     
     @IBAction func suggestCorrectionTapped(_ sender: UIButton) {
-        let status = self.status(tag: sender.tag)
         var point = self.point
         
-        service.suggestCorrection(id: point.id, status: status) { [weak self] (result) in
+        service.suggestCorrection(id: point.id, status: newStatus) { [weak self] (result) in
             switch result {
             case .success(let id):
                 point.status = status
@@ -65,13 +64,12 @@ final class StatusCorrectionViewController: UIViewController {
 
 private extension StatusCorrectionViewController {
     
-    func status(tag: Int) -> RecyclePointStatus {
-        switch tag {
-        case 0:
+    var newStatus: RecyclePointStatus {
+        if buttons[0].isSelected {
             return .open
-        case 1:
+        } else if buttons[1].isSelected {
             return .broken
-        default:
+        } else {
             return .closed
         }
     }

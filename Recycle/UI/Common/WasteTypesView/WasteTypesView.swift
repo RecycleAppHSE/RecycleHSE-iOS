@@ -13,6 +13,7 @@ class WasteTypesView: UIView {
     // MARK: - Properties
     
     var selectedTypes: [WasteType] = []
+    var cellsInRowCount = 4
     
     private var layout: UICollectionViewFlowLayout? {
         collectionView.collectionViewLayout as? UICollectionViewFlowLayout
@@ -69,7 +70,9 @@ class WasteTypesView: UIView {
     func configure(with cellModels: [WasteTypeCellModel]) {
         self.cellModels = cellModels
         collectionView.reloadData()
-        collectionView.layoutIfNeeded()
+        
+        collectionView.invalidateIntrinsicContentSize()
+        invalidateIntrinsicContentSize()
     }
     
     
@@ -125,7 +128,7 @@ extension WasteTypesView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 70, height: 70)
+        return .init(width: 70, height: 70)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -141,7 +144,7 @@ extension WasteTypesView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        24
+        10
     }
 }
 
