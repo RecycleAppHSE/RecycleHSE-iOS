@@ -62,22 +62,13 @@
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="v0E-lJ-iUx" customClass="WasteTypesView" customModule="Recycle" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="56" width="414" height="100"/>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow-template" translatesAutoresizingMaskIntoConstraints="NO" id="d1m-37-0ut">
-                                        <rect key="frame" x="386" y="68" width="16" height="20"/>
-                                        <color key="tintColor" name="textGray"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="SZu-oU-FHU"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="d1m-37-0ut" firstAttribute="centerY" secondItem="g98-Es-cVR" secondAttribute="centerY" id="2Kq-ev-Mhp"/>
                                     <constraint firstAttribute="bottom" secondItem="v0E-lJ-iUx" secondAttribute="bottom" id="RHf-d8-sQB"/>
                                     <constraint firstItem="3ju-7a-YFr" firstAttribute="leading" secondItem="g98-Es-cVR" secondAttribute="leading" constant="12" id="dZi-QK-K7L"/>
                                     <constraint firstItem="3ju-7a-YFr" firstAttribute="top" secondItem="g98-Es-cVR" secondAttribute="top" constant="12" id="ktt-0V-k8V"/>
                                     <constraint firstItem="v0E-lJ-iUx" firstAttribute="top" secondItem="3ju-7a-YFr" secondAttribute="bottom" constant="12" id="oPm-ch-g6c"/>
                                     <constraint firstItem="v0E-lJ-iUx" firstAttribute="leading" secondItem="g98-Es-cVR" secondAttribute="leading" id="op5-m4-3qu"/>
-                                    <constraint firstAttribute="trailing" secondItem="d1m-37-0ut" secondAttribute="trailing" constant="12" id="p0H-FF-KY8"/>
                                     <constraint firstAttribute="trailing" secondItem="3ju-7a-YFr" secondAttribute="trailing" constant="32" id="ueY-8B-9El"/>
                                     <constraint firstAttribute="trailing" secondItem="v0E-lJ-iUx" secondAttribute="trailing" id="zfv-VT-Rco"/>
                                 </constraints>
@@ -145,7 +136,6 @@
     </scenes>
     <resources>
         <image name="cancel" width="30" height="30"/>
-        <image name="rightArrow-template" width="16" height="16"/>
         <namedColor name="background">
             <color red="0.76078431372549016" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

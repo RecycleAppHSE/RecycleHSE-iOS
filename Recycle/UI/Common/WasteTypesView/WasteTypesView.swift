@@ -106,7 +106,8 @@ extension WasteTypesView: UICollectionViewDelegateFlowLayout {
         let row = indexPath.row
         let cellModel = cellModels[row]
         let type = cellModel.type
-        if cellModel.isSelected {
+        
+        if !cellModel.isSelected {
             selectedTypes.append(type)
         } else {
             selectedTypes.removeAll(where: { $0 == type })

@@ -19,14 +19,16 @@ final class StatusCorrectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let index: Int
         switch point.status {
         case .open:
-            buttons[0].isSelected = true
+            index = 0
         case .broken:
-            buttons[1].isSelected = true
+            index = 1
         case .closed:
-            buttons[2].isSelected = true
+            index = 2
         }
+        buttonSelected(buttons[index])
     }
     
     @IBAction func buttonSelected(_ sender: UIButton) {
@@ -52,6 +54,11 @@ final class StatusCorrectionViewController: UIViewController {
                 self?.show(error: error)
             }
         }
+    }
+    
+    
+    @IBAction func closeTapped(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

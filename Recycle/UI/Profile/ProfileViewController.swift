@@ -92,8 +92,8 @@ private extension ProfileViewController {
         nameTextView.text = user.name
         
         let ids = user.correctionIds
-        confirmedButton.count = ids.approvedCount
-        notConfirmedButton.count = ids.notApprovedCount
+        confirmedButton.count = ids.appliedCount
+        notConfirmedButton.count = ids.inProgressCount
         allButton.count = ids.totalCount
     }
 }

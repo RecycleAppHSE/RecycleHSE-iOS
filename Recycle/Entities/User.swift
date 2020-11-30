@@ -10,19 +10,20 @@ import Foundation
 struct User: Decodable {
     
     struct Corrections: Decodable {
-        let approved: [String]
-        let notApproved: [String]
+        var applied: [Int]
+        var inProgress: [Int]
+        var rejected: [Int]
         
-        var approvedCount: Int {
-            approved.count
+        var appliedCount: Int {
+            applied.count
         }
         
-        var notApprovedCount: Int {
-            notApproved.count
+        var inProgressCount: Int {
+            inProgress.count
         }
         
         var totalCount: Int {
-            approvedCount + notApprovedCount
+            appliedCount + inProgressCount
         }
     }
     
