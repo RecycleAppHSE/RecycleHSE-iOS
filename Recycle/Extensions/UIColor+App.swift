@@ -10,6 +10,7 @@ import UIKit
 extension UIColor {
     
     static let main = UIColor(named: "main")
+    static let buttonTint = UIColor(named: "buttonTint")
     static let textGray = UIColor(named: "textGray")
     static let wasteBackground = UIColor(named: "wasteBackground")
     static let background = UIColor(named: "background")

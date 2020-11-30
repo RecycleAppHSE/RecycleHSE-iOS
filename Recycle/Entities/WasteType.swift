@@ -6,7 +6,7 @@
 //
 
 
-enum WasteType: String, Codable {
+enum WasteType: String, Codable, CaseIterable {
     case
     paper,
     glass,

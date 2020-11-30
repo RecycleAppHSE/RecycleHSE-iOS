@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Correction Mode View Controller-->
+        <!--Waste Type Correction View Controller-->
         <scene sceneID="tJJ-Mc-WYM">
             <objects>
-                <viewController storyboardIdentifier="CorrectionModeViewController" id="eyi-N1-5dO" customClass="CorrectionModeViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WasteTypeCorrectionViewController" id="eyi-N1-5dO" customClass="WasteTypeCorrectionViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pAN-m7-U8f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,6 +30,9 @@
                                     <constraint firstAttribute="height" constant="30" id="G8e-Lg-QgS"/>
                                 </constraints>
                                 <state key="normal" image="cancel"/>
+                                <connections>
+                                    <action selector="closeTapped" destination="eyi-N1-5dO" eventType="touchUpInside" id="TO9-8j-wfY"/>
+                                </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVE-AX-qHs">
                                 <rect key="frame" x="187" y="53" width="40" height="4"/>
@@ -88,28 +91,51 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBV-Xp-z6I">
+                                <rect key="frame" x="12" y="790" width="388" height="46"/>
+                                <color key="backgroundColor" name="buttonTint"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="OjO-f9-dUY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Отправить изменения">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="correctTapped:" destination="eyi-N1-5dO" eventType="touchUpInside" id="JX3-zU-qk3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dbM-2V-6AT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wVE-AX-qHs" firstAttribute="centerX" secondItem="dbM-2V-6AT" secondAttribute="centerX" id="1gZ-tM-owz"/>
                             <constraint firstItem="dvx-rH-RBb" firstAttribute="width" secondItem="dvx-rH-RBb" secondAttribute="height" multiplier="1:1" id="7Zz-ck-E8f"/>
+                            <constraint firstItem="oBV-Xp-z6I" firstAttribute="top" relation="greaterThanOrEqual" secondItem="g98-Es-cVR" secondAttribute="bottom" id="ARW-cL-kPn"/>
                             <constraint firstItem="g98-Es-cVR" firstAttribute="trailing" secondItem="dbM-2V-6AT" secondAttribute="trailing" id="GET-IZ-SQh"/>
                             <constraint firstItem="dvx-rH-RBb" firstAttribute="top" secondItem="dbM-2V-6AT" secondAttribute="top" constant="23" id="I7t-YV-Ns1"/>
                             <constraint firstItem="g98-Es-cVR" firstAttribute="leading" secondItem="dbM-2V-6AT" secondAttribute="leading" id="IO6-q6-n5f"/>
                             <constraint firstItem="dbM-2V-6AT" firstAttribute="trailing" secondItem="dvx-rH-RBb" secondAttribute="trailing" constant="12" id="LVl-sq-wso"/>
                             <constraint firstItem="wVE-AX-qHs" firstAttribute="top" secondItem="dbM-2V-6AT" secondAttribute="top" constant="9" id="OrH-K6-onQ"/>
                             <constraint firstItem="dvx-rH-RBb" firstAttribute="leading" secondItem="vUr-FK-eiW" secondAttribute="trailing" constant="8" id="SwF-rD-djW"/>
+                            <constraint firstItem="oBV-Xp-z6I" firstAttribute="leading" secondItem="dbM-2V-6AT" secondAttribute="leading" constant="12" id="UKm-e9-WqW"/>
                             <constraint firstItem="gdH-yh-T5z" firstAttribute="trailing" secondItem="vUr-FK-eiW" secondAttribute="trailing" id="a4N-8v-4ZX"/>
                             <constraint firstItem="vUr-FK-eiW" firstAttribute="top" secondItem="wVE-AX-qHs" secondAttribute="bottom" constant="9" id="aRW-cV-VvJ"/>
                             <constraint firstItem="g98-Es-cVR" firstAttribute="top" secondItem="gdH-yh-T5z" secondAttribute="bottom" constant="15" id="eQ2-eB-IvM"/>
+                            <constraint firstItem="dbM-2V-6AT" firstAttribute="trailing" secondItem="oBV-Xp-z6I" secondAttribute="trailing" constant="14" id="ehS-an-S8j"/>
+                            <constraint firstItem="dbM-2V-6AT" firstAttribute="bottom" secondItem="oBV-Xp-z6I" secondAttribute="bottom" constant="26" id="paC-qc-6Ru"/>
                             <constraint firstItem="gdH-yh-T5z" firstAttribute="top" secondItem="vUr-FK-eiW" secondAttribute="bottom" constant="24" id="rMx-Pz-Cqp"/>
                             <constraint firstItem="vUr-FK-eiW" firstAttribute="leading" secondItem="dbM-2V-6AT" secondAttribute="leading" constant="12" id="rq5-3d-3E4"/>
                             <constraint firstItem="gdH-yh-T5z" firstAttribute="leading" secondItem="vUr-FK-eiW" secondAttribute="leading" id="wI3-nB-3ZA"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="wasteTypesView" destination="v0E-lJ-iUx" id="WxB-RV-iMq"/>
+                        <outlet property="wasteTypesView" destination="v0E-lJ-iUx" id="jYI-mF-ye9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLD-2N-OYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -122,6 +148,9 @@
         <image name="rightArrow-template" width="16" height="16"/>
         <namedColor name="background">
             <color red="0.76078431372549016" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="buttonTint">
+            <color red="0.0" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textGray">
             <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

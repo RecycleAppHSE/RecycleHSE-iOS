@@ -9,9 +9,9 @@ import Foundation
 
 protocol CorrectionService {
     
-    func suggestCorrection(id: String,
+    func suggestCorrection(id: Int,
                            types: [WasteType],
-                           callback: @escaping ResultCallback<String>)
+                           callback: @escaping ResultCallback<Int>)
 }
 
 struct CorrectionServiceImp {
@@ -21,7 +21,7 @@ struct CorrectionServiceImp {
 
 extension CorrectionServiceImp: CorrectionService {
     
-    func suggestCorrection(id: String, types: [WasteType], callback: @escaping ResultCallback<String>) {
+    func suggestCorrection(id: Int, types: [WasteType], callback: @escaping ResultCallback<Int>) {
         api.request("correction/suggest", method: .post) { (result: Result<CorrectionResponse, Error>) in
             switch result {
             case .success(let response):
@@ -36,7 +36,7 @@ extension CorrectionServiceImp: CorrectionService {
 private extension CorrectionServiceImp {
     
     struct CorrectionResponse: Decodable {
-        let correctionId: String
+        let correctionId: Int
     }
     
     struct TypesCorrectionBody: Encodable {

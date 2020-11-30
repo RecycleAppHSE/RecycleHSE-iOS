@@ -8,7 +8,7 @@
 import UIKit
 
 enum WasteCellMode {
-    case selectable, readOnly
+    case selectable, selectableBlue, readOnly
 }
 
 struct WasteTypeCellModel {
@@ -21,22 +21,31 @@ struct WasteTypeCellModel {
     let tickImage: UIImage?
     let hideTick: Bool
     let backgroundColor: UIColor?
+    let isSelected: Bool
+    let type: WasteType
+    let mode: WasteCellMode
     
     // MARK: - Init
     
     init(wasteType: WasteType, hideTitle: Bool) {
         let wasteModel = WasteTypeModel(type: wasteType)
         self.image = wasteModel.image
+        self.mode = .readOnly
         title = wasteModel.title
         titleColor = hideTitle ? .clear : .textGray
         tickImage = nil
         hideTick = true
         backgroundColor = .clear
+        isSelected = false
+        type = wasteType
     }
     
     init(waste: WasteType,
          isSelected: Bool,
          mode: WasteCellMode) {
+        self.mode = mode
+        self.isSelected = isSelected
+        self.type = waste
         tickImage = isSelected ? #imageLiteral(resourceName: "tick-selected") : #imageLiteral(resourceName: "tick-unselected")
         
         let wasteModel = WasteTypeModel(type: waste)
@@ -52,7 +61,11 @@ struct WasteTypeCellModel {
             
         case .selectable:
             hideTick = false
-            backgroundColor = isSelected ? .green : .wasteBackground
+            backgroundColor = isSelected ? .main : .wasteBackground
+            
+        case .selectableBlue:
+            hideTick = false
+            backgroundColor = isSelected ? .buttonTint : .wasteBackground
         }
     }
     

@@ -24,11 +24,19 @@ class CorrectionModeViewController: UIViewController {
     }
     
     @IBAction func showWasteTypesEdit(_ sender: UIButton) {
+        let vc: WasteTypeCorrectionViewController = create()
+        vc.point = point
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func showStatusEdit(_ sender: UIButton) {
         
     }
+    
+    @IBAction func closeTapped(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
 }
 
 private extension CorrectionModeViewController {

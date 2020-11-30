@@ -30,6 +30,9 @@
                                     <constraint firstAttribute="height" constant="30" id="WsQ-7Q-qjo"/>
                                 </constraints>
                                 <state key="normal" image="cancel"/>
+                                <connections>
+                                    <action selector="closeTapped:" destination="Z9y-aq-Jp4" eventType="touchUpInside" id="GW0-hX-7L9"/>
+                                </connections>
                             </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n0-vn-RfZ">
                                 <rect key="frame" x="187" y="9" width="40" height="4"/>

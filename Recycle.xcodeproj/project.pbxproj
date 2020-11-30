@@ -419,8 +419,8 @@
 		B066547925358B8C001C17A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B05EF010257579CE002533B3 /* WasteTypeCorrection */,
 				B05EEFFF257572FB002533B3 /* CorrectionMode */,
+				B05EF010257579CE002533B3 /* WasteTypeCorrection */,
 				B03BCD8525631D2900214F79 /* Search */,
 				B066545125358610001C17A8 /* Map */,
 				B0645768253629D100A2CA6E /* PointInfo */,
