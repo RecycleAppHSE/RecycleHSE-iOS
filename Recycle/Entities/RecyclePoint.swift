@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum RecyclePointStatus: String, Decodable {
+enum RecyclePointStatus: String, Codable {
     case open = "works_fine"
     case broken
     case closed = "would_not_work"
@@ -31,7 +31,7 @@ struct RecyclePoint: Decodable {
     
     let schedule: Schedule?
     let correctionsCount: Int
-    
+     
     static let empty: RecyclePoint = {
         RecyclePoint(id: 0, name: "", address: nil, phoneNumber: nil, webSite: nil, wasteTypes: [], latitude: 0, longitude: 0, status: .closed, lastUpdated: Date(), schedule: nil, correctionsCount: 0)
     }()

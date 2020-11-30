@@ -12,6 +12,10 @@ protocol CorrectionService {
     func suggestCorrection(id: Int,
                            types: [WasteType],
                            callback: @escaping ResultCallback<Int>)
+    
+    func suggestCorrection(id: Int,
+                           status: RecyclePointStatus,
+                           callback: @escaping ResultCallback<Int>)
 }
 
 struct CorrectionServiceImp {
@@ -22,7 +26,20 @@ struct CorrectionServiceImp {
 extension CorrectionServiceImp: CorrectionService {
     
     func suggestCorrection(id: Int, types: [WasteType], callback: @escaping ResultCallback<Int>) {
-        api.request("correction/suggest", method: .post) { (result: Result<CorrectionResponse, Error>) in
+        let body = TypesCorrectionBody(pointId: id, changeTo: types)
+        api.request("correction/suggest", method: .post, params: [:], body: body) { (result: Result<CorrectionResponse, Error>) in
+            switch result {
+            case .success(let response):
+                callback(.success(response.correctionId))
+            case .failure(let error):
+                callback(.failure(error))
+            }
+        }
+    }
+    
+    func suggestCorrection(id: Int, status: RecyclePointStatus, callback: @escaping ResultCallback<Int>) {
+        let body = StatusCorrectionBody(pointId: id, changeTo: status)
+        api.request("correction/suggest", method: .post, params: [:], body: body) { (result: Result<CorrectionResponse, Error>) in
             switch result {
             case .success(let response):
                 callback(.success(response.correctionId))
@@ -44,5 +61,12 @@ private extension CorrectionServiceImp {
         let changeTo: [WasteType]
         
         let field = "recycle"
+    }
+    
+    struct StatusCorrectionBody: Encodable {
+        let pointId: Int
+        let changeTo: RecyclePointStatus
+        
+        let field = "works"
     }
 }

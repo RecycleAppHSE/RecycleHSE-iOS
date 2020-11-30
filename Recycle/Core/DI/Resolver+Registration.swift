@@ -35,7 +35,7 @@ extension Resolver {
         add(type: CorrectionService.self) {
             CorrectionServiceImp(
                 api: self.resolve()
-            )§
+            )
         }
         
         add(type: AppHelper.self) {

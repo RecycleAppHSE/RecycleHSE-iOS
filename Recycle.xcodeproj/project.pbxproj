@@ -273,6 +273,13 @@
 			path = WasteTypeCorrection;
 			sourceTree = "<group>";
 		};
+		B05EF02925758FA9002533B3 /* StatusCorrection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatusCorrection;
+			sourceTree = "<group>";
+		};
 		B062B2A1255098DD00F56049 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +428,7 @@
 			children = (
 				B05EEFFF257572FB002533B3 /* CorrectionMode */,
 				B05EF010257579CE002533B3 /* WasteTypeCorrection */,
+				B05EF02925758FA9002533B3 /* StatusCorrection */,
 				B03BCD8525631D2900214F79 /* Search */,
 				B066545125358610001C17A8 /* Map */,
 				B0645768253629D100A2CA6E /* PointInfo */,

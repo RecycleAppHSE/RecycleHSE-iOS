@@ -112,15 +112,13 @@ extension WasteTypesView: UICollectionViewDelegateFlowLayout {
             selectedTypes.removeAll(where: { $0 == type })
         }
         
-        self.cellModels = cellModels.map {
-            let type = $0.type
-            let isSelected = selectedTypes.contains(type)
-            WasteTypeCellModel(
-                waste: type,
-                isSelected: isSelected,
-                mode: $0.mode
-            )
-        }
+        cellModels[row] = WasteTypeCellModel(
+            waste: cellModel.type,
+            isSelected: !cellModel.isSelected,
+            mode: cellModel.mode
+        )
+        
+        collectionView.reloadItems(at: [indexPath])
     }
     
     func collectionView(_ collectionView: UICollectionView,

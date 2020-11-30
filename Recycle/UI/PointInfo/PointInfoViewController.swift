@@ -60,6 +60,13 @@ class PointInfoViewController: UIViewController {
     @IBAction func linkTapped(_ sender: UIButton) {
         appHelper.open(url: point.webSite)
     }
+    
+    @IBAction func correctionTapped(_ sender: UIButton) {
+        let vc: CorrectionModeViewController = create()
+        vc.point = point
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension PointInfoViewController {
