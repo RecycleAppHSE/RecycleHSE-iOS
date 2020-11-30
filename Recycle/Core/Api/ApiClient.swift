@@ -9,6 +9,7 @@ import Foundation
 
 protocol ApiClient {
     
+    @discardableResult
     func request<T: Decodable, Body: Encodable>(
         _ path: String,
         method: HTTPMethod,
@@ -20,6 +21,7 @@ protocol ApiClient {
 
 extension ApiClient {
     
+    @discardableResult
     func request<T: Decodable>(
         _ path: String,
         _ callback: ResultCallback<T>?
@@ -27,6 +29,7 @@ extension ApiClient {
         return request(path, method: .get, params: [:], body: String?.none, callback)
     }
     
+    @discardableResult
     func request<T: Decodable>(
         _ path: String,
         method: HTTPMethod,
@@ -35,6 +38,7 @@ extension ApiClient {
         return request(path, method: method, params: [:], body: String?.none, callback)
     }
     
+    @discardableResult
     func request<T: Decodable>(
         _ path: String,
         params: [String : Any],

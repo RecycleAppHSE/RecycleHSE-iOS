@@ -29,6 +29,7 @@ class WasteTypesView: UIView {
     private let heightConstraint = NSLayoutConstraint()
     
     private var cellModels: [WasteTypeCellModel] = []
+    private var selectedTypes: [WasteType] = []
     
     private let sectionInsets = UIEdgeInsets(
         top: 12,
@@ -69,6 +70,8 @@ class WasteTypesView: UIView {
         collectionView.reloadData()
         collectionView.layoutIfNeeded()
     }
+    
+    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -97,6 +100,11 @@ extension WasteTypesView: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension WasteTypesView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = indexPath.row
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

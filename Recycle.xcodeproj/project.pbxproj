@@ -24,6 +24,9 @@
 		B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043CBEF253901B500807EA8 /* ProfileViewController.swift */; };
 		B05EF00125757344002533B3 /* CorrectionModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EF00025757344002533B3 /* CorrectionModeViewController.swift */; };
 		B05EF00925757356002533B3 /* CorrectionMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05EF00825757356002533B3 /* CorrectionMode.storyboard */; };
+		B05EF012257579DE002533B3 /* WasteTypeCorrectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EF011257579DE002533B3 /* WasteTypeCorrectionViewController.swift */; };
+		B05EF01A257579EE002533B3 /* WasteTypeCorrection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05EF019257579EE002533B3 /* WasteTypeCorrection.storyboard */; };
+		B05EF02225757CF9002533B3 /* CorrectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EF02125757CF9002533B3 /* CorrectionService.swift */; };
 		B062B2A3255098E800F56049 /* ApiClientImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2A2255098E800F56049 /* ApiClientImp.swift */; };
 		B062B2AC25509A0B00F56049 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B062B2AB25509A0B00F56049 /* Alamofire */; };
 		B062B2B225509C4C00F56049 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2B125509C4C00F56049 /* Resolver.swift */; };
@@ -104,6 +107,9 @@
 		B043CBEF253901B500807EA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B05EF00025757344002533B3 /* CorrectionModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionModeViewController.swift; sourceTree = "<group>"; };
 		B05EF00825757356002533B3 /* CorrectionMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CorrectionMode.storyboard; sourceTree = "<group>"; };
+		B05EF011257579DE002533B3 /* WasteTypeCorrectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypeCorrectionViewController.swift; sourceTree = "<group>"; };
+		B05EF019257579EE002533B3 /* WasteTypeCorrection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WasteTypeCorrection.storyboard; sourceTree = "<group>"; };
+		B05EF02125757CF9002533B3 /* CorrectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionService.swift; sourceTree = "<group>"; };
 		B062B2A2255098E800F56049 /* ApiClientImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientImp.swift; sourceTree = "<group>"; };
 		B062B2B125509C4C00F56049 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		B062B2B925509C8A00F56049 /* InjectPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectPropertyWrapper.swift; sourceTree = "<group>"; };
@@ -258,6 +264,15 @@
 			path = CorrectionMode;
 			sourceTree = "<group>";
 		};
+		B05EF010257579CE002533B3 /* WasteTypeCorrection */ = {
+			isa = PBXGroup;
+			children = (
+				B05EF019257579EE002533B3 /* WasteTypeCorrection.storyboard */,
+				B05EF011257579DE002533B3 /* WasteTypeCorrectionViewController.swift */,
+			);
+			path = WasteTypeCorrection;
+			sourceTree = "<group>";
+		};
 		B062B2A1255098DD00F56049 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +401,7 @@
 				B062B2F12550AE2600F56049 /* UserService.swift */,
 				B062B3072550B3C000F56049 /* PointService.swift */,
 				B07CDB03255186370068C9E5 /* AppHelper.swift */,
+				B05EF02125757CF9002533B3 /* CorrectionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -403,6 +419,7 @@
 		B066547925358B8C001C17A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B05EF010257579CE002533B3 /* WasteTypeCorrection */,
 				B05EEFFF257572FB002533B3 /* CorrectionMode */,
 				B03BCD8525631D2900214F79 /* Search */,
 				B066545125358610001C17A8 /* Map */,
@@ -590,6 +607,7 @@
 				B0A977BA2538F8F50085531F /* BubbleButton.xib in Resources */,
 				B00FD1FB253601EC00225771 /* Colors.xcassets in Resources */,
 				B066542625358601001C17A8 /* Main.storyboard in Resources */,
+				B05EF01A257579EE002533B3 /* WasteTypeCorrection.storyboard in Resources */,
 				B066545E2535866D001C17A8 /* Map.storyboard in Resources */,
 				B00FD20C253606D900225771 /* PointCalloutView.xib in Resources */,
 				B03BCD9D25631F9C00214F79 /* SearchCell.xib in Resources */,
@@ -636,6 +654,7 @@
 				B062B3032550B10C00F56049 /* Result+Values.swift in Sources */,
 				B08A61862550CF3F00F4288B /* PointClusterView.swift in Sources */,
 				B062B2D92550A00000F56049 /* ApiClient.swift in Sources */,
+				B05EF02225757CF9002533B3 /* CorrectionService.swift in Sources */,
 				B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */,
 				B062B2C525509DAC00F56049 /* Resolver+Registration.swift in Sources */,
 				B05EF00125757344002533B3 /* CorrectionModeViewController.swift in Sources */,
@@ -653,6 +672,7 @@
 				B0ACD5B82564191C00D199B5 /* SearchController.swift in Sources */,
 				B08A61B82550F8B100F4288B /* EmptyResponse.swift in Sources */,
 				B03BCD8725631E8F00214F79 /* SearchPointController.swift in Sources */,
+				B05EF012257579DE002533B3 /* WasteTypeCorrectionViewController.swift in Sources */,
 				B062B2CE25509ED200F56049 /* ResultCallback.swift in Sources */,
 				B06654562535862D001C17A8 /* MapViewController.swift in Sources */,
 				B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */,
