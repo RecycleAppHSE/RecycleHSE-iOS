@@ -31,6 +31,10 @@ struct RecyclePoint: Decodable {
     
     let schedule: Schedule?
     let correctionsCount: Int
+    
+    static let empty: RecyclePoint = {
+        RecyclePoint(id: 0, name: "", address: nil, phoneNumber: nil, webSite: nil, wasteTypes: [], latitude: 0, longitude: 0, status: .closed, lastUpdated: Date(), schedule: nil, correctionsCount: 0)
+    }()
 }
 
 extension RecyclePoint {

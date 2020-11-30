@@ -18,6 +18,15 @@
           "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
           "version": "5.0.1"
         }
+      },
+      {
+        "package": "StatusAlert",
+        "repositoryURL": "https://github.com/LowKostKustomz/StatusAlert",
+        "state": {
+          "branch": null,
+          "revision": "d2820218fd4340bbc281cf19c966696ff29ed85b",
+          "version": "1.1.1"
+        }
       }
     ]
   },
