@@ -7,12 +7,15 @@
 
 import UIKit
 
-final class SearchTableViewCell: UITableViewCell {
-    
+final class SearchCell: UITableViewCell {
     
     @IBOutlet weak var titleNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
-    func configure(
+    func configure(title: String, text: String?
+    ) {
+        titleNameLabel.text = title
+        addressLabel.text = text
+    }
 }
 

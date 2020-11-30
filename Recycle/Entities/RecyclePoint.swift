@@ -18,7 +18,7 @@ struct RecyclePoint: Decodable {
     
     let id: Int
     let name: String
-    let address: String
+    let address: String?
     let phoneNumber: String?
     let webSite: URL?
     let wasteTypes: [WasteType]

@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import SnapKit
 
 class MapViewController: UIViewController {
     
@@ -21,12 +22,15 @@ class MapViewController: UIViewController {
     let clusterId = MKMapViewDefaultClusterAnnotationViewReuseIdentifier
         
     var points: [RecyclePoint] = []
+    
+    var searchController: UISearchController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         createUserIfNeeded()
         
+        setupSearch()
         setupLocation()
         setupMap()
     }
@@ -58,20 +62,24 @@ extension MapViewController: MKMapViewDelegate {
         
         switch annotation {
         case let pointAnnotation as PointAnnotation:
-            
-            let view = PointAnnotationView(annotation: annotation, reuseIdentifier: annotationId)
+            let view = mapView.dequeueReusableAnnotationView(withIdentifier: annotationId) as! PointAnnotationView
+            view.annotation = pointAnnotation
+            view.clusteringIdentifier = clusterId
             view.calloutView.delegate = self
             view.calloutView.annotation = pointAnnotation
             return view
+            
         case is MKClusterAnnotation:
-            return mapView.dequeueReusableAnnotationView(withIdentifier: clusterId)
+            let clusterView = mapView.dequeueReusableAnnotationView(withIdentifier: clusterId)
+            clusterView?.annotation = annotation
+            return clusterView
+            
         default:
             return nil
         }
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
         didSelectCallout(with: view.annotation)
     }
 }
@@ -92,9 +100,14 @@ extension MapViewController: PointCalloutViewDelegate {
             return
         }
         
-        let vc: PointInfoViewController = create()
-        vc.point = point
-        present(vc, animated: true)
+        showPointInfo(point: point)
+    }
+}
+
+extension MapViewController: SearchPointDelegate {
+    
+    func didSelectPoint(_ point: RecyclePoint) {
+        showPointInfo(point: point)
     }
 }
 
@@ -120,7 +133,7 @@ private extension MapViewController {
         
         mapView.register(PointClusterView.self, forAnnotationViewWithReuseIdentifier: clusterId)
         
-        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 4000000)
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 40000)
         mapView.setCameraZoomRange(zoomRange, animated: false)
         
         let moscow = CLLocation(latitude: 55.7558, longitude: 37.6173)
@@ -147,17 +160,35 @@ private extension MapViewController {
     }
     
     func handle(points: [RecyclePoint]) {
-        let annotations = points.prefix(5000).map {
+//        let annotations = points.prefix(5000).map {
+//            PointAnnotation(point: $0)
+//        }
+        let annotations = points.map {
             PointAnnotation(point: $0)
         }
         
         mapView.addAnnotations(annotations)
-        
-//        let queue = DispatchQueue.global(qos: .userInteractive)
-//        queue.async { [weak self] in
-//
-//        }
     }
     
+    func setupSearch() {
+        let resultsController = SearchPointController()
+        
+        let searchController = UISearchController(
+            searchResultsController: resultsController
+        )
+        searchController.searchResultsUpdater = resultsController
+        searchController.searchBar.placeholder = "Поиск места или адреса"
+        searchController.searchBar.setValue("Отменить", forKey: "cancelButtonText")
+        searchController.searchBar.tintColor = .main
+        
+        resultsController.delegate = self
+        
+        navigationItem.searchController = searchController
+    }
     
+    func showPointInfo(point: RecyclePoint) {
+        let vc: PointInfoViewController = create()
+        vc.point = point
+        present(vc, animated: true)
+    }
 }

@@ -12,13 +12,17 @@ protocol PointService {
     func point(with id: Int) -> RecyclePoint?
     
     func loadPoints(_ callback: @escaping ResultCallback<[RecyclePoint]>)
+    
+    func searchPoint(text: String,
+                     callback: @escaping ResultCallback<[RecyclePoint]>)
 }
 
 class PointServiceImp {
     
-    let api: ApiClient
+    private let api: ApiClient
     
-    var pointStore: [Int : RecyclePoint] = [:]
+    private var pointStore: [Int : RecyclePoint] = [:]
+    private var searchRequest: Cancellable?
     
     init(api: ApiClient) {
         self.api = api
@@ -41,6 +45,21 @@ extension PointServiceImp: PointService {
                 for point in points {
                     self?.pointStore[point.id] = point
                 }
+                callback(.success(points))
+            case .failure(let error):
+                callback(.failure(error))
+            }
+        }
+    }
+    
+    func searchPoint(text: String,
+                     callback: @escaping ResultCallback<[RecyclePoint]>) {
+        searchRequest?.cancel()
+        
+        api.request("search", params: ["q" : text]) { (result: Result<PointsResponse, Error>) in
+            switch result {
+            case .success(let response):
+                let points = response.points
                 callback(.success(points))
             case .failure(let error):
                 callback(.failure(error))

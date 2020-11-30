@@ -37,8 +37,6 @@ final class PointAnnotationView: MKAnnotationView {
         canShowCallout = true
         detailCalloutAccessoryView = calloutView
         
-        clusteringIdentifier = String(describing: PointClusterView.self)
-        
         displayPriority = .defaultLow
     }
 

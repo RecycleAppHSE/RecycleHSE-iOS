@@ -19,6 +19,7 @@
 		B03BCD9025631F6D00214F79 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD8F25631F6D00214F79 /* SearchCell.swift */; };
 		B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD9725631F9500214F79 /* SearchCellModel.swift */; };
 		B03BCD9D25631F9C00214F79 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03BCD9C25631F9C00214F79 /* SearchCell.xib */; };
+		B03BCDA52563292600214F79 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCDA42563292600214F79 /* Cancellable.swift */; };
 		B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B043CBEA2538FD2000807EA8 /* Profile.storyboard */; };
 		B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043CBEF253901B500807EA8 /* ProfileViewController.swift */; };
 		B062B2A3255098E800F56049 /* ApiClientImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062B2A2255098E800F56049 /* ApiClientImp.swift */; };
@@ -64,6 +65,7 @@
 		B0A977B02538F7B40085531F /* UIView+XibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A977AF2538F7B40085531F /* UIView+XibLoadable.swift */; };
 		B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A977B42538F8E80085531F /* BubbleButton.swift */; };
 		B0A977BA2538F8F50085531F /* BubbleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A977B92538F8F50085531F /* BubbleButton.xib */; };
+		B0ACD5B82564191C00D199B5 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACD5B72564191C00D199B5 /* SearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,7 @@
 		B03BCD8F25631F6D00214F79 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		B03BCD9725631F9500214F79 /* SearchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellModel.swift; sourceTree = "<group>"; };
 		B03BCD9C25631F9C00214F79 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		B03BCDA42563292600214F79 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		B043CBEA2538FD2000807EA8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B043CBEF253901B500807EA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B062B2A2255098E800F56049 /* ApiClientImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientImp.swift; sourceTree = "<group>"; };
@@ -145,6 +148,7 @@
 		B0A977AF2538F7B40085531F /* UIView+XibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+XibLoadable.swift"; sourceTree = "<group>"; };
 		B0A977B42538F8E80085531F /* BubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
 		B0A977B92538F8F50085531F /* BubbleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubbleButton.xib; sourceTree = "<group>"; };
+		B0ACD5B72564191C00D199B5 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,7 @@
 			children = (
 				B03BCD8E25631F5D00214F79 /* SearchCell */,
 				B03BCD8625631E8F00214F79 /* SearchPointController.swift */,
+				B0ACD5B72564191C00D199B5 /* SearchController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			children = (
 				B062B2D82550A00000F56049 /* ApiClient.swift */,
 				B062B2A2255098E800F56049 /* ApiClientImp.swift */,
+				B03BCDA42563292600214F79 /* Cancellable.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -596,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03BCDA52563292600214F79 /* Cancellable.swift in Sources */,
 				B062B2B225509C4C00F56049 /* Resolver.swift in Sources */,
 				B07CDAFF2551821B0068C9E5 /* StatusViewModel.swift in Sources */,
 				B066541F25358601001C17A8 /* AppDelegate.swift in Sources */,
@@ -627,6 +634,7 @@
 				B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */,
 				B062B2FE2550AF7F00F56049 /* KeyValueStore.swift in Sources */,
 				B03BCD9025631F6D00214F79 /* SearchCell.swift in Sources */,
+				B0ACD5B82564191C00D199B5 /* SearchController.swift in Sources */,
 				B08A61B82550F8B100F4288B /* EmptyResponse.swift in Sources */,
 				B03BCD8725631E8F00214F79 /* SearchPointController.swift in Sources */,
 				B062B2CE25509ED200F56049 /* ResultCallback.swift in Sources */,

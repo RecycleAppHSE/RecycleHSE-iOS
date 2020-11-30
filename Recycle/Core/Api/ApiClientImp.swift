@@ -34,7 +34,7 @@ extension ApiClientImp: ApiClient {
         method: HTTPMethod,
         params: [String : Any],
         body: Body?,
-        _ callback: ResultCallback<T>?) {
+        _ callback: ResultCallback<T>?) -> Cancellable {
         
         let headers: HTTPHeaders = .init([
             .init(name: "USER_ID", value: String(store.userId ?? 0))
@@ -42,13 +42,25 @@ extension ApiClientImp: ApiClient {
         
         let url = baseUrl + path
         
-        AF.request(
-            url,
-            method: method,
-            parameters: body,
-            encoder: JSONParameterEncoder(encoder: encoder),
-            headers: headers
-        ).validate().responseDecodable(of: T.self, decoder: decoder) { response in
+        let req: DataRequest
+        if let body = body {
+            req = AF.request(
+                url,
+                method: method,
+                parameters: body,
+                encoder: JSONParameterEncoder(encoder: encoder),
+                headers: headers
+            )
+        } else {
+            req = AF.request(
+                url,
+                method: method,
+                parameters: params,
+                headers: headers
+            )
+        }
+        
+        return req.validate().responseDecodable(of: T.self, decoder: decoder) { response in
             guard let value = response.value else {
                 let error = response.error ?? AFError.invalidURL(url: path)
                 callback?(.failure(error))

@@ -15,7 +15,7 @@ protocol ApiClient {
         params: [String : Any],
         body: Body?,
         _ callback: ResultCallback<T>?
-    )
+    ) -> Cancellable
 }
 
 extension ApiClient {
@@ -23,15 +23,23 @@ extension ApiClient {
     func request<T: Decodable>(
         _ path: String,
         _ callback: ResultCallback<T>?
-    ) {
-        request(path, method: .get, params: [:], body: String?.none, callback)
+    ) -> Cancellable {
+        return request(path, method: .get, params: [:], body: String?.none, callback)
     }
     
     func request<T: Decodable>(
         _ path: String,
         method: HTTPMethod,
         _ callback: ResultCallback<T>?
-    ) {
-        request(path, method: method, params: [:], body: String?.none, callback)
+    ) -> Cancellable {
+        return request(path, method: method, params: [:], body: String?.none, callback)
+    }
+    
+    func request<T: Decodable>(
+        _ path: String,
+        params: [String : Any],
+        _ callback: ResultCallback<T>?
+    ) -> Cancellable {
+        return request(path, method: .get, params: params, body: String?.none, callback)
     }
 }

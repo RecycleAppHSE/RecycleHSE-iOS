@@ -30,9 +30,10 @@
         <!--Карты-->
         <scene sceneID="Opw-xg-VVL">
             <objects>
-                <navigationController navigationBarHidden="YES" id="jXS-zr-ion" sceneMemberID="viewController">
+                <navigationController id="jXS-zr-ion" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Карты" image="tabmap" id="JbZ-xD-0ya"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zpk-Um-vPQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

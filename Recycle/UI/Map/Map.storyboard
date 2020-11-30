@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZeO-Cy-jpy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R8-iT-Xf8">
                                 <rect key="frame" x="328" y="516" width="70" height="330"/>
@@ -93,9 +93,9 @@
                         <viewLayoutGuide key="safeArea" id="K6x-wd-tXp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZeO-Cy-jpy" firstAttribute="top" secondItem="CQA-tM-UPF" secondAttribute="top" id="0Cg-Yd-Q3c"/>
                             <constraint firstItem="K6x-wd-tXp" firstAttribute="trailing" secondItem="5R8-iT-Xf8" secondAttribute="trailing" constant="16" id="1Ol-hf-vVc"/>
                             <constraint firstItem="ZeO-Cy-jpy" firstAttribute="trailing" secondItem="K6x-wd-tXp" secondAttribute="trailing" id="DIN-c2-YIk"/>
+                            <constraint firstItem="ZeO-Cy-jpy" firstAttribute="top" secondItem="K6x-wd-tXp" secondAttribute="top" id="J7e-S6-oYP"/>
                             <constraint firstItem="ZeO-Cy-jpy" firstAttribute="leading" secondItem="K6x-wd-tXp" secondAttribute="leading" id="JUi-6u-KI3"/>
                             <constraint firstItem="K6x-wd-tXp" firstAttribute="bottom" secondItem="5R8-iT-Xf8" secondAttribute="bottom" constant="16" id="gUR-zD-BoK"/>
                             <constraint firstAttribute="bottom" secondItem="ZeO-Cy-jpy" secondAttribute="bottom" id="qX2-Au-CZv"/>

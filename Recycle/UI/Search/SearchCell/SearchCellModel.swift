@@ -10,7 +10,7 @@ import Foundation
 struct SearchCellModel {
     
     let title: String
-    let text: String
+    let text: String?
     
     init(point: RecyclePoint) {
         title = point.name

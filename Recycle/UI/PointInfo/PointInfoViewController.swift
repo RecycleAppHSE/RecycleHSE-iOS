@@ -65,17 +65,12 @@ class PointInfoViewController: UIViewController {
 extension PointInfoViewController {
     
     func loadTitle() {
-        let location = CLLocation(latitude: point.latitude, longitude: point.longitude)
+        organizationLabel.text = point.name
         
-        //let location1 = CLLocation(latitude: 55.806085, longitude: 37.559281)
-        
-        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
-            guard let placemark = placemarks?.first else { return }
-            
-            let street = placemark.thoroughfare ?? ""
-            let house = placemark.subThoroughfare ?? ""
-            
-            self?.titleLabel.text = "\(street) \(house)"
+        if let address = point.address {
+            titleLabel.text = address
+        } else {
+            loadAddress()
         }
     }
     
@@ -113,5 +108,24 @@ extension PointInfoViewController {
         
         let correctionsTitle = "История исправлений (\(point.correctionsCount) актуальных)"
         correctionsButton.setTitle(correctionsTitle, for: .normal)
+    }
+}
+
+private extension PointInfoViewController {
+    
+    func loadAddress() {
+        let location = CLLocation(
+            latitude: point.latitude,
+            longitude: point.longitude
+        )
+
+        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
+            guard let placemark = placemarks?.first else { return }
+
+            let street = placemark.thoroughfare ?? ""
+            let house = placemark.subThoroughfare ?? ""
+
+            self?.titleLabel.text = "\(street) \(house)"
+        }
     }
 }
