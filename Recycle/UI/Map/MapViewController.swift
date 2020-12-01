@@ -160,12 +160,12 @@ private extension MapViewController {
     }
     
     func handle(points: [RecyclePoint]) {
-//        let annotations = points.prefix(5000).map {
-//            PointAnnotation(point: $0)
-//        }
-        let annotations = points.map {
+        let annotations = points.prefix(5000).map {
             PointAnnotation(point: $0)
         }
+//        let annotations = points.map {
+//            PointAnnotation(point: $0)
+//        }
         
         mapView.addAnnotations(annotations)
     }

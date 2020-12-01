@@ -39,9 +39,7 @@ final class WasteTypeCorrectionViewController: UIViewController {
         service.suggestCorrection(id: id, types: types) { [weak self] result in
             switch result {
             case .success(let id):
-                point.wasteTypes = types
                 point.correctionsCount += 1
-                
                 self?.delegate?.didUpdatePoint(point)
                 
                 self?.dismiss(animated: true, completion: {

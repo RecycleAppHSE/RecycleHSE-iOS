@@ -45,7 +45,6 @@ final class StatusCorrectionViewController: UIViewController {
         service.suggestCorrection(id: point.id, status: newStatus) { [weak self] (result) in
             switch result {
             case .success(let id):
-                point.status = status
                 point.correctionsCount += 1
                 self?.delegate?.didUpdatePoint(point)
                 self?.dismiss(animated: true, completion: nil)
