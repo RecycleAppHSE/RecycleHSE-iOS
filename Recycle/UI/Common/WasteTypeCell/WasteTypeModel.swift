@@ -35,6 +35,20 @@ struct WasteTypeModel {
             return "Одежда"
         case .lamps:
             return "Лампы"
+        case .toxic:
+            return "Опасные\nотходы"
+        case .appliances:
+            return "Бытовая\nтехника"
+        case .tetraPack:
+            return "Tetra\nPak"
+        case .batteries:
+            return "Батарейки"
+        case .tires:
+            return "Шины"
+        case .caps:
+            return "Крышки"
+        case .other:
+            return "Прочее"
         }
     }
     
@@ -52,6 +66,16 @@ struct WasteTypeModel {
             return #imageLiteral(resourceName: "clothes-mini")
         case .lamps:
             return #imageLiteral(resourceName: "lamps-mini")
+        case .toxic:
+            return #imageLiteral(resourceName: "danger-mini")
+        case .appliances:
+            return #imageLiteral(resourceName: "washing-machine-mini")
+        case .batteries:
+            return #imageLiteral(resourceName: "power-mini")
+        case .tetraPack:
+            return #imageLiteral(resourceName: "milk-mini")
+        case .tires, .caps, .other:
+            return #imageLiteral(resourceName: "cancel")
         }
     }
 }

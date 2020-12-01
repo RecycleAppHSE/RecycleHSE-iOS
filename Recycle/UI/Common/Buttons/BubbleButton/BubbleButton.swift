@@ -28,6 +28,16 @@ final class BubbleButton: UIView, XibLoadable {
         }
     }
     
+    var count: Int {
+        get {
+            return Int(countLabel.text ?? "") ?? 0
+        }
+        
+        set {
+            countLabel.text = "\(newValue)"
+        }
+    }
+    
     // MARK: - Init
     
     override init(frame: CGRect) {

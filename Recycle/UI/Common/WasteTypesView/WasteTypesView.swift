@@ -12,6 +12,9 @@ class WasteTypesView: UIView {
     
     // MARK: - Properties
     
+    var selectedTypes: [WasteType] = []
+    var cellsInRowCount = 4
+    
     private var layout: UICollectionViewFlowLayout? {
         collectionView.collectionViewLayout as? UICollectionViewFlowLayout
     }
@@ -67,8 +70,12 @@ class WasteTypesView: UIView {
     func configure(with cellModels: [WasteTypeCellModel]) {
         self.cellModels = cellModels
         collectionView.reloadData()
-        collectionView.layoutIfNeeded()
+        
+        collectionView.invalidateIntrinsicContentSize()
+        invalidateIntrinsicContentSize()
     }
+    
+    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -98,10 +105,30 @@ extension WasteTypesView: UICollectionViewDataSource {
 
 extension WasteTypesView: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let cellModel = cellModels[row]
+        let type = cellModel.type
+        
+        if !cellModel.isSelected {
+            selectedTypes.append(type)
+        } else {
+            selectedTypes.removeAll(where: { $0 == type })
+        }
+        
+        cellModels[row] = WasteTypeCellModel(
+            waste: cellModel.type,
+            isSelected: !cellModel.isSelected,
+            mode: cellModel.mode
+        )
+        
+        collectionView.reloadItems(at: [indexPath])
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 70, height: 70)
+        return .init(width: 70, height: 70)
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -117,7 +144,7 @@ extension WasteTypesView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        24
+        10
     }
 }
 

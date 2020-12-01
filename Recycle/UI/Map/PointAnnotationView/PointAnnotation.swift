@@ -11,27 +11,23 @@ class PointAnnotation: NSObject, MKAnnotation {
     
     // MARK: - Properties
     
-    var coordinate: CLLocationCoordinate2D
+    let id: Int
+    let coordinate: CLLocationCoordinate2D
     
-    var wasteImages: [UIImage] {
-        [
-            WasteTypeModel(type: .clothes).image,
-            WasteTypeModel(type: .lamps).image,
-            WasteTypeModel(type: .plastic).image,
-        ]
-    }
+    let wasteImages: [UIImage]
     
     // MARK: - Init
     
-    init(longitude: CLLocationDegrees, latitude: CLLocationDegrees) {
-        coordinate = .init(latitude: latitude, longitude: longitude)
-    }
-    
-    static var test: [PointAnnotation] {
-        return [
-            PointAnnotation(longitude: 55.7558, latitude: 37.6173),
-            PointAnnotation(longitude: 3.7558, latitude: 37.6173),
-            PointAnnotation(longitude: 55.7558, latitude: 50.6173)
-        ]
+    init(point: RecyclePoint) {
+        id = point.id
+        
+        wasteImages = point.wasteTypes.map {
+            WasteTypeModel(type: $0).image
+        }
+        
+        coordinate = CLLocationCoordinate2D(
+            latitude: point.latitude,
+            longitude: point.longitude
+        )
     }
 }

@@ -16,6 +16,8 @@ protocol LocationManager: AnyObject {
     
     var delegate: LocationManagerDelegate? { get set }
     
+    var location: CLLocation? { get }
+    
     func requestAuth()
 }
 
@@ -23,6 +25,7 @@ class LocationManagerImp: NSObject {
     
     weak var delegate: LocationManagerDelegate?
     
+    private (set) var location: CLLocation?
     private let manager: CLLocationManager
     
     init(manager: CLLocationManager = CLLocationManager()) {
@@ -33,7 +36,10 @@ class LocationManagerImp: NSObject {
 extension LocationManagerImp: LocationManager {
     
     func requestAuth() {
+        manager.delegate = self
+    
         manager.requestWhenInUseAuthorization()
+        startMonitoting()
     }
 }
 
@@ -43,14 +49,12 @@ extension LocationManagerImp: CLLocationManagerDelegate {
         if #available(iOS 14.0, *) {
             switch manager.authorizationStatus {
             case .authorizedWhenInUse:
-                manager.startMonitoringSignificantLocationChanges()
-                manager.startUpdatingLocation()
+                startMonitoting()
             default:
                 break
             }
         } else {
-            manager.startMonitoringSignificantLocationChanges()
-            manager.startUpdatingLocation()
+            startMonitoting()
         }
     }
     
@@ -59,6 +63,7 @@ extension LocationManagerImp: CLLocationManagerDelegate {
             return
         }
         
+        self.location = location
         delegate?.didUpdateLocation(location)
     }
 }
@@ -67,5 +72,7 @@ private extension LocationManagerImp {
     
     func startMonitoting() {
         
+        manager.startMonitoringSignificantLocationChanges()
+        manager.startUpdatingLocation()
     }
 }

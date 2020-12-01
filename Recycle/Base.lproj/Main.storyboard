@@ -3,29 +3,11 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
-        <scene sceneID="6om-CE-Ovq">
-            <objects>
-                <viewController id="7S3-MR-Btb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Wej-T3-fG9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="qF3-KN-Pxi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Rqo-bc-pam"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W0M-LJ-HBh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-770" y="682"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jtN-6D-8BJ">
             <objects>
@@ -72,11 +54,11 @@
             </objects>
             <point key="canvasLocation" x="622" y="360"/>
         </scene>
-        <!--Item-->
+        <!--Профиль-->
         <scene sceneID="64B-NP-qEs">
             <objects>
                 <navigationController id="g1X-WG-Yr2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="YlT-YM-4Kb"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" id="YlT-YM-4Kb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Fy9-jf-8GK">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -105,8 +87,5 @@
         <namedColor name="main">
             <color red="0.10980392156862745" green="0.5490196078431373" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

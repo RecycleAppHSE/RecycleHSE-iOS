@@ -6,13 +6,22 @@
 //
 
 
-enum WasteType: String, Decodable {
+enum WasteType: String, Codable, CaseIterable {
     case
     paper,
     glass,
     plastic,
     metal,
     clothes,
-    lamps
+    lamps = "light_bulbs",
+        
+    tetraPack = "tetra_pack",
+    toxic,
+    appliances, // Техника
+    batteries,
+        
+    tires, // шины
+    caps, 
+    other
 }
 
