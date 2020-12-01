@@ -7,6 +7,11 @@
 
 import MapKit
 
+struct WasteImageModel {
+    let image: UIImage
+    let backgroundColor: UIColor?
+}
+
 class PointAnnotation: NSObject, MKAnnotation {
     
     // MARK: - Properties
@@ -14,15 +19,23 @@ class PointAnnotation: NSObject, MKAnnotation {
     let id: Int
     let coordinate: CLLocationCoordinate2D
     
-    let wasteImages: [UIImage]
+    let wasteImages: [WasteImageModel]
     
     // MARK: - Init
     
-    init(point: RecyclePoint) {
+    init(point: RecyclePoint, filterTypes: [WasteType]) {
         id = point.id
-        
         wasteImages = point.wasteTypes.map {
-            WasteTypeModel(type: $0).image
+            let image = WasteTypeModel(type: $0).image
+            let isSelected = filterTypes.contains($0)
+            if isSelected {
+                print("selected")
+            }
+            return WasteImageModel(
+                image: image,
+                backgroundColor: isSelected ? .main : .clear
+                
+            )
         }
         
         coordinate = CLLocationCoordinate2D(

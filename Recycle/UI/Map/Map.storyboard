@@ -102,6 +102,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="filterButton" destination="0Dn-MT-JFV" id="D8r-AJ-Nwr"/>
                         <outlet property="mapView" destination="ZeO-Cy-jpy" id="M2j-5y-txj"/>
                         <segue destination="Svp-IG-qs6" kind="presentation" identifier="pointInfo" id="Ewu-pS-GG4"/>
                     </connections>

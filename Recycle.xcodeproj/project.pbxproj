@@ -15,6 +15,8 @@
 		B00FD21925360CFB00225771 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00FD21125360C8F00225771 /* MapKit.framework */; };
 		B00FD22F2536219B00225771 /* WasteTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00FD22E2536219B00225771 /* WasteTypesView.swift */; };
 		B00FD2382536224800225771 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B00FD2372536224800225771 /* SnapKit */; };
+		B0103B6925765F2900EC83B9 /* PointFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0103B6825765F2900EC83B9 /* PointFilterViewController.swift */; };
+		B0103B7125765F3500EC83B9 /* PointFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0103B7025765F3500EC83B9 /* PointFilter.storyboard */; };
 		B03BCD8725631E8F00214F79 /* SearchPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD8625631E8F00214F79 /* SearchPointController.swift */; };
 		B03BCD9025631F6D00214F79 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD8F25631F6D00214F79 /* SearchCell.swift */; };
 		B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD9725631F9500214F79 /* SearchCellModel.swift */; };
@@ -101,6 +103,8 @@
 		B00FD20B253606D900225771 /* PointCalloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointCalloutView.xib; sourceTree = "<group>"; };
 		B00FD21125360C8F00225771 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B00FD22E2536219B00225771 /* WasteTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypesView.swift; sourceTree = "<group>"; };
+		B0103B6825765F2900EC83B9 /* PointFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointFilterViewController.swift; sourceTree = "<group>"; };
+		B0103B7025765F3500EC83B9 /* PointFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PointFilter.storyboard; sourceTree = "<group>"; };
 		B03BCD8625631E8F00214F79 /* SearchPointController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPointController.swift; sourceTree = "<group>"; };
 		B03BCD8F25631F6D00214F79 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		B03BCD9725631F9500214F79 /* SearchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellModel.swift; sourceTree = "<group>"; };
@@ -230,6 +234,15 @@
 				B00FD22E2536219B00225771 /* WasteTypesView.swift */,
 			);
 			path = WasteTypesView;
+			sourceTree = "<group>";
+		};
+		B0103B6725765F2000EC83B9 /* PointFilter */ = {
+			isa = PBXGroup;
+			children = (
+				B0103B6825765F2900EC83B9 /* PointFilterViewController.swift */,
+				B0103B7025765F3500EC83B9 /* PointFilter.storyboard */,
+			);
+			path = PointFilter;
 			sourceTree = "<group>";
 		};
 		B03BCD8525631D2900214F79 /* Search */ = {
@@ -434,6 +447,7 @@
 		B066547925358B8C001C17A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B0103B6725765F2000EC83B9 /* PointFilter */,
 				B05EEFFF257572FB002533B3 /* CorrectionMode */,
 				B05EF010257579CE002533B3 /* WasteTypeCorrection */,
 				B05EF02925758FA9002533B3 /* StatusCorrection */,
@@ -628,6 +642,7 @@
 				B05EF01A257579EE002533B3 /* WasteTypeCorrection.storyboard in Resources */,
 				B066545E2535866D001C17A8 /* Map.storyboard in Resources */,
 				B00FD20C253606D900225771 /* PointCalloutView.xib in Resources */,
+				B0103B7125765F3500EC83B9 /* PointFilter.storyboard in Resources */,
 				B03BCD9D25631F9C00214F79 /* SearchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,6 +677,7 @@
 				B064575E2536241D00A2CA6E /* WasteTypeModel.swift in Sources */,
 				B00FD1F6253601B600225771 /* UIColor+App.swift in Sources */,
 				B06457802536810E00A2CA6E /* RecyclePointViewModel.swift in Sources */,
+				B0103B6925765F2900EC83B9 /* PointFilterViewController.swift in Sources */,
 				B08A618E2550D55000F4288B /* UIViewController+Storyboard.swift in Sources */,
 				B0645759253623AE00A2CA6E /* WasteTypeCellModel.swift in Sources */,
 				B062B2BA25509C8A00F56049 /* InjectPropertyWrapper.swift in Sources */,
