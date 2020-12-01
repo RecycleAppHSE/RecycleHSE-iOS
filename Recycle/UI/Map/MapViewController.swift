@@ -10,8 +10,9 @@ import MapKit
 import CoreLocation
 import SnapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, PointFilterDelegate {
     
+    @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
     @Inject var locationManager: LocationManager
@@ -21,7 +22,15 @@ class MapViewController: UIViewController {
     let annotationId = MKMapViewDefaultAnnotationViewReuseIdentifier
     let clusterId = MKMapViewDefaultClusterAnnotationViewReuseIdentifier
         
-    var points: [RecyclePoint] = []
+    var filterTypes = [WasteType]() {
+        didSet {
+            let image = filterTypes.isEmpty ? #imageLiteral(resourceName: "filter") : #imageLiteral(resourceName: "filterSelected")
+            filterButton.setImage(image, for: .normal)
+            reloadAnnotations()
+        }
+    }
+    var points = [RecyclePoint]()
+    var currentAnnotations = [MKAnnotation]()
     
     var searchController: UISearchController?
 
@@ -51,9 +60,11 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func filterTapped(_ sender: Any) {
-        // TODO: present filter screen
+        let vc: PointFilterViewController = create()
+        vc.delegate = self
+        let navigationVC = UINavigationController(rootViewController: vc)
+        present(navigationVC, animated: true, completion: nil)
     }
-    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -160,14 +171,16 @@ private extension MapViewController {
     }
     
     func handle(points: [RecyclePoint]) {
-        let annotations = points.prefix(5000).map {
-            PointAnnotation(point: $0)
+        self.points = Array(points.prefix(5000))
+        reloadAnnotations()
+    }
+    
+    func reloadAnnotations() {
+        mapView.removeAnnotations(currentAnnotations)
+        currentAnnotations = points.compactMap {
+            annotation(for: $0)
         }
-//        let annotations = points.map {
-//            PointAnnotation(point: $0)
-//        }
-        
-        mapView.addAnnotations(annotations)
+        mapView.addAnnotations(currentAnnotations)
     }
     
     func setupSearch() {
@@ -189,6 +202,43 @@ private extension MapViewController {
     func showPointInfo(point: RecyclePoint) {
         let vc: PointInfoViewController = create()
         vc.point = point
+        vc.filterTypes = filterTypes
         present(vc, animated: true)
+    }
+    
+    func annotation(for point: RecyclePoint) -> PointAnnotation? {
+        guard filterTypes.isEmpty else {
+            return PointAnnotation(
+                point: point,
+                filterTypes: filterTypes
+            )
+        }
+        
+        var containsAll = true
+        var containsAny = false
+        
+        for filterType in filterTypes {
+            if point.wasteTypes.contains(filterType) {
+                containsAny = true
+            } else {
+                containsAll = false
+            }
+        }
+        
+        if containsAll {
+            return PointAnnotation(
+                point: point,
+                filterTypes: filterTypes
+            )
+        }
+        
+        if containsAny {
+            return PointAnnotation(
+                point: point,
+                filterTypes: filterTypes
+            )
+        }
+        
+        return nil
     }
 }

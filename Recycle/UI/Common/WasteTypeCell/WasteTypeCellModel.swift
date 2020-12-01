@@ -27,7 +27,7 @@ struct WasteTypeCellModel {
     
     // MARK: - Init
     
-    init(wasteType: WasteType, hideTitle: Bool) {
+    init(wasteType: WasteType, hideTitle: Bool, isSelected: Bool = false) {
         let wasteModel = WasteTypeModel(type: wasteType)
         self.image = wasteModel.image
         self.mode = .readOnly
@@ -36,7 +36,7 @@ struct WasteTypeCellModel {
         tickImage = nil
         hideTick = true
         backgroundColor = .clear
-        isSelected = false
+        self.isSelected = isSelected
         type = wasteType
     }
     

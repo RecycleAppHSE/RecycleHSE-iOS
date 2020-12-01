@@ -32,6 +32,7 @@ class PointInfoViewController: UIViewController {
     @Inject var geocoder: CLGeocoder
     
     var point: RecyclePoint!
+    var filterTypes: [WasteType] = []
     weak var delegate: PointUpdaterDelegate?
     
     // MARK: - Functions
@@ -74,16 +75,19 @@ extension PointInfoViewController {
     func loadTitle() {
         organizationLabel.text = point.name
         
-        if let address = point.address {
-            titleLabel.text = address
-        } else {
+//        if let address = point.address {
+//            titleLabel.text = address
+//        } else {
             loadAddress()
-        }
+//        }
     }
     
     func configureWasteTypes() {
         let cellModels: [WasteTypeCellModel] = point.wasteTypes.map {
-            .init(wasteType: $0, hideTitle: false)
+            WasteTypeCellModel(
+                waste: $0,
+                isSelected: filterTypes.contains($0), mode: .readOnly
+            )
         }
 
         wasteTypesView.configure(with: cellModels)
