@@ -15,6 +15,15 @@ class WasteTypesView: UIView {
     var selectedTypes: [WasteType] = []
     var cellsInRowCount = 4
     
+    var sectionInsets = UIEdgeInsets(
+        top: 12,
+        left: 12,
+        bottom: 12,
+        right: 12
+    )
+    
+    var size: CGSize = .init(width: 70, height: 70)
+    
     private var layout: UICollectionViewFlowLayout? {
         collectionView.collectionViewLayout as? UICollectionViewFlowLayout
     }
@@ -32,13 +41,6 @@ class WasteTypesView: UIView {
     private let heightConstraint = NSLayoutConstraint()
     
     private var cellModels: [WasteTypeCellModel] = []
-    
-    private let sectionInsets = UIEdgeInsets(
-        top: 12,
-        left: 12,
-        bottom: 12,
-        right: 12
-    )
     
     // MARK: - Init
     
@@ -75,7 +77,10 @@ class WasteTypesView: UIView {
         invalidateIntrinsicContentSize()
     }
     
-    
+    func setupSmall() {
+        size = CGSize(width: 40, height: 40)
+        sectionInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -128,7 +133,7 @@ extension WasteTypesView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 70, height: 70)
+        return size
     }
     
     func collectionView(_ collectionView: UICollectionView,

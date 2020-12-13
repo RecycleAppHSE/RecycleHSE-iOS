@@ -22,6 +22,9 @@
 		B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD9725631F9500214F79 /* SearchCellModel.swift */; };
 		B03BCD9D25631F9C00214F79 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03BCD9C25631F9C00214F79 /* SearchCell.xib */; };
 		B03BCDA52563292600214F79 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCDA42563292600214F79 /* Cancellable.swift */; };
+		B04242A62586C0DD00F431BD /* CorrectionCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04242A52586C0DD00F431BD /* CorrectionCellModel.swift */; };
+		B04242AB2586C57F00F431BD /* Correction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04242AA2586C57F00F431BD /* Correction.swift */; };
+		B04242B02586D34000F431BD /* UIView+Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04242AF2586D34000F431BD /* UIView+Stack.swift */; };
 		B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B043CBEA2538FD2000807EA8 /* Profile.storyboard */; };
 		B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B043CBEF253901B500807EA8 /* ProfileViewController.swift */; };
 		B05EF00125757344002533B3 /* CorrectionModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05EF00025757344002533B3 /* CorrectionModeViewController.swift */; };
@@ -68,6 +71,10 @@
 		B07CDB04255186370068C9E5 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDB03255186370068C9E5 /* AppHelper.swift */; };
 		B07CDB0925518E4D0068C9E5 /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDB0825518E4D0068C9E5 /* MKMapView+Extension.swift */; };
 		B07CDB0E25519BC40068C9E5 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07CDB0D25519BC40068C9E5 /* ErrorManager.swift */; };
+		B0852A9E2586B20A007ABCEC /* CorrectionList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0852A9D2586B20A007ABCEC /* CorrectionList.storyboard */; };
+		B0852AA32586B214007ABCEC /* CorrectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0852AA22586B214007ABCEC /* CorrectionListViewController.swift */; };
+		B0852AA92586B3F5007ABCEC /* CorrectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0852AA82586B3F5007ABCEC /* CorrectionCell.swift */; };
+		B0852AB62586B43D007ABCEC /* CorrectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0852AB52586B43D007ABCEC /* CorrectionCell.xib */; };
 		B08A61862550CF3F00F4288B /* PointClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61852550CF3F00F4288B /* PointClusterView.swift */; };
 		B08A618E2550D55000F4288B /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */; };
 		B08A61B32550F6E700F4288B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08A61B22550F6E700F4288B /* User.swift */; };
@@ -110,6 +117,9 @@
 		B03BCD9725631F9500214F79 /* SearchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellModel.swift; sourceTree = "<group>"; };
 		B03BCD9C25631F9C00214F79 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		B03BCDA42563292600214F79 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		B04242A52586C0DD00F431BD /* CorrectionCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionCellModel.swift; sourceTree = "<group>"; };
+		B04242AA2586C57F00F431BD /* Correction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Correction.swift; sourceTree = "<group>"; };
+		B04242AF2586D34000F431BD /* UIView+Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Stack.swift"; sourceTree = "<group>"; };
 		B043CBEA2538FD2000807EA8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B043CBEF253901B500807EA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B05EF00025757344002533B3 /* CorrectionModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionModeViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +171,10 @@
 		B07CDB03255186370068C9E5 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		B07CDB0825518E4D0068C9E5 /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
 		B07CDB0D25519BC40068C9E5 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		B0852A9D2586B20A007ABCEC /* CorrectionList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CorrectionList.storyboard; sourceTree = "<group>"; };
+		B0852AA22586B214007ABCEC /* CorrectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionListViewController.swift; sourceTree = "<group>"; };
+		B0852AA82586B3F5007ABCEC /* CorrectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionCell.swift; sourceTree = "<group>"; };
+		B0852AB52586B43D007ABCEC /* CorrectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectionCell.xib; sourceTree = "<group>"; };
 		B08A61852550CF3F00F4288B /* PointClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointClusterView.swift; sourceTree = "<group>"; };
 		B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		B08A61B22550F6E700F4288B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -207,6 +221,7 @@
 				B062B3022550B10C00F56049 /* Result+Values.swift */,
 				B08A618D2550D55000F4288B /* UIViewController+Storyboard.swift */,
 				B07CDB0825518E4D0068C9E5 /* MKMapView+Extension.swift */,
+				B04242AF2586D34000F431BD /* UIView+Stack.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +324,7 @@
 				B062B2EC2550A7DD00F56049 /* Schedule.swift */,
 				B08A61B22550F6E700F4288B /* User.swift */,
 				B062B2CC25509ECB00F56049 /* Helpers */,
+				B04242AA2586C57F00F431BD /* Correction.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -447,6 +463,7 @@
 		B066547925358B8C001C17A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B0852A9C2586B1F8007ABCEC /* CorrectionList */,
 				B0103B6725765F2000EC83B9 /* PointFilter */,
 				B05EEFFF257572FB002533B3 /* CorrectionMode */,
 				B05EF010257579CE002533B3 /* WasteTypeCorrection */,
@@ -491,6 +508,26 @@
 				B00FD1EC2535FE8600225771 /* PointAnnotation.swift */,
 			);
 			path = PointAnnotationView;
+			sourceTree = "<group>";
+		};
+		B0852A9C2586B1F8007ABCEC /* CorrectionList */ = {
+			isa = PBXGroup;
+			children = (
+				B0852AA72586B3ED007ABCEC /* CorrectionCell */,
+				B0852A9D2586B20A007ABCEC /* CorrectionList.storyboard */,
+				B0852AA22586B214007ABCEC /* CorrectionListViewController.swift */,
+			);
+			path = CorrectionList;
+			sourceTree = "<group>";
+		};
+		B0852AA72586B3ED007ABCEC /* CorrectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				B0852AB52586B43D007ABCEC /* CorrectionCell.xib */,
+				B0852AA82586B3F5007ABCEC /* CorrectionCell.swift */,
+				B04242A52586C0DD00F431BD /* CorrectionCellModel.swift */,
+			);
+			path = CorrectionCell;
 			sourceTree = "<group>";
 		};
 		B08A61842550CF2A00F4288B /* PointClusterView */ = {
@@ -630,9 +667,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B066548525358C6D001C17A8 /* WasteTypeCell.xib in Resources */,
+				B0852AB62586B43D007ABCEC /* CorrectionCell.xib in Resources */,
 				B06457722536464A00A2CA6E /* PointInfo.storyboard in Resources */,
 				B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */,
 				B066542B25358604001C17A8 /* LaunchScreen.storyboard in Resources */,
+				B0852A9E2586B20A007ABCEC /* CorrectionList.storyboard in Resources */,
 				B066542825358604001C17A8 /* Assets.xcassets in Resources */,
 				B05EF00925757356002533B3 /* CorrectionMode.storyboard in Resources */,
 				B0A977BA2538F8F50085531F /* BubbleButton.xib in Resources */,
@@ -669,21 +708,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03BCDA52563292600214F79 /* Cancellable.swift in Sources */,
+				B0852AA92586B3F5007ABCEC /* CorrectionCell.swift in Sources */,
 				B062B2B225509C4C00F56049 /* Resolver.swift in Sources */,
 				B07CDAFF2551821B0068C9E5 /* StatusViewModel.swift in Sources */,
 				B066541F25358601001C17A8 /* AppDelegate.swift in Sources */,
 				B062B3082550B3C000F56049 /* PointService.swift in Sources */,
 				B062B2F22550AE2600F56049 /* UserService.swift in Sources */,
 				B064575E2536241D00A2CA6E /* WasteTypeModel.swift in Sources */,
+				B04242AB2586C57F00F431BD /* Correction.swift in Sources */,
 				B00FD1F6253601B600225771 /* UIColor+App.swift in Sources */,
 				B06457802536810E00A2CA6E /* RecyclePointViewModel.swift in Sources */,
 				B0103B6925765F2900EC83B9 /* PointFilterViewController.swift in Sources */,
 				B08A618E2550D55000F4288B /* UIViewController+Storyboard.swift in Sources */,
+				B04242B02586D34000F431BD /* UIView+Stack.swift in Sources */,
 				B0645759253623AE00A2CA6E /* WasteTypeCellModel.swift in Sources */,
 				B062B2BA25509C8A00F56049 /* InjectPropertyWrapper.swift in Sources */,
 				B066546D25358A82001C17A8 /* RecyclePoint.swift in Sources */,
 				B07CDB0E25519BC40068C9E5 /* ErrorManager.swift in Sources */,
 				B07CDB0925518E4D0068C9E5 /* MKMapView+Extension.swift in Sources */,
+				B0852AA32586B214007ABCEC /* CorrectionListViewController.swift in Sources */,
 				B06654672535873F001C17A8 /* LocationManager.swift in Sources */,
 				B062B3032550B10C00F56049 /* Result+Values.swift in Sources */,
 				B08A61862550CF3F00F4288B /* PointClusterView.swift in Sources */,
@@ -699,6 +742,7 @@
 				B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */,
 				B00FD204253606BE00225771 /* PointCalloutView.swift in Sources */,
 				B00FD22F2536219B00225771 /* WasteTypesView.swift in Sources */,
+				B04242A62586C0DD00F431BD /* CorrectionCellModel.swift in Sources */,
 				B066547525358AB2001C17A8 /* WasteType.swift in Sources */,
 				B0A977B02538F7B40085531F /* UIView+XibLoadable.swift in Sources */,
 				B066542125358601001C17A8 /* SceneDelegate.swift in Sources */,

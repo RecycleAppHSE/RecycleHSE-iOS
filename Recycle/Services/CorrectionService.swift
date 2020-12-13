@@ -16,6 +16,10 @@ protocol CorrectionService {
     func suggestCorrection(id: Int,
                            status: RecyclePointStatus,
                            callback: @escaping ResultCallback<Int>)
+    
+    func set(isLiked: Int,
+             for id: Int,
+             callback: @escaping ResultCallback<Void>)
 }
 
 struct CorrectionServiceImp {
@@ -48,6 +52,19 @@ extension CorrectionServiceImp: CorrectionService {
             }
         }
     }
+    
+    func set(isLiked: Int, for id: Int, callback: @escaping ResultCallback<Void>) {
+        let body = LikeBody(like: isLiked)
+        api.request("correction/\(id)/like", method: .post, params: [:], body: body) {
+            (result: Result<EmptyResponse, Error>) in
+            switch result {
+            case .success:
+                callback(.success)
+            case .failure(let error):
+                callback(.failure(error))
+            }
+        }
+    }
 }
 
 private extension CorrectionServiceImp {
@@ -68,5 +85,9 @@ private extension CorrectionServiceImp {
         let changeTo: RecyclePointStatus
         
         let field = "works"
+    }
+    
+    struct LikeBody: Encodable {
+        let like: Int
     }
 }
