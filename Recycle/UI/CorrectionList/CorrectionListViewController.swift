@@ -15,6 +15,8 @@ class CorrectionListViewController: UIViewController {
     
     var point: RecyclePoint!
     
+    var ids: [Int]? = nil
+    
     var corrections: [Correction] = []
     
     override func viewDidLoad() {
@@ -23,7 +25,11 @@ class CorrectionListViewController: UIViewController {
         let nib = UINib(nibName: "CorrectionCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellId)
         
-        service.loadCorrections(pointId: point.id) { [weak self] result in
+        loadCorrections()
+    }
+    
+    func loadCorrections() {
+        let callback: ResultCallback<[Correction]> = { [weak self] result in
             switch result {
             case .success(let corrections):
                 self?.corrections = corrections
@@ -32,6 +38,13 @@ class CorrectionListViewController: UIViewController {
                 self?.show(error: error)
             }
         }
+        
+        if let ids = ids {
+            service.loadCorrections(ids: ids, callback: callback)
+        } else {
+            service.loadCorrections(pointId: point.id, callback: callback)
+        }
+        
     }
 }
 

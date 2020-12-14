@@ -34,7 +34,7 @@ class CorrectionCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dislikeButton: UIButton!
     
-    var point: RecyclePoint!
+    var point: RecyclePoint?
     var correction: Correction!
     
     @Inject var service: CorrectionService
@@ -47,8 +47,8 @@ class CorrectionCell: UITableViewCell {
     }
     
     func configure() {
-        addressLabel.text = point.address
-        nameLabel.text = point.name
+        addressLabel.text = point?.address
+        nameLabel.text = point?.name
         
         let date = Date(timeIntervalSince1970: correction.submitTime)
         let dateText = Self.formatter.string(from: date)

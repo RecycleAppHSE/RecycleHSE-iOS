@@ -312,6 +312,9 @@
                                                         <state key="normal" title="История исправлений (2 актуальых)">
                                                             <color key="titleColor" name="main"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="correctionListTapped:" destination="CHO-Vx-cAx" eventType="touchUpInside" id="ghw-YC-DBj"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow-template" translatesAutoresizingMaskIntoConstraints="NO" id="TZs-uZ-ll0">
                                                         <rect key="frame" x="386" y="89" width="16" height="16"/>

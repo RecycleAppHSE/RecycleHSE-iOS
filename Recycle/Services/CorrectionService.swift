@@ -20,6 +20,9 @@ protocol CorrectionService {
     func loadCorrections(pointId: Int,
                          callback: @escaping ResultCallback<[Correction]>)
     
+    func loadCorrections(ids: [Int],
+                         callback: @escaping ResultCallback<[Correction]>)
+    
     func set(isLiked: Int,
              for id: Int,
              callback: @escaping ResultCallback<Void>)
@@ -58,9 +61,47 @@ extension CorrectionServiceImp: CorrectionService {
     
     func loadCorrections(pointId: Int,
                          callback: @escaping ResultCallback<[Correction]>) {
-        api.request("point/\(pointId)/corrections") { (result: Result<[Correction], Error>) in
-            callback(result)
+        api.request("point/\(pointId)/corrections") { (result: Result<CorrectionListResponse, Error>) in
+            switch result {
+            case .success(let response):
+                callback(.success(response.corrections))
+            case .failure(let error):
+                callback(.failure(error))
+            }
         }
+    }
+    
+    func loadCorrections(ids: [Int],
+                         callback: @escaping ResultCallback<[Correction]>) {
+        let group = DispatchGroup()
+        var corrections: [Correction] = []
+        var error: Error?
+        
+        for id in ids {
+            group.enter()
+            loadCorrection(id: id) { result in
+                switch result {
+                case .success(let correction):
+                    corrections.append(correction)
+                case .failure(let requestError):
+                    error = requestError
+                }
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: .main) {
+            if let error = error {
+                callback(.failure(error))
+            } else {
+                callback(.success(corrections))
+            }
+        }
+    }
+    
+    func loadCorrection(id: Int,
+                        callback: @escaping ResultCallback<Correction>) {
+        api.request("correction/\(id)", callback)
     }
     
     func set(isLiked: Int, for id: Int, callback: @escaping ResultCallback<Void>) {
@@ -81,6 +122,10 @@ private extension CorrectionServiceImp {
     
     struct CorrectionResponse: Decodable {
         let correctionId: Int
+    }
+    
+    struct CorrectionListResponse: Decodable {
+        let corrections: [Correction]
     }
     
     struct TypesCorrectionBody: Encodable {

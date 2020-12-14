@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
     
     @Inject var userService: UserService
     
+    var user: User?
+    
     // MARK: - Functions
     
     override func viewDidLoad() {
@@ -27,6 +29,21 @@ class ProfileViewController: UIViewController {
         
         setupView()
         loadUser()
+        
+        allButton.tapAction = { [weak self] in
+            guard let user = self?.user else { return }
+            self?.showCorrections(ids: user.correctionIds.all)
+        }
+        
+        notConfirmedButton.tapAction = { [weak self] in
+            guard let user = self?.user else { return }
+            self?.showCorrections(ids: user.correctionIds.inProgress)
+        }
+        
+        confirmedButton.tapAction = { [weak self] in
+            guard let user = self?.user else { return }
+            self?.showCorrections(ids: user.correctionIds.approved)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +53,12 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Actions
     
-    
+    func showCorrections(ids: [Int]) {
+        let vc: CorrectionListViewController = create()
+        vc.ids = ids
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ProfileViewController: UITextViewDelegate {
@@ -79,6 +101,7 @@ private extension ProfileViewController {
         userService.getUser { [weak self] result in
             switch result {
             case .success(let user):
+                self?.user = user
                 self?.display(user: user)
             case .failure(let error):
                 self?.show(error: error, repeatCallback: {

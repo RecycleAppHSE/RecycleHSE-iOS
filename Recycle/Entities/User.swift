@@ -10,12 +10,20 @@ import Foundation
 struct User: Decodable {
     
     struct Corrections: Decodable {
-        var applied: [Int]
+        var approved: [Int]
         var inProgress: [Int]
         var rejected: [Int]
         
+        var all: [Int] {
+            var result = [Int]()
+            result.append(contentsOf: approved)
+            result.append(contentsOf: inProgress)
+            result.append(contentsOf: rejected)
+            return result
+        }
+        
         var appliedCount: Int {
-            applied.count
+            approved.count
         }
         
         var inProgressCount: Int {

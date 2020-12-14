@@ -61,6 +61,11 @@ struct Correction: Decodable {
     var likeCount: Int
     var dislikeCount: Int
     
-    var isStatusMode: Bool = false
-    var isSelf = false
+    var isStatusMode: Bool {
+        changeTo.status != nil
+    }
+    
+    var isSelf: Bool {
+        false
+    }
 }

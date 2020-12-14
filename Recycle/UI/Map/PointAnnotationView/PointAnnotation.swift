@@ -28,13 +28,9 @@ class PointAnnotation: NSObject, MKAnnotation {
         wasteImages = point.wasteTypes.map {
             let image = WasteTypeModel(type: $0).image
             let isSelected = filterTypes.contains($0)
-            if isSelected {
-                print("selected")
-            }
             return WasteImageModel(
                 image: image,
                 backgroundColor: isSelected ? .main : .clear
-                
             )
         }
         
