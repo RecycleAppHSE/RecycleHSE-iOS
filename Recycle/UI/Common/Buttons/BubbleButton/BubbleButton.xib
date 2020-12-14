@@ -44,9 +44,8 @@
                             <color key="textColor" name="textGray"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buJ-E4-TNK">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buJ-E4-TNK">
                             <rect key="frame" x="0.0" y="0.0" width="199" height="94"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <connections>
                                 <action selector="bubbleTapped:" destination="-1" eventType="touchUpInside" id="E3M-P2-DmV"/>
                             </connections>
@@ -55,9 +54,13 @@
                     <color key="backgroundColor" name="bubbleBackground"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="zl5-d5-cn3" secondAttribute="trailing" id="5gU-41-7jp"/>
+                        <constraint firstItem="buJ-E4-TNK" firstAttribute="top" secondItem="qhI-F5-xCX" secondAttribute="top" id="7ZD-y7-zFj"/>
                         <constraint firstAttribute="trailing" secondItem="5Zg-8w-nju" secondAttribute="trailing" id="8Ql-PD-bMX"/>
+                        <constraint firstAttribute="trailing" secondItem="buJ-E4-TNK" secondAttribute="trailing" id="Bqy-O1-00v"/>
                         <constraint firstItem="zl5-d5-cn3" firstAttribute="leading" secondItem="qhI-F5-xCX" secondAttribute="leading" constant="13" id="Mrc-rA-rKQ"/>
                         <constraint firstAttribute="bottom" secondItem="zl5-d5-cn3" secondAttribute="bottom" id="QNE-P2-bE7"/>
+                        <constraint firstAttribute="bottom" secondItem="buJ-E4-TNK" secondAttribute="bottom" id="lEG-1p-Ov1"/>
+                        <constraint firstItem="buJ-E4-TNK" firstAttribute="leading" secondItem="qhI-F5-xCX" secondAttribute="leading" id="ttQ-WH-D55"/>
                         <constraint firstItem="5Zg-8w-nju" firstAttribute="top" secondItem="qhI-F5-xCX" secondAttribute="top" id="y5Q-Bx-z2V"/>
                     </constraints>
                 </view>

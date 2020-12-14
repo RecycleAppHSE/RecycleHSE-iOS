@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="huK-cd-4be">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="4" width="414" height="858"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spB-cY-5lE">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="124"/>
@@ -151,7 +151,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYF-md-FSY">
-                                        <rect key="frame" x="0.0" y="433" width="414" height="385"/>
+                                        <rect key="frame" x="0.0" y="433" width="414" height="425"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -160,12 +160,15 @@
                         <viewLayoutGuide key="safeArea" id="6BX-nw-kRl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="huK-cd-4be" firstAttribute="top" secondItem="6BX-nw-kRl" secondAttribute="top" id="YNa-lQ-EeF"/>
+                            <constraint firstItem="huK-cd-4be" firstAttribute="top" secondItem="6BX-nw-kRl" secondAttribute="top" constant="-40" id="YNa-lQ-EeF"/>
                             <constraint firstItem="huK-cd-4be" firstAttribute="leading" secondItem="6BX-nw-kRl" secondAttribute="leading" id="YW9-gB-zos"/>
                             <constraint firstItem="6BX-nw-kRl" firstAttribute="bottom" secondItem="huK-cd-4be" secondAttribute="bottom" id="bgb-GR-Psg"/>
                             <constraint firstItem="6BX-nw-kRl" firstAttribute="trailing" secondItem="huK-cd-4be" secondAttribute="trailing" id="oa1-dj-Nff"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="G3b-3h-Rzk">
+                        <barButtonItem key="backBarButtonItem" title="Профиль" id="sG5-DV-D4a"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="allButton" destination="Id4-A1-INZ" id="jLe-fb-owP"/>
                         <outlet property="avatarImageView" destination="spT-Uw-BwE" id="NhY-YR-3gk"/>
