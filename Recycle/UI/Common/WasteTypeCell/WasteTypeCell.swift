@@ -26,6 +26,7 @@ class WasteTypeCell: UICollectionViewCell {
     }
     
     func configure(with cellModel: WasteTypeCellModel) {
+        
         textLabel.text = cellModel.title
         textLabel.textColor = cellModel.titleColor
         imageView.image = cellModel.image

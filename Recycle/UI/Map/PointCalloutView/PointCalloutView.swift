@@ -45,10 +45,13 @@ class PointCalloutView: UIView, XibLoadable {
         for imageModel in images {
             let imageView = UIImageView(image: imageModel.image)
             
+            //imageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
             imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor).isActive = true
             imageView.layer.cornerRadius = 4
             imageView.clipsToBounds = true
+            //imageView.contentMode = .scaleAspectFit
             imageView.contentMode = .center
+            
             imageView.backgroundColor = imageModel.backgroundColor
             
             wasteStackView.addArrangedSubview(imageView)

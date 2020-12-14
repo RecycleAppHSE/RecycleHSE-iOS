@@ -23,6 +23,7 @@ class WasteTypesView: UIView {
     )
     
     var size: CGSize = .init(width: 70, height: 70)
+    var textFont: UIFont = .systemFont(ofSize: 13, weight: .semibold)
     
     private var layout: UICollectionViewFlowLayout? {
         collectionView.collectionViewLayout as? UICollectionViewFlowLayout
@@ -80,6 +81,7 @@ class WasteTypesView: UIView {
     func setupSmall() {
         size = CGSize(width: 40, height: 40)
         sectionInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
+        textFont = .systemFont(ofSize: 8, weight: .semibold)
     }
 }
 
@@ -100,6 +102,7 @@ extension WasteTypesView: UICollectionViewDataSource {
             for: indexPath
         ) as! WasteTypeCell
         
+        cell.textLabel.font = textFont
         cell.configure(with: cellModel)
         
         return cell

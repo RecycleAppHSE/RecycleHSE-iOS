@@ -8,14 +8,14 @@
 import UIKit
 
 enum WasteCellMode {
-    case selectable, selectableBlue, readOnly
+    case selectable, selectableBlue, readOnly, readOnlyImages
 }
 
 struct WasteTypeCellModel {
     
     // MARK: - Properties
     
-    let title: String
+    var title: String
     let titleColor: UIColor?
     let image: UIImage
     let tickImage: UIImage?
@@ -58,6 +58,11 @@ struct WasteTypeCellModel {
         case .readOnly:
             hideTick = true
             backgroundColor = isSelected ? .main : .clear
+            
+        case .readOnlyImages:
+            hideTick = true
+            backgroundColor = .clear
+            title = ""
             
         case .selectable:
             hideTick = false

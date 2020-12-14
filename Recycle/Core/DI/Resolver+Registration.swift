@@ -9,6 +9,8 @@ import Foundation
 import CoreLocation
 import UIKit
 
+var sharedPointService: PointService!
+
 extension Resolver {
     
     func registerDependencies() {
@@ -27,9 +29,13 @@ extension Resolver {
         }
         
         add(type: PointService.self) {
-            PointServiceImp(
-                api: self.resolve()
-            )
+            if sharedPointService == nil {
+                sharedPointService = PointServiceImp(
+                    api: self.resolve()
+                )
+            }
+            
+            return sharedPointService
         }
         
         add(type: CorrectionService.self) {

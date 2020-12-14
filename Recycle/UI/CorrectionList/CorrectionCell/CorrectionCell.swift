@@ -78,7 +78,41 @@ class CorrectionCell: UITableViewCell {
         typesContainer.isHiddenInStackView = isStatusMode
         statusContainer.isHidden = !isStatusMode
         
+        if let status = correction.changeTo.status {
+            configureStatus(
+                imageView: fromStatusImageView,
+                label: fromStatusLabel,
+                status: point?.status ?? .open
+            )
+            
+            configureStatus(
+                imageView: toStatusImageView,
+                label: toStatusLabel,
+                status: status
+            )
+        }
         
+        if let toTypes = correction.changeTo.types,
+           let fromTypes = point?.wasteTypes {
+            let fromCellModels = fromTypes.map {
+                WasteTypeCellModel(
+                    waste: $0,
+                    isSelected: false,
+                    mode: .readOnly
+                )
+            }
+            
+            let toCellModels = toTypes.map {
+                WasteTypeCellModel(
+                    waste: $0,
+                    isSelected: false,
+                    mode: .readOnly
+                )
+            }
+            
+            fromWasteTypesView.configure(with: fromCellModels)
+            toWasteTypesView.configure(with: toCellModels)
+        }
     }
     
     @IBAction func likeTapped(_ sender: Any) {
@@ -113,6 +147,14 @@ class CorrectionCell: UITableViewCell {
                 break
             }
         }
+    }
+    
+    func configureStatus(imageView: UIImageView, label: UILabel, status: RecyclePointStatus) {
+        let statusViewModel = StatusViewModel(status: status)
+        imageView.image = statusViewModel.image
+        imageView.backgroundColor = statusViewModel.color
+        label.text = statusViewModel.text
+        label.textColor = statusViewModel.color
     }
     
     static let formatter: DateFormatter = {

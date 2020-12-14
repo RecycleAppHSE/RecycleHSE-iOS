@@ -12,8 +12,9 @@ class CorrectionListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     @Inject var service: CorrectionService
+    @Inject var pointService: PointService
     
-    var point: RecyclePoint!
+    var point: RecyclePoint?
     
     var ids: [Int]? = nil
     
@@ -41,10 +42,9 @@ class CorrectionListViewController: UIViewController {
         
         if let ids = ids {
             service.loadCorrections(ids: ids, callback: callback)
-        } else {
+        } else if let point = point {
             service.loadCorrections(pointId: point.id, callback: callback)
         }
-        
     }
 }
 
@@ -60,8 +60,9 @@ extension CorrectionListViewController: UITableViewDataSource, UITableViewDelega
             for: indexPath
         ) as! CorrectionCell
         
-        cell.point = point
-        cell.correction = corrections[indexPath.row]
+        let correction = corrections[indexPath.row]
+        cell.point = point ?? pointService.point(with: correction.id)
+        cell.correction = correction
         cell.configure()
         
         return cell
