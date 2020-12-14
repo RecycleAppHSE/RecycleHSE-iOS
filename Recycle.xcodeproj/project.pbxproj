@@ -83,6 +83,11 @@
 		B0A977B52538F8E80085531F /* BubbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A977B42538F8E80085531F /* BubbleButton.swift */; };
 		B0A977BA2538F8F50085531F /* BubbleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A977B92538F8F50085531F /* BubbleButton.xib */; };
 		B0ACD5B82564191C00D199B5 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ACD5B72564191C00D199B5 /* SearchController.swift */; };
+		B0F7265C258822AC00DFEF31 /* TipsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7265B258822AC00DFEF31 /* TipsTableViewController.swift */; };
+		B0F72668258822C900DFEF31 /* TipsTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F72667258822C900DFEF31 /* TipsTable.storyboard */; };
+		B0F7266D2588241200DFEF31 /* TipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7266C2588241200DFEF31 /* TipsTableViewCell.swift */; };
+		B0F726722588249500DFEF31 /* TipsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F726712588249500DFEF31 /* TipsCollection.swift */; };
+		B0F726772588265000DFEF31 /* TipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F726762588265000DFEF31 /* TipService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +188,11 @@
 		B0A977B42538F8E80085531F /* BubbleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleButton.swift; sourceTree = "<group>"; };
 		B0A977B92538F8F50085531F /* BubbleButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BubbleButton.xib; sourceTree = "<group>"; };
 		B0ACD5B72564191C00D199B5 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		B0F7265B258822AC00DFEF31 /* TipsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTableViewController.swift; sourceTree = "<group>"; };
+		B0F72667258822C900DFEF31 /* TipsTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipsTable.storyboard; sourceTree = "<group>"; };
+		B0F7266C2588241200DFEF31 /* TipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTableViewCell.swift; sourceTree = "<group>"; };
+		B0F726712588249500DFEF31 /* TipsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollection.swift; sourceTree = "<group>"; };
+		B0F726762588265000DFEF31 /* TipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +335,7 @@
 				B08A61B22550F6E700F4288B /* User.swift */,
 				B062B2CC25509ECB00F56049 /* Helpers */,
 				B04242AA2586C57F00F431BD /* Correction.swift */,
+				B0F726712588249500DFEF31 /* TipsCollection.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -446,6 +457,7 @@
 				B062B3072550B3C000F56049 /* PointService.swift */,
 				B07CDB03255186370068C9E5 /* AppHelper.swift */,
 				B05EF02125757CF9002533B3 /* CorrectionService.swift */,
+				B0F726762588265000DFEF31 /* TipService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -463,6 +475,7 @@
 		B066547925358B8C001C17A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B0F7265A2588229600DFEF31 /* TipsTable */,
 				B0852A9C2586B1F8007ABCEC /* CorrectionList */,
 				B0103B6725765F2000EC83B9 /* PointFilter */,
 				B05EEFFF257572FB002533B3 /* CorrectionMode */,
@@ -553,6 +566,24 @@
 				B0A977B42538F8E80085531F /* BubbleButton.swift */,
 			);
 			path = BubbleButton;
+			sourceTree = "<group>";
+		};
+		B0F7265A2588229600DFEF31 /* TipsTable */ = {
+			isa = PBXGroup;
+			children = (
+				B0F72663258822B000DFEF31 /* Tips */,
+				B0F72667258822C900DFEF31 /* TipsTable.storyboard */,
+				B0F7265B258822AC00DFEF31 /* TipsTableViewController.swift */,
+				B0F7266C2588241200DFEF31 /* TipsTableViewCell.swift */,
+			);
+			path = TipsTable;
+			sourceTree = "<group>";
+		};
+		B0F72663258822B000DFEF31 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -671,6 +702,7 @@
 				B06457722536464A00A2CA6E /* PointInfo.storyboard in Resources */,
 				B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */,
 				B066542B25358604001C17A8 /* LaunchScreen.storyboard in Resources */,
+				B0F72668258822C900DFEF31 /* TipsTable.storyboard in Resources */,
 				B0852A9E2586B20A007ABCEC /* CorrectionList.storyboard in Resources */,
 				B066542825358604001C17A8 /* Assets.xcassets in Resources */,
 				B05EF00925757356002533B3 /* CorrectionMode.storyboard in Resources */,
@@ -728,14 +760,17 @@
 				B07CDB0925518E4D0068C9E5 /* MKMapView+Extension.swift in Sources */,
 				B0852AA32586B214007ABCEC /* CorrectionListViewController.swift in Sources */,
 				B06654672535873F001C17A8 /* LocationManager.swift in Sources */,
+				B0F7266D2588241200DFEF31 /* TipsTableViewCell.swift in Sources */,
 				B062B3032550B10C00F56049 /* Result+Values.swift in Sources */,
 				B08A61862550CF3F00F4288B /* PointClusterView.swift in Sources */,
 				B062B2D92550A00000F56049 /* ApiClient.swift in Sources */,
 				B05EF02225757CF9002533B3 /* CorrectionService.swift in Sources */,
+				B0F726722588249500DFEF31 /* TipsCollection.swift in Sources */,
 				B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */,
 				B05EF02E257594AF002533B3 /* PointUpdaterDelegate.swift in Sources */,
 				B062B2C525509DAC00F56049 /* Resolver+Registration.swift in Sources */,
 				B05EF00125757344002533B3 /* CorrectionModeViewController.swift in Sources */,
+				B0F726772588265000DFEF31 /* TipService.swift in Sources */,
 				B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */,
 				B064576A25362A1200A2CA6E /* PointInfoViewController.swift in Sources */,
 				B05EF039257597D2002533B3 /* StatusCorrectionViewController.swift in Sources */,
@@ -757,6 +792,7 @@
 				B06654562535862D001C17A8 /* MapViewController.swift in Sources */,
 				B066547D25358BBF001C17A8 /* WasteTypeCell.swift in Sources */,
 				B07CDB04255186370068C9E5 /* AppHelper.swift in Sources */,
+				B0F7265C258822AC00DFEF31 /* TipsTableViewController.swift in Sources */,
 				B00FD1ED2535FE8600225771 /* PointAnnotation.swift in Sources */,
 				B062B2ED2550A7DD00F56049 /* Schedule.swift in Sources */,
 				B062B2A3255098E800F56049 /* ApiClientImp.swift in Sources */,
