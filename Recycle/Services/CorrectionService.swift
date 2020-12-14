@@ -17,6 +17,9 @@ protocol CorrectionService {
                            status: RecyclePointStatus,
                            callback: @escaping ResultCallback<Int>)
     
+    func loadCorrections(pointId: Int,
+                         callback: @escaping ResultCallback<[Correction]>)
+    
     func set(isLiked: Int,
              for id: Int,
              callback: @escaping ResultCallback<Void>)
@@ -50,6 +53,13 @@ extension CorrectionServiceImp: CorrectionService {
             case .failure(let error):
                 callback(.failure(error))
             }
+        }
+    }
+    
+    func loadCorrections(pointId: Int,
+                         callback: @escaping ResultCallback<[Correction]>) {
+        api.request("point/\(pointId)/corrections") { (result: Result<[Correction], Error>) in
+            callback(result)
         }
     }
     

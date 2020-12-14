@@ -203,7 +203,9 @@ private extension MapViewController {
         let vc: PointInfoViewController = create()
         vc.point = point
         vc.filterTypes = filterTypes
-        present(vc, animated: true)
+        
+        let navigation = UINavigationController(rootViewController: vc)
+        present(navigation, animated: true)
     }
     
     func annotation(for point: RecyclePoint) -> PointAnnotation? {

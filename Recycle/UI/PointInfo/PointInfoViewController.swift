@@ -43,6 +43,16 @@ class PointInfoViewController: UIViewController {
         configureViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     // MARK: - Actions
     
     @IBAction func closeTapped(_ sender: UIButton) {
@@ -68,6 +78,11 @@ class PointInfoViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    @IBAction func correctionListTapped(_ sender: UIButton) {
+        let vc: CorrectionListViewController = create()
+        vc.point = point
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension PointInfoViewController {

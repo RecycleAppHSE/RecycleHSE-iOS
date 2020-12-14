@@ -74,6 +74,10 @@ class CorrectionCell: UITableViewCell {
         likeButton.isEnabled = isSelf
         dislikeButton.isEnabled = isSelf
         
+        let isStatusMode = correction.isStatusMode
+        typesContainer.isHiddenInStackView = isStatusMode
+        statusContainer.isHidden = !isStatusMode
+        
         
     }
     

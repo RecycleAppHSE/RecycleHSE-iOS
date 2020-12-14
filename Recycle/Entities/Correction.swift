@@ -8,11 +8,23 @@
 import Foundation
 import UIKit
 
-struct Correction {
+struct CorrectionChangeTo: Decodable {
+    
+    let status: RecyclePointStatus?
+    let types: [WasteType]?
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        types = try? container.decode([WasteType].self)
+        status = try? container.decode(RecyclePointStatus.self)
+    }
+}
+
+struct Correction: Decodable {
     
     enum Status: String, Decodable {
         case inProgress = "in-progress"
-        case approved
+        case approved = "applied"
         case declined
         
         var text: String {
@@ -42,7 +54,7 @@ struct Correction {
     let pointId: Int
     let field: String
     
-    let changeToTypes: [WasteType]
+    let changeTo: CorrectionChangeTo
     let status: Status
     
     let submitTime: TimeInterval
