@@ -111,7 +111,11 @@ extension PointInfoViewController {
     func configureTexts() {
         organizationLabel.text = point.name
         
-        
+        let statusViewModel = StatusViewModel(status: point.status)
+        statusImageView.image = statusViewModel.image
+        statusImageView.backgroundColor = statusViewModel.color
+        statusLabel.text = statusViewModel.text
+        statusLabel.textColor = statusViewModel.color
         
         let phone = point.phoneNumber
         phoneButton.setTitle(phone, for: .normal)

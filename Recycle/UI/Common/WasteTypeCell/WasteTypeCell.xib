@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plastic-mini" translatesAutoresizingMaskIntoConstraints="NO" id="y8e-IM-Cc6">
-                                <rect key="frame" x="21" y="10.5" width="28" height="28"/>
+                                <rect key="frame" x="21" y="12" width="28" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="28" id="aOd-v4-cZK"/>
                                     <constraint firstAttribute="width" secondItem="y8e-IM-Cc6" secondAttribute="height" multiplier="1:1" id="bA5-bt-OOh"/>
@@ -35,8 +35,8 @@
                                     <constraint firstAttribute="width" constant="14" id="fk3-nO-8KZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tetra Pack" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3N-CK-D7b">
-                                <rect key="frame" x="19" y="38.5" width="32.5" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tetra Pack" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3N-CK-D7b">
+                                <rect key="frame" x="19" y="44" width="32.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <color key="textColor" name="textGray"/>
                                 <nil key="highlightedColor"/>
@@ -45,7 +45,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="A3N-CK-D7b" secondAttribute="bottom" id="7GU-SY-Hba"/>
-                            <constraint firstItem="y8e-IM-Cc6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="600" id="LGC-ds-6Xg"/>
                             <constraint firstItem="y8e-IM-Cc6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="V3O-yo-Btx"/>
                             <constraint firstItem="A3N-CK-D7b" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y8e-IM-Cc6" secondAttribute="bottom" priority="950" id="YHe-Ph-dQW"/>
                             <constraint firstItem="A3N-CK-D7b" firstAttribute="centerX" secondItem="y8e-IM-Cc6" secondAttribute="centerX" id="cu6-x9-WOs"/>

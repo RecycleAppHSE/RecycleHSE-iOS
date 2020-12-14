@@ -170,6 +170,7 @@ private extension WasteTypesView {
         collectionView.dataSource = self
         
         collectionView.backgroundColor = .clear
+        collectionView.isScrollEnabled = false
         
         let cellNib = UINib(nibName: "WasteTypeCell", bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: "WasteTypeCell")

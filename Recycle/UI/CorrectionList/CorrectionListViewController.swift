@@ -35,6 +35,7 @@ class CorrectionListViewController: UIViewController {
             case .success(let corrections):
                 self?.corrections = corrections
                 self?.tableView.reloadData()
+                self?.view.layoutIfNeeded()
             case .failure(let error):
                 self?.show(error: error)
             }
