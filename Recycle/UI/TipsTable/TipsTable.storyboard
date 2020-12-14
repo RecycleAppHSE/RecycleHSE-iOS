@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tips Table View Controller-->
+        <!--Коллекции-->
         <scene sceneID="QjW-bo-FnP">
             <objects>
-                <viewController id="Qha-cC-o5k" customClass="TipsTableViewController" sceneMemberID="viewController">
+                <viewController title="Коллекции" id="Qha-cC-o5k" customClass="TipsTableViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hHT-Hn-dXN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,6 +77,9 @@
                             <constraint firstItem="zC5-xH-XoV" firstAttribute="trailing" secondItem="JOz-MK-0Yn" secondAttribute="trailing" id="vm7-Od-vLV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="JOz-MK-0Yn" id="cCL-GV-oQP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kif-Mr-bn1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
