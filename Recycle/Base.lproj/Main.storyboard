@@ -92,14 +92,27 @@
             <objects>
                 <navigationController id="ZMf-0a-HA7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Советы" image="tabtip" id="h3O-EM-Mfx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BLh-oL-RG3">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="BLh-oL-RG3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="LXR-GC-Z4U" kind="relationship" relationship="rootViewController" id="jvg-J1-rJx"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OK1-r8-Kqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="1008"/>
+        </scene>
+        <!--TipsTableViewController-->
+        <scene sceneID="cW3-pJ-JEc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TipsTable" referencedIdentifier="TipsTableViewController" id="LXR-GC-Z4U" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0HI-tC-nLL"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m1o-nO-XNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="1008"/>
         </scene>
     </scenes>
     <resources>

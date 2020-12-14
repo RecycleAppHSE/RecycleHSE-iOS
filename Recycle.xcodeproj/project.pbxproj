@@ -88,6 +88,10 @@
 		B0F7266D2588241200DFEF31 /* TipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7266C2588241200DFEF31 /* TipsTableViewCell.swift */; };
 		B0F726722588249500DFEF31 /* TipsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F726712588249500DFEF31 /* TipsCollection.swift */; };
 		B0F726772588265000DFEF31 /* TipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F726762588265000DFEF31 /* TipService.swift */; };
+		B0F7268125882A0900DFEF31 /* TipsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7268025882A0900DFEF31 /* TipsContainerViewController.swift */; };
+		B0F7268625882A2600DFEF31 /* TipPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F7268525882A2600DFEF31 /* TipPage.storyboard */; };
+		B0F7268B25882A3A00DFEF31 /* TipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7268A25882A3A00DFEF31 /* TipPageViewController.swift */; };
+		B0F7269125882E4C00DFEF31 /* TipsContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F7269025882E4C00DFEF31 /* TipsContainer.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +197,10 @@
 		B0F7266C2588241200DFEF31 /* TipsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsTableViewCell.swift; sourceTree = "<group>"; };
 		B0F726712588249500DFEF31 /* TipsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollection.swift; sourceTree = "<group>"; };
 		B0F726762588265000DFEF31 /* TipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipService.swift; sourceTree = "<group>"; };
+		B0F7268025882A0900DFEF31 /* TipsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsContainerViewController.swift; sourceTree = "<group>"; };
+		B0F7268525882A2600DFEF31 /* TipPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipPage.storyboard; sourceTree = "<group>"; };
+		B0F7268A25882A3A00DFEF31 /* TipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPageViewController.swift; sourceTree = "<group>"; };
+		B0F7269025882E4C00DFEF31 /* TipsContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipsContainer.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -571,6 +579,7 @@
 		B0F7265A2588229600DFEF31 /* TipsTable */ = {
 			isa = PBXGroup;
 			children = (
+				B0F7268F25882E4000DFEF31 /* TipsContainer */,
 				B0F72663258822B000DFEF31 /* Tips */,
 				B0F72667258822C900DFEF31 /* TipsTable.storyboard */,
 				B0F7265B258822AC00DFEF31 /* TipsTableViewController.swift */,
@@ -582,8 +591,19 @@
 		B0F72663258822B000DFEF31 /* Tips */ = {
 			isa = PBXGroup;
 			children = (
+				B0F7268525882A2600DFEF31 /* TipPage.storyboard */,
+				B0F7268A25882A3A00DFEF31 /* TipPageViewController.swift */,
 			);
 			path = Tips;
+			sourceTree = "<group>";
+		};
+		B0F7268F25882E4000DFEF31 /* TipsContainer */ = {
+			isa = PBXGroup;
+			children = (
+				B0F7269025882E4C00DFEF31 /* TipsContainer.storyboard */,
+				B0F7268025882A0900DFEF31 /* TipsContainerViewController.swift */,
+			);
+			path = TipsContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -702,6 +722,7 @@
 				B06457722536464A00A2CA6E /* PointInfo.storyboard in Resources */,
 				B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */,
 				B066542B25358604001C17A8 /* LaunchScreen.storyboard in Resources */,
+				B0F7268625882A2600DFEF31 /* TipPage.storyboard in Resources */,
 				B0F72668258822C900DFEF31 /* TipsTable.storyboard in Resources */,
 				B0852A9E2586B20A007ABCEC /* CorrectionList.storyboard in Resources */,
 				B066542825358604001C17A8 /* Assets.xcassets in Resources */,
@@ -710,6 +731,7 @@
 				B00FD1FB253601EC00225771 /* Colors.xcassets in Resources */,
 				B05EF03E257597D8002533B3 /* StatusCorrection.storyboard in Resources */,
 				B066542625358601001C17A8 /* Main.storyboard in Resources */,
+				B0F7269125882E4C00DFEF31 /* TipsContainer.storyboard in Resources */,
 				B05EF01A257579EE002533B3 /* WasteTypeCorrection.storyboard in Resources */,
 				B066545E2535866D001C17A8 /* Map.storyboard in Resources */,
 				B00FD20C253606D900225771 /* PointCalloutView.xib in Resources */,
@@ -742,6 +764,7 @@
 				B03BCDA52563292600214F79 /* Cancellable.swift in Sources */,
 				B0852AA92586B3F5007ABCEC /* CorrectionCell.swift in Sources */,
 				B062B2B225509C4C00F56049 /* Resolver.swift in Sources */,
+				B0F7268B25882A3A00DFEF31 /* TipPageViewController.swift in Sources */,
 				B07CDAFF2551821B0068C9E5 /* StatusViewModel.swift in Sources */,
 				B066541F25358601001C17A8 /* AppDelegate.swift in Sources */,
 				B062B3082550B3C000F56049 /* PointService.swift in Sources */,
@@ -773,6 +796,7 @@
 				B0F726772588265000DFEF31 /* TipService.swift in Sources */,
 				B0665490253595A3001C17A8 /* PointAnnotationView.swift in Sources */,
 				B064576A25362A1200A2CA6E /* PointInfoViewController.swift in Sources */,
+				B0F7268125882A0900DFEF31 /* TipsContainerViewController.swift in Sources */,
 				B05EF039257597D2002533B3 /* StatusCorrectionViewController.swift in Sources */,
 				B043CBF0253901B500807EA8 /* ProfileViewController.swift in Sources */,
 				B00FD204253606BE00225771 /* PointCalloutView.swift in Sources */,

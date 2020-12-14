@@ -13,12 +13,12 @@
         <!--Коллекции-->
         <scene sceneID="QjW-bo-FnP">
             <objects>
-                <viewController title="Коллекции" id="Qha-cC-o5k" customClass="TipsTableViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipsTableViewController" title="Коллекции" id="Qha-cC-o5k" customClass="TipsTableViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hHT-Hn-dXN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-MK-0Yn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JOz-MK-0Yn">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -35,12 +35,18 @@
                                                     <color key="textColor" name="textGray"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mug-oY-YBz">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mug-oY-YBz">
                                                     <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="asl-nr-lGd"/>
                                                         <constraint firstAttribute="height" constant="100" id="dP1-Bs-3Cs"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как утилизировать правильно?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvr-zu-ghw">
                                                     <rect key="frame" x="140" y="42" width="235" height="48"/>
@@ -60,6 +66,11 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="iEf-gV-Av0" secondAttribute="trailing" constant="32" id="yY1-7v-4h4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countLabel" destination="iEf-gV-Av0" id="D0c-5K-fTH"/>
+                                            <outlet property="nameLabel" destination="wvr-zu-ghw" id="6se-kP-hUr"/>
+                                            <outlet property="tipsImageView" destination="mug-oY-YBz" id="djK-PD-6K9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

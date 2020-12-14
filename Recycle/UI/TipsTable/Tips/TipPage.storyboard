@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tip Page View Controller-->
+        <scene sceneID="Rhq-nH-8KO">
+            <objects>
+                <viewController id="FMb-9v-HGC" customClass="TipPageViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rzv-8Y-ici">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4r9-kv-GAz">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y66-Az-vpy">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uE-bJ-zDr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="tips1" translatesAutoresizingMaskIntoConstraints="NO" id="Hmd-sp-fAS">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="306"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как организовать пространство для сортировки?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAm-eA-yk6">
+                                                <rect key="frame" x="16" y="339" width="382" height="97"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzF-sg-mvr">
+                                                <rect key="frame" x="16" y="452" width="382" height="304.5"/>
+                                                <mutableString key="text">Кажется, что если собирать отходы для переработки, то ими будет завалена вся квартира! На деле всё совсем не страшно. Ваш главный союзник – компактность! Можно взять одну коробку и складывать в неё все перерабатываемые отходы, а сортировать их по видам непосредственно перед сдачей в пункт приёма вторсырья. Можно завести отдельное мусорное ведро, например, только для сухих отходов. Макулатура и тетра пак в сложенном виде занимают совсем мало места, а алюминиевые банки успешно сплющиваются. Кроме того, в продаже есть специальные контейнеры для сортировки. Найти такие можно у IKEA и Jysk.</mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Hmd-sp-fAS" secondAttribute="trailing" id="A90-Rr-YZp"/>
+                                            <constraint firstAttribute="trailing" secondItem="zAm-eA-yk6" secondAttribute="trailing" constant="16" id="HzM-e5-kqO"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EzF-sg-mvr" secondAttribute="bottom" constant="40" id="IFz-QS-KCP"/>
+                                            <constraint firstItem="Hmd-sp-fAS" firstAttribute="top" secondItem="9uE-bJ-zDr" secondAttribute="top" constant="28" id="OON-Ik-BI0"/>
+                                            <constraint firstItem="zAm-eA-yk6" firstAttribute="leading" secondItem="9uE-bJ-zDr" secondAttribute="leading" constant="16" id="UKr-d5-fmf"/>
+                                            <constraint firstItem="EzF-sg-mvr" firstAttribute="top" secondItem="zAm-eA-yk6" secondAttribute="bottom" constant="16" id="Ulu-hn-b9U"/>
+                                            <constraint firstItem="zAm-eA-yk6" firstAttribute="top" secondItem="Hmd-sp-fAS" secondAttribute="bottom" constant="5" id="UuB-XP-1X2"/>
+                                            <constraint firstItem="EzF-sg-mvr" firstAttribute="trailing" secondItem="zAm-eA-yk6" secondAttribute="trailing" id="W7N-0v-kbl"/>
+                                            <constraint firstItem="Hmd-sp-fAS" firstAttribute="leading" secondItem="9uE-bJ-zDr" secondAttribute="leading" id="Y7Y-af-cgZ"/>
+                                            <constraint firstItem="EzF-sg-mvr" firstAttribute="leading" secondItem="zAm-eA-yk6" secondAttribute="leading" id="vsY-tt-paR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9uE-bJ-zDr" firstAttribute="top" secondItem="Y66-Az-vpy" secondAttribute="top" id="FXm-bQ-paF"/>
+                                    <constraint firstItem="9uE-bJ-zDr" firstAttribute="height" secondItem="Y66-Az-vpy" secondAttribute="height" priority="500" id="N0i-L7-B0u"/>
+                                    <constraint firstAttribute="bottom" secondItem="9uE-bJ-zDr" secondAttribute="bottom" id="P9P-QT-N75"/>
+                                    <constraint firstItem="9uE-bJ-zDr" firstAttribute="leading" secondItem="Y66-Az-vpy" secondAttribute="leading" id="eyk-DC-hR9"/>
+                                    <constraint firstAttribute="trailing" secondItem="9uE-bJ-zDr" secondAttribute="trailing" id="uMa-YY-ebP"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="VmT-BT-gHD"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="KpH-xy-mJA"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BQS-L5-Upf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BQS-L5-Upf" firstAttribute="bottom" secondItem="Y66-Az-vpy" secondAttribute="bottom" id="D8t-li-cyZ"/>
+                            <constraint firstItem="Y66-Az-vpy" firstAttribute="leading" secondItem="BQS-L5-Upf" secondAttribute="leading" id="HP3-sB-NsD"/>
+                            <constraint firstItem="Y66-Az-vpy" firstAttribute="top" secondItem="BQS-L5-Upf" secondAttribute="top" id="TAw-nu-Tl6"/>
+                            <constraint firstItem="9uE-bJ-zDr" firstAttribute="width" secondItem="Rzv-8Y-ici" secondAttribute="width" id="meF-bi-upi"/>
+                            <constraint firstItem="BQS-L5-Upf" firstAttribute="trailing" secondItem="Y66-Az-vpy" secondAttribute="trailing" id="ol6-gW-PHS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="EzF-sg-mvr" id="XqS-HT-X3L"/>
+                        <outlet property="imageView" destination="Hmd-sp-fAS" id="AC7-YK-7XJ"/>
+                        <outlet property="nameLabel" destination="zAm-eA-yk6" id="bcC-Si-Hky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ljx-sZ-rft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="73.660714285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tips1" width="375" height="306"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

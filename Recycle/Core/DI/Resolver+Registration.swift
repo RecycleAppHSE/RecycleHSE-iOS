@@ -44,6 +44,10 @@ extension Resolver {
             )
         }
         
+        add(type: TipService.self) {
+            TipServiceImp(api: self.resolve())
+        }
+        
         add(type: AppHelper.self) {
             AppHelperImp(
                 application: UIApplication.shared

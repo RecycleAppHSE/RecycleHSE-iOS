@@ -35,6 +35,7 @@ struct TipCollectionResponse: Decodable {
 }
 
 struct Tip: Decodable {
+    
     let id: Int
     let colllectionId: Int
     let title: String
