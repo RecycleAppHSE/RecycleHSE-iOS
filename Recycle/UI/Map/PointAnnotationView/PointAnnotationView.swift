@@ -11,14 +11,9 @@ import MapKit
 final class PointAnnotationView: MKAnnotationView {
     
     let calloutView = PointCalloutView()
+    let circleView = UIView()
 
     // MARK: Initialization
-    
-//    override var annotation: MKAnnotation? {
-//        willSet {
-//            configureDetailView()
-//        }
-//    }
 
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
@@ -31,7 +26,7 @@ final class PointAnnotationView: MKAnnotationView {
         let button = UIButton(type: .detailDisclosure)
         button.setImage(#imageLiteral(resourceName: "rightArrow"), for: .normal)
         button.tintColor = .black
-        button.frame = .init(x: 0, y: 0, width: 20, height: 20)
+        button.frame = .init(x: 0, y: 0, width: 30, height: 30)
         rightCalloutAccessoryView = button
         
         canShowCallout = true
@@ -47,31 +42,44 @@ final class PointAnnotationView: MKAnnotationView {
     
     override func prepareForDisplay() {
         super.prepareForDisplay()
-        configureDetailView()
+        configure()
     }
 
     // MARK: Setup
 
     private func setupCircleView() {
+        
         backgroundColor = .clear
 
-        let circleView = UIView()
-        circleView.backgroundColor = .main
-        circleView.layer.cornerRadius = 7
+        let size: CGFloat = 20
+        let origin = size / 2
+        
+        circleView.layer.cornerRadius = origin
         circleView.clipsToBounds = true
+        
         addSubview(circleView)
 
-        circleView.frame = CGRect(x: 7, y: 7, width: 14, height: 14)
+        circleView.frame = CGRect(x: origin, y: origin, width: size, height: size)
     }
 }
 
 private extension PointAnnotationView {
     
-    func configureDetailView() {
+    func configure() {
         guard let annotation = annotation as? PointAnnotation else { return }
         
         calloutView.configure(
             images: annotation.wasteImages
         )
+        
+        if annotation.partlyFilter {
+            circleView.backgroundColor = .white
+            circleView.layer.borderColor = UIColor.main?.cgColor
+            circleView.layer.borderWidth = 5
+        } else {
+            circleView.backgroundColor = .main
+            circleView.layer.borderColor = UIColor.clear.cgColor
+            circleView.layer.borderWidth = 0
+        }
     }
 }

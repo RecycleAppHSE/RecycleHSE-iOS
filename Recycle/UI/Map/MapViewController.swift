@@ -237,7 +237,8 @@ private extension MapViewController {
         if containsAny {
             return PointAnnotation(
                 point: point,
-                filterTypes: filterTypes
+                filterTypes: filterTypes,
+                partlyFilter: true
             )
         }
         

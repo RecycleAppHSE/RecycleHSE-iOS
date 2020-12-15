@@ -20,11 +20,13 @@ class PointAnnotation: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
     
     let wasteImages: [WasteImageModel]
+    let partlyFilter: Bool
     
     // MARK: - Init
     
-    init(point: RecyclePoint, filterTypes: [WasteType]) {
+    init(point: RecyclePoint, filterTypes: [WasteType], partlyFilter: Bool = false) {
         id = point.id
+        self.partlyFilter = partlyFilter
         let types = point.wasteTypes.filter { !$0.isUnknown }
         wasteImages = types.map {
             let image = WasteTypeModel(type: $0).image
