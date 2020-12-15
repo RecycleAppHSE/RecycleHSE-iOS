@@ -33,12 +33,25 @@ final class PointClusterView: MKAnnotationView {
     }
     
     func image(annotation: MKClusterAnnotation, count: Int) -> UIImage? {
+        let hasPartlyFilter = self.hasPartlyFilter(annotation)
+        let backgroundColor: UIColor = hasPartlyFilter ? .white : .main
+        let textColor: UIColor = hasPartlyFilter ? .main : .white
+        
+        layer.cornerRadius = 20
+        layer.borderColor = textColor.cgColor
+        
+        if hasPartlyFilter {
+            layer.borderWidth = 5
+        } else {
+            layer.borderWidth = 0
+        }
+        
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 40.0, height: 40.0))
         image = renderer.image { _ in
-            UIColor.main?.setFill()
+            backgroundColor.setFill()
             UIBezierPath(ovalIn: CGRect(x: 0.0, y: 0.0, width: 40.0, height: 40.0)).fill()
             let attributes: [NSAttributedString.Key: Any] = [
-                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.foregroundColor: textColor,
                 NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20.0)
             ]
 
@@ -49,5 +62,16 @@ final class PointClusterView: MKAnnotationView {
         }
         
         return image
+    }
+    
+    private func hasPartlyFilter(_ clusterAnnotation: MKClusterAnnotation) -> Bool {
+        for annotation in clusterAnnotation.memberAnnotations {
+            let pointAnnotation = annotation as? PointAnnotation
+            if pointAnnotation?.partlyFilter == true {
+                return true
+            }
+        }
+        
+        return false
     }
 }

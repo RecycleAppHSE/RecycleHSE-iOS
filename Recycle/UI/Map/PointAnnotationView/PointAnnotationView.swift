@@ -74,7 +74,7 @@ private extension PointAnnotationView {
         
         if annotation.partlyFilter {
             circleView.backgroundColor = .white
-            circleView.layer.borderColor = UIColor.main?.cgColor
+            circleView.layer.borderColor = UIColor.main.cgColor
             circleView.layer.borderWidth = 5
         } else {
             circleView.backgroundColor = .main
