@@ -35,7 +35,15 @@
                             <constraint firstItem="V4P-pA-uSG" firstAttribute="top" secondItem="p11-QT-J0c" secondAttribute="top" id="u8f-Lv-WA3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Исправления" id="yDb-By-s5o">
+                        <barButtonItem key="rightBarButtonItem" title="Править" id="Sfd-uy-6GE">
+                            <connections>
+                                <action selector="edit" destination="rKB-Q1-Lgb" id="jhr-5e-LZA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="Sfd-uy-6GE" id="0WG-Jz-698"/>
                         <outlet property="tableView" destination="V4P-pA-uSG" id="G5g-HK-vFH"/>
                     </connections>
                 </viewController>

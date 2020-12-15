@@ -32,6 +32,8 @@ protocol CorrectionService {
     func set(isLiked: Int,
              for id: Int,
              callback: @escaping ResultCallback<Void>)
+    
+    func delete(id: Int, callback: @escaping ResultCallback<EmptyResponse>)
 }
 
 struct CorrectionServiceImp {
@@ -146,6 +148,12 @@ extension CorrectionServiceImp: CorrectionService {
             case .failure(let error):
                 callback(.failure(error))
             }
+        }
+    }
+    
+    func delete(id: Int, callback: @escaping ResultCallback<EmptyResponse>) {
+        api.request("correction/\(id)", method: .delete) { (result: Result<EmptyResponse, Error>) in
+            callback(result)
         }
     }
 }

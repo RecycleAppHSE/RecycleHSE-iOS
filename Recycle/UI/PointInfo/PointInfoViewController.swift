@@ -162,7 +162,11 @@ private extension PointInfoViewController {
         )
 
         geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
-            guard let placemark = placemarks?.first else { return }
+            guard let placemark = placemarks?.first,
+                  error == nil else {
+                self?.titleLabel.text = self?.point.address
+                return
+            }
 
             let street = placemark.thoroughfare ?? ""
             let house = placemark.subThoroughfare ?? ""

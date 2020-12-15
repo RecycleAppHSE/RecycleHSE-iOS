@@ -9,6 +9,7 @@ import UIKit
 
 class CorrectionListViewController: UIViewController {
     
+    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet var tableView: UITableView!
     
     @Inject var service: CorrectionService
@@ -27,6 +28,14 @@ class CorrectionListViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: cellId)
         
         loadCorrections()
+    }
+    
+    @IBAction func edit() {
+        let isEditing = !tableView.isEditing
+        tableView.setEditing(isEditing, animated: true)
+        
+        let title = tableView.isEditing ? "Готово" : "Править"
+        editButton.title = title
     }
     
     func loadCorrections() {
@@ -71,5 +80,24 @@ extension CorrectionListViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         corrections.count
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let correction = corrections[indexPath.row]
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Удалить\nисправление") { [weak self] (action, indexPath) in
+            
+            self?.service.delete(id: correction.id) { result in
+                switch result {
+                case .success:
+                    self?.corrections.remove(at: indexPath.row)
+                    self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+                case .failure(let error):
+                    self?.show(error: error)
+                }
+            }
+        }
+
+        return [delete]
     }
 }
