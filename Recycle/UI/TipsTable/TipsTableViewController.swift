@@ -63,14 +63,18 @@ extension TipsTableViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func show(tips: [Tip], title: String) {
-        let vc = TipsContainerViewController()
+        let vc = TipsContainerViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [:])
         
         vc.title = title
-        vc.orderedViewControllers = tips.map {
+        vc.controllers = tips.map {
             let page: TipPageViewController = create()
             page.tip = $0
             return page
         }
+        
+        let test: TipPageViewController = create()
+        test.tip = tips.first
+        vc.controllers.append(test)
         
         navigationController?.pushViewController(vc, animated: true)
     }
