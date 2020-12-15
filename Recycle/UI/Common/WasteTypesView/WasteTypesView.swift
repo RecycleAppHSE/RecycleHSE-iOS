@@ -183,5 +183,11 @@ private extension WasteTypesView {
         collectionView.register(cellNib, forCellWithReuseIdentifier: "WasteTypeCell")
         
         heightConstraint.priority = .fittingSizeLevel
+        
+        
+        let width = UIScreen.main.bounds.width
+        if width >= 350 {
+            itemSpacing = 20
+        }
     }
 }

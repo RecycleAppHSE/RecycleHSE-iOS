@@ -373,6 +373,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elv-Mq-V9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationItem id="q2m-uS-QES">
+                    <barButtonItem key="backBarButtonItem" title="Назад" id="9xe-Di-kGy"/>
+                </navigationItem>
             </objects>
             <point key="canvasLocation" x="205.79710144927537" y="205.58035714285714"/>
         </scene>

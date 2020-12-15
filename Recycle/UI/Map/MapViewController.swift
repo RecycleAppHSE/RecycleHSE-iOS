@@ -139,12 +139,13 @@ private extension MapViewController {
     
     func setupMap() {
         mapView.delegate = self
+        mapView.showsUserLocation = true
         
         mapView.register(PointAnnotationView.self, forAnnotationViewWithReuseIdentifier: annotationId)
         
         mapView.register(PointClusterView.self, forAnnotationViewWithReuseIdentifier: clusterId)
         
-        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 40000)
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: 1000000)
         mapView.setCameraZoomRange(zoomRange, animated: false)
         
         let moscow = CLLocation(latitude: 55.7558, longitude: 37.6173)

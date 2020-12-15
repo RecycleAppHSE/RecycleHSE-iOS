@@ -39,6 +39,11 @@ class CorrectionListViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     @IBAction func edit() {
         let isEditing = !tableView.isEditing
         tableView.setEditing(isEditing, animated: true)
@@ -51,7 +56,9 @@ class CorrectionListViewController: UIViewController {
         let callback: ResultCallback<[Correction]> = { [weak self] result in
             switch result {
             case .success(let corrections):
-                self?.corrections = corrections
+                self?.corrections = corrections.sorted(by: {
+                    $0.submitTime > $1.submitTime
+                })
                 self?.tableView.reloadData()
                 self?.view.layoutIfNeeded()
             case .failure(let error):
@@ -80,7 +87,7 @@ extension CorrectionListViewController: UITableViewDataSource, UITableViewDelega
         ) as! CorrectionCell
         
         let correction = corrections[indexPath.row]
-        cell.point = point ?? pointService.point(with: correction.id)
+        cell.point = point ?? pointService.point(with: correction.pointId)
         cell.correction = correction
         cell.configure()
         

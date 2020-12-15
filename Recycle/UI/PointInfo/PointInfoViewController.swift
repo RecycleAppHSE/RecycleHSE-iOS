@@ -48,10 +48,10 @@ class PointInfoViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: true)
+//    }
     
     // MARK: - Actions
     
@@ -90,11 +90,11 @@ extension PointInfoViewController {
     func loadTitle() {
         organizationLabel.text = point.name
         
-//        if let address = point.address {
-//            titleLabel.text = address
-//        } else {
+        if let address = point.address {
+            titleLabel.text = address
+        } else {
             loadAddress()
-//        }
+        }
     }
     
     func configureWasteTypes() {
