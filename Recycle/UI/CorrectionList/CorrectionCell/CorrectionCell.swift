@@ -34,10 +34,17 @@ class CorrectionCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dislikeButton: UIButton!
     
+    
+    @IBOutlet weak var selfLikeContainer: UIView!
+    @IBOutlet weak var selfLikeButton: UIButton!
+    @IBOutlet weak var selfDislikeButton: UIButton!
+    
+    
     var point: RecyclePoint?
     var correction: Correction!
     
     @Inject var service: CorrectionService
+    @Inject var userService: UserService
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,9 +67,12 @@ class CorrectionCell: UITableViewCell {
         likeButton.setTitle(likeText, for: .normal)
         likeButton.setTitle(likeText, for: .selected)
         
+        selfLikeButton.setTitle(likeText, for: .normal)
+        
         let dislikeText = " \(correction.dislikeCount)"
         dislikeButton.setTitle(dislikeText, for: .normal)
         dislikeButton.setTitle(dislikeText, for: .selected)
+        selfDislikeButton.setTitle(dislikeText, for: .normal)
         
         let isLiked = Self.likedIds.contains(correction.id)
         let isDisliked = Self.dislikedIds.contains(correction.id)
@@ -70,8 +80,9 @@ class CorrectionCell: UITableViewCell {
         likeButton.isSelected = isLiked
         dislikeButton.isSelected = isDisliked
         
-        likeButton.isEnabled = service.wasLiked(id: correction.id)
-        dislikeButton.isEnabled = service.wasUnliked(id: correction.id)
+        let isCurrentUser = self.isCurrentUser
+        likesContainer.isHiddenInStackView = isCurrentUser
+        selfLikeContainer.isHiddenInStackView = !isCurrentUser
         
         let isStatusMode = correction.isStatusMode
         typesContainer.isHiddenInStackView = isStatusMode
@@ -114,7 +125,12 @@ class CorrectionCell: UITableViewCell {
         }
     }
     
-    @IBAction func likeTapped(_ sender: Any) {
+    @IBAction func likeTapped(_ sender: UIButton) {
+        guard !sender.isSelected else {
+            unlike()
+            return
+        }
+        
         service.set(isLiked: 1, for: correction.id) { [weak self] result in
             switch result {
             case .success:
@@ -125,7 +141,12 @@ class CorrectionCell: UITableViewCell {
         }
     }
     
-    @IBAction func dislikeTapped(_ sender: Any) {
+    @IBAction func dislikeTapped(_ sender: UIButton) {
+        guard !sender.isSelected else {
+            unlike()
+            return
+        }
+        
         service.set(isLiked: -1, for: correction.id) { [weak self] result in
             switch result {
             case .success:
@@ -154,6 +175,11 @@ class CorrectionCell: UITableViewCell {
         imageView.backgroundColor = statusViewModel.color
         label.text = statusViewModel.text
         label.textColor = statusViewModel.color
+    }
+    
+    var isCurrentUser: Bool {
+        let all = userService.user?.correctionIds.all ?? []
+        return all.contains(correction.id)
     }
     
     static let formatter: DateFormatter = {

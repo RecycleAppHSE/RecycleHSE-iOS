@@ -14,8 +14,10 @@ class CorrectionListViewController: UIViewController {
     
     @Inject var service: CorrectionService
     @Inject var pointService: PointService
+    @Inject var userService: UserService
     
     var point: RecyclePoint?
+    var user: User?
     
     var ids: [Int]? = nil
     
@@ -24,10 +26,17 @@ class CorrectionListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if !isUserMode {
+            navigationItem.rightBarButtonItem = nil
+        }
+        
         let nib = UINib(nibName: "CorrectionCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellId)
         
-        loadCorrections()
+        userService.getUser { [weak self] result in
+            self?.user = result.value
+            self?.loadCorrections()
+        }
     }
     
     @IBAction func edit() {
@@ -83,6 +92,10 @@ extension CorrectionListViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        guard isUserMode else {
+            return nil
+        }
+        
         let correction = corrections[indexPath.row]
         
         let delete = UITableViewRowAction(style: .destructive, title: "Удалить\nисправление") { [weak self] (action, indexPath) in
@@ -99,5 +112,9 @@ extension CorrectionListViewController: UITableViewDataSource, UITableViewDelega
         }
 
         return [delete]
+    }
+    
+    var isUserMode: Bool {
+        ids != nil
     }
 }

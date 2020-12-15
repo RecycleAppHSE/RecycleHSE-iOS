@@ -13,7 +13,6 @@ class WasteTypesView: UIView {
     // MARK: - Properties
     
     var selectedTypes: [WasteType] = []
-    var cellsInRowCount = 4
     
     var sectionInsets = UIEdgeInsets(
         top: 12,
@@ -22,6 +21,7 @@ class WasteTypesView: UIView {
         right: 12
     )
     
+    var itemSpacing: CGFloat = 10
     var size: CGSize = .init(width: 70, height: 70)
     var textFont: UIFont = .systemFont(ofSize: 13, weight: .semibold)
     
@@ -82,6 +82,7 @@ class WasteTypesView: UIView {
     
     func setupSmall() {
         size = CGSize(width: 40, height: 40)
+        itemSpacing = 4
         sectionInsets = .init(top: 4, left: 4, bottom: 4, right: 4)
         textFont = .systemFont(ofSize: 8, weight: .semibold)
     }
@@ -158,7 +159,7 @@ extension WasteTypesView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        10
+        itemSpacing
     }
 }
 

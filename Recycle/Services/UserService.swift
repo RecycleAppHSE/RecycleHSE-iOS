@@ -9,12 +9,16 @@ import Foundation
 
 protocol UserService {
     
+    var user: User? { get }
+      
     func createUserIfNeeded(_ callback: ResultCallback<Void>?)
     func getUser(callback: @escaping ResultCallback<User>)
     func updateName(_ name: String, _ callback: @escaping ResultCallback<Void>)
 }
 
 class UserServiceImp {
+    
+    static var user: User?
     
     let api: ApiClient
     let store: KeyValueStore
@@ -30,6 +34,10 @@ extension UserServiceImp: UserService {
     
     private struct UserResponse: Decodable {
         let userId: Int
+    }
+    
+    var user: User? {
+        Self.user
     }
     
     func createUserIfNeeded(_ callback: ResultCallback<Void>?) {
@@ -51,6 +59,7 @@ extension UserServiceImp: UserService {
     
     func getUser(callback: @escaping ResultCallback<User>) {
         api.request("me") { (result: Result<User, Error>) in
+            Self.user = result.value
             callback(result)
         }
     }

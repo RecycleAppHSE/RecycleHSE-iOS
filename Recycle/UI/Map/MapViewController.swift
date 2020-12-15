@@ -209,7 +209,7 @@ private extension MapViewController {
     }
     
     func annotation(for point: RecyclePoint) -> PointAnnotation? {
-        guard filterTypes.isEmpty else {
+        guard !filterTypes.isEmpty else {
             return PointAnnotation(
                 point: point,
                 filterTypes: filterTypes

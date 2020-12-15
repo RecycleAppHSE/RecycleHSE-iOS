@@ -12,8 +12,7 @@ final class SearchCell: UITableViewCell {
     @IBOutlet weak var titleNameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
-    func configure(title: String, text: String?
-    ) {
+    func configure(title: String, text: String?) {
         titleNameLabel.text = text
         addressLabel.text = title
     }
