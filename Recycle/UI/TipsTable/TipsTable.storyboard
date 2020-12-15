@@ -88,6 +88,9 @@
                             <constraint firstItem="zC5-xH-XoV" firstAttribute="trailing" secondItem="JOz-MK-0Yn" secondAttribute="trailing" id="vm7-Od-vLV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Коллекции" id="usO-DV-nqN">
+                        <barButtonItem key="backBarButtonItem" title="Коллекции" id="29f-B0-YCZ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="JOz-MK-0Yn" id="cCL-GV-oQP"/>
                     </connections>

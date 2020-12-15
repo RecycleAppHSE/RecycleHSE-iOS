@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Resolver.shared.registerDependencies()
         
+        var navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = .main
+        
         return true
     }
 
