@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pJh-WY-a2j">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="839"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWM-p6-oGZ" userLabel="Title Container">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="75.5"/>
@@ -126,10 +126,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="193.5" translatesAutoresizingMaskIntoConstraints="NO" id="k0l-vX-WlV">
-                                                <rect key="frame" x="0.0" y="125.5" width="414" height="193.5"/>
+                                                <rect key="frame" x="0.0" y="125.5" width="414" height="214.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Принимает:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O58-i0-P4t">
-                                                        <rect key="frame" x="14" y="0.0" width="125.5" height="32"/>
+                                                        <rect key="frame" x="14" y="21" width="125.5" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="eWC-He-uiv"/>
                                                         </constraints>
@@ -138,7 +138,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="131.5" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-pc-LvK" customClass="WasteTypesView" customModule="Recycle" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="42" width="414" height="131.5"/>
+                                                        <rect key="frame" x="0.0" y="63" width="414" height="131.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </view>
                                                 </subviews>
@@ -147,24 +147,24 @@
                                                     <constraint firstAttribute="bottom" secondItem="uWa-pc-LvK" secondAttribute="bottom" constant="20" id="24Y-Iu-qK6"/>
                                                     <constraint firstAttribute="trailing" secondItem="uWa-pc-LvK" secondAttribute="trailing" id="BRM-7D-j78"/>
                                                     <constraint firstItem="uWa-pc-LvK" firstAttribute="leading" secondItem="k0l-vX-WlV" secondAttribute="leading" id="XGa-En-nwc"/>
-                                                    <constraint firstItem="O58-i0-P4t" firstAttribute="top" secondItem="k0l-vX-WlV" secondAttribute="top" id="h2x-3q-WNu"/>
+                                                    <constraint firstItem="O58-i0-P4t" firstAttribute="top" secondItem="k0l-vX-WlV" secondAttribute="top" constant="21" id="h2x-3q-WNu"/>
                                                     <constraint firstItem="uWa-pc-LvK" firstAttribute="top" secondItem="O58-i0-P4t" secondAttribute="bottom" constant="10" id="hSm-qW-mFj"/>
                                                     <constraint firstItem="O58-i0-P4t" firstAttribute="leading" secondItem="k0l-vX-WlV" secondAttribute="leading" constant="14" id="r41-kD-fkZ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtR-kq-PeR">
-                                                <rect key="frame" x="0.0" y="319" width="414" height="351"/>
+                                                <rect key="frame" x="0.0" y="340" width="414" height="351"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ee3-Wy-Z7r">
-                                                <rect key="frame" x="0.0" y="670" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="691" width="414" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="eVt-70-TFb"/>
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-Of-b0W">
-                                                <rect key="frame" x="0.0" y="670" width="414" height="142"/>
+                                                <rect key="frame" x="0.0" y="691" width="414" height="142"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Работает 24 часа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rM-wU-pAq">
                                                         <rect key="frame" x="14" y="8" width="386" height="32"/>
@@ -290,7 +290,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-D1-o6g">
-                                                <rect key="frame" x="0.0" y="670" width="414" height="148"/>
+                                                <rect key="frame" x="0.0" y="691" width="414" height="148"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-k2-kZo">
                                                         <rect key="frame" x="64" y="20" width="286" height="46"/>
@@ -359,6 +359,9 @@
                             <constraint firstItem="bh2-pJ-U9B" firstAttribute="top" secondItem="yrX-mE-wSq" secondAttribute="top" id="eWc-b3-DbF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="q2m-uS-QES">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="9xe-Di-kGy"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="correctionsButton" destination="s0B-Y7-Hhs" id="hl2-fU-zwZ"/>
                         <outlet property="emailButton" destination="zBQ-Q1-l7g" id="X9s-RY-UQz"/>
@@ -373,9 +376,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elv-Mq-V9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationItem id="q2m-uS-QES">
-                    <barButtonItem key="backBarButtonItem" title="Назад" id="9xe-Di-kGy"/>
-                </navigationItem>
             </objects>
             <point key="canvasLocation" x="205.79710144927537" y="205.58035714285714"/>
         </scene>

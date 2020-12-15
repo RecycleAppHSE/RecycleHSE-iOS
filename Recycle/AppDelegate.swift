@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Resolver.shared.registerDependencies()
         
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.prefersLargeTitles = true
         navigationBarAppearace.tintColor = .main
         
         return true
