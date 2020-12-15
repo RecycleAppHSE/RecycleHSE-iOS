@@ -74,8 +74,8 @@ class CorrectionCell: UITableViewCell {
         dislikeButton.setTitle(dislikeText, for: .selected)
         selfDislikeButton.setTitle(dislikeText, for: .normal)
         
-        let isLiked = Self.likedIds.contains(correction.id)
-        let isDisliked = Self.dislikedIds.contains(correction.id)
+        let isLiked = service.wasLiked(id: correction.id)
+        let isDisliked = service.wasUnliked(id: correction.id)
         
         likeButton.isSelected = isLiked
         dislikeButton.isSelected = isDisliked
@@ -83,6 +83,11 @@ class CorrectionCell: UITableViewCell {
         let isCurrentUser = self.isCurrentUser
         likesContainer.isHiddenInStackView = isCurrentUser
         selfLikeContainer.isHiddenInStackView = !isCurrentUser
+        
+        if correction.status != .inProgress {
+            likesContainer.isHiddenInStackView = true
+            selfLikeContainer.isHiddenInStackView = true
+        }
         
         let isStatusMode = correction.isStatusMode
         typesContainer.isHiddenInStackView = isStatusMode
@@ -134,7 +139,9 @@ class CorrectionCell: UITableViewCell {
         service.set(isLiked: 1, for: correction.id) { [weak self] result in
             switch result {
             case .success:
-                self?.likeButton.isSelected = true
+                self?.correction.likeCount += 1
+                self?.configure()
+                self?.reloadCorrection()
             case .failure:
                 break
             }
@@ -150,7 +157,9 @@ class CorrectionCell: UITableViewCell {
         service.set(isLiked: -1, for: correction.id) { [weak self] result in
             switch result {
             case .success:
-                self?.dislikeButton.isSelected = true
+                self?.correction.dislikeCount += 1
+                self?.configure()
+                self?.reloadCorrection()
             case .failure:
                 break
             }
@@ -161,8 +170,7 @@ class CorrectionCell: UITableViewCell {
         service.set(isLiked: 0, for: correction.id) { [weak self] result in
             switch result {
             case .success:
-                self?.likeButton.isSelected = false
-                self?.dislikeButton.isSelected = false
+                self?.reloadCorrection()
             case .failure:
                 break
             }
@@ -182,12 +190,18 @@ class CorrectionCell: UITableViewCell {
         return all.contains(correction.id)
     }
     
+    func reloadCorrection() {
+        service.loadCorrections(ids: [correction.id]) { [weak self] result in
+            if let value = result.value?.first {
+                self?.correction = value
+                self?.configure()
+            }
+        }
+    }
+    
     static let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.M.yyyy в HH:mm"
         return formatter
     }()
-    
-    static var likedIds = [Int]()
-    static var dislikedIds = [Int]()
 }

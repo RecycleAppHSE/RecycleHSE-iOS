@@ -74,8 +74,12 @@ struct WasteTypeModel {
             return #imageLiteral(resourceName: "power-mini")
         case .tetraPack:
             return #imageLiteral(resourceName: "milk-mini")
-        case .tires, .caps, .other:
-            return #imageLiteral(resourceName: "cancel")
+        case .tires:
+            return #imageLiteral(resourceName: "other3")
+        case .caps:
+            return #imageLiteral(resourceName: "other1")
+        case .other:
+            return #imageLiteral(resourceName: "other2")
         }
     }
 }

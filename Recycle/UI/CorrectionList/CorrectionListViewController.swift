@@ -91,12 +91,21 @@ extension CorrectionListViewController: UITableViewDataSource, UITableViewDelega
         corrections.count
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        let correction = corrections[indexPath.row]
+        guard isUserMode, correction.status == .inProgress else {
+            return false
+        }
+        
+        return true
+    }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        guard isUserMode else {
+        let correction = corrections[indexPath.row]
+        guard isUserMode, correction.status == .inProgress else {
             return nil
         }
         
-        let correction = corrections[indexPath.row]
         
         let delete = UITableViewRowAction(style: .destructive, title: "Удалить\nисправление") { [weak self] (action, indexPath) in
             
