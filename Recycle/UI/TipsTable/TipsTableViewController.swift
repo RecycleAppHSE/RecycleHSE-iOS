@@ -46,4 +46,36 @@ extension TipsTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tipCollections.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tipsCollection = tipCollections[indexPath.row]
+        
+        service.loadTips(collectionId: tipsCollection.id) { [weak self] result in
+            switch result {
+            case .success(let tips):
+                self?.show(tips: tips, title: tipsCollection.title)
+            case .failure(let error):
+                self?.show(error: error)
+            }
+        }
+    }
+    
+    func show(tips: [Tip], title: String) {
+        let vc = TipsContainerViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: [:])
+        
+        vc.title = title
+        vc.orderedViewControllers = tips.map {
+            let page: TipPageViewController = create()
+            page.tip = $0
+            return page
+        }
+        
+        vc.orderedViewControllers.append(contentsOf: tips.map {
+            let page: TipPageViewController = create()
+            page.tip = $0
+            return page
+        })
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

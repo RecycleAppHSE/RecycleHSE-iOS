@@ -12,7 +12,7 @@
         <!--Tip Page View Controller-->
         <scene sceneID="Rhq-nH-8KO">
             <objects>
-                <viewController id="FMb-9v-HGC" customClass="TipPageViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipPageViewController" id="FMb-9v-HGC" customClass="TipPageViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rzv-8Y-ici">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzF-sg-mvr">
                                                 <rect key="frame" x="16" y="452" width="382" height="304.5"/>
-                                                <mutableString key="text">Кажется, что если собирать отходы для переработки, то ими будет завалена вся квартира! На деле всё совсем не страшно. Ваш главный союзник – компактность! Можно взять одну коробку и складывать в неё все перерабатываемые отходы, а сортировать их по видам непосредственно перед сдачей в пункт приёма вторсырья. Можно завести отдельное мусорное ведро, например, только для сухих отходов. Макулатура и тетра пак в сложенном виде занимают совсем мало места, а алюминиевые банки успешно сплющиваются. Кроме того, в продаже есть специальные контейнеры для сортировки. Найти такие можно у IKEA и Jysk.</mutableString>
+                                                <string key="text">Кажется, что если собирать отходы для переработки, то ими будет завалена вся квартира! На деле всё совсем не страшно. Ваш главный союзник – компактность! Можно взять одну коробку и складывать в неё все перерабатываемые отходы, а сортировать их по видам непосредственно перед сдачей в пункт приёма вторсырья. Можно завести отдельное мусорное ведро, например, только для сухих отходов. Макулатура и тетра пак в сложенном виде занимают совсем мало места, а алюминиевые банки успешно сплющиваются. Кроме того, в продаже есть специальные контейнеры для сортировки. Найти такие можно у IKEA и Jysk.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

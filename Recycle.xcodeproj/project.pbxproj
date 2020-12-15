@@ -91,7 +91,6 @@
 		B0F7268125882A0900DFEF31 /* TipsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7268025882A0900DFEF31 /* TipsContainerViewController.swift */; };
 		B0F7268625882A2600DFEF31 /* TipPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F7268525882A2600DFEF31 /* TipPage.storyboard */; };
 		B0F7268B25882A3A00DFEF31 /* TipPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F7268A25882A3A00DFEF31 /* TipPageViewController.swift */; };
-		B0F7269125882E4C00DFEF31 /* TipsContainer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F7269025882E4C00DFEF31 /* TipsContainer.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,7 +199,6 @@
 		B0F7268025882A0900DFEF31 /* TipsContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsContainerViewController.swift; sourceTree = "<group>"; };
 		B0F7268525882A2600DFEF31 /* TipPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipPage.storyboard; sourceTree = "<group>"; };
 		B0F7268A25882A3A00DFEF31 /* TipPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPageViewController.swift; sourceTree = "<group>"; };
-		B0F7269025882E4C00DFEF31 /* TipsContainer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TipsContainer.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -600,7 +598,6 @@
 		B0F7268F25882E4000DFEF31 /* TipsContainer */ = {
 			isa = PBXGroup;
 			children = (
-				B0F7269025882E4C00DFEF31 /* TipsContainer.storyboard */,
 				B0F7268025882A0900DFEF31 /* TipsContainerViewController.swift */,
 			);
 			path = TipsContainer;
@@ -731,7 +728,6 @@
 				B00FD1FB253601EC00225771 /* Colors.xcassets in Resources */,
 				B05EF03E257597D8002533B3 /* StatusCorrection.storyboard in Resources */,
 				B066542625358601001C17A8 /* Main.storyboard in Resources */,
-				B0F7269125882E4C00DFEF31 /* TipsContainer.storyboard in Resources */,
 				B05EF01A257579EE002533B3 /* WasteTypeCorrection.storyboard in Resources */,
 				B066545E2535866D001C17A8 /* Map.storyboard in Resources */,
 				B00FD20C253606D900225771 /* PointCalloutView.xib in Resources */,

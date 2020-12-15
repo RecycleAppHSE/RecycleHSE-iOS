@@ -7,14 +7,17 @@
 
 import UIKit
 
-class TipsContainerViewController: UIViewController {
+class TipsContainerViewController: UIPageViewController {
     
     var orderedViewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if let first = orderedViewControllers.first {
+            setViewControllers([first], direction: .forward, animated: true, completion: nil)
+            
+        }
     }
 }
 
