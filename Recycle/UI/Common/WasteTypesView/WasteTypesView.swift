@@ -76,6 +76,8 @@ class WasteTypesView: UIView {
         
         collectionView.invalidateIntrinsicContentSize()
         invalidateIntrinsicContentSize()
+        heightConstraint.constant = collectionView.contentSize.height
+        collectionView.reloadData()
     }
     
     func setupSmall() {
@@ -116,6 +118,10 @@ extension WasteTypesView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = indexPath.row
         let cellModel = cellModels[row]
+        guard cellModel.mode == .selectable ||
+                cellModel.mode == .selectableBlue else {
+            return
+        }
         let type = cellModel.type
         
         if !cellModel.isSelected {

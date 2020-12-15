@@ -14,8 +14,8 @@ final class SearchCell: UITableViewCell {
     
     func configure(title: String, text: String?
     ) {
-        titleNameLabel.text = title
-        addressLabel.text = text
+        titleNameLabel.text = text
+        addressLabel.text = title
     }
 }
 

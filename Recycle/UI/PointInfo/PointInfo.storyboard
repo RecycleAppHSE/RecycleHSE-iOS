@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pJh-WY-a2j">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="573"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="589"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWM-p6-oGZ" userLabel="Title Container">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="75.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Покровский бульвар, 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwB-Py-unt">
                                                         <rect key="frame" x="14" y="16" width="342" height="26.5"/>
@@ -47,7 +47,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Контейнер ООО “МСК-НТ”" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv8-GU-Z6n">
-                                                        <rect key="frame" x="14" y="42.5" width="342" height="17"/>
+                                                        <rect key="frame" x="14" y="44.5" width="342" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" name="textGray"/>
                                                         <nil key="highlightedColor"/>
@@ -71,16 +71,16 @@
                                                     <constraint firstItem="QGO-aK-jhn" firstAttribute="centerX" secondItem="bWM-p6-oGZ" secondAttribute="centerX" id="6h0-yg-Got"/>
                                                     <constraint firstItem="NJ0-O6-Wap" firstAttribute="leading" secondItem="HwB-Py-unt" secondAttribute="trailing" constant="16" id="7VT-fa-C59"/>
                                                     <constraint firstItem="NJ0-O6-Wap" firstAttribute="top" secondItem="bWM-p6-oGZ" secondAttribute="top" constant="24" id="M4e-r8-IV9"/>
-                                                    <constraint firstItem="nv8-GU-Z6n" firstAttribute="top" secondItem="HwB-Py-unt" secondAttribute="bottom" id="Vj5-za-bes"/>
+                                                    <constraint firstItem="nv8-GU-Z6n" firstAttribute="top" secondItem="HwB-Py-unt" secondAttribute="bottom" constant="2" id="Vj5-za-bes"/>
                                                     <constraint firstItem="nv8-GU-Z6n" firstAttribute="trailing" secondItem="HwB-Py-unt" secondAttribute="trailing" id="YdO-k7-enl"/>
                                                     <constraint firstItem="nv8-GU-Z6n" firstAttribute="leading" secondItem="HwB-Py-unt" secondAttribute="leading" id="dqi-BG-ykB"/>
-                                                    <constraint firstAttribute="bottom" secondItem="nv8-GU-Z6n" secondAttribute="bottom" id="jff-XW-tp7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nv8-GU-Z6n" secondAttribute="bottom" constant="14" id="jff-XW-tp7"/>
                                                     <constraint firstItem="HwB-Py-unt" firstAttribute="leading" secondItem="bWM-p6-oGZ" secondAttribute="leading" constant="14" id="pYn-1q-wCN"/>
                                                     <constraint firstItem="HwB-Py-unt" firstAttribute="top" secondItem="QGO-aK-jhn" secondAttribute="bottom" constant="8" id="wU6-BV-lFz"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDv-8Z-h0C" userLabel="StatusContainer">
-                                                <rect key="frame" x="0.0" y="59.5" width="414" height="50"/>
+                                                <rect key="frame" x="0.0" y="75.5" width="414" height="50"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="R5T-s5-WEL">
                                                         <rect key="frame" x="12" y="8" width="18" height="18"/>
@@ -97,6 +97,9 @@
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Функционирует нормально!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7x-yj-ish">
                                                         <rect key="frame" x="36" y="0.0" width="366" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="T03-fH-kKd"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                         <color key="textColor" name="main"/>
                                                         <nil key="highlightedColor"/>
@@ -123,7 +126,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="150" translatesAutoresizingMaskIntoConstraints="NO" id="k0l-vX-WlV">
-                                                <rect key="frame" x="0.0" y="109.5" width="414" height="193.5"/>
+                                                <rect key="frame" x="0.0" y="125.5" width="414" height="193.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Принимает:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O58-i0-P4t">
                                                         <rect key="frame" x="14" y="0.0" width="125.5" height="32"/>
@@ -150,14 +153,14 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ee3-Wy-Z7r">
-                                                <rect key="frame" x="0.0" y="303" width="414" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="319" width="414" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="eVt-70-TFb"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-Of-b0W">
-                                                <rect key="frame" x="0.0" y="303" width="414" height="142"/>
+                                                <rect key="frame" x="0.0" y="319" width="414" height="142"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Работает 24 часа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rM-wU-pAq">
                                                         <rect key="frame" x="14" y="8" width="386" height="32"/>
@@ -283,7 +286,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-D1-o6g">
-                                                <rect key="frame" x="0.0" y="445" width="414" height="128"/>
+                                                <rect key="frame" x="0.0" y="461" width="414" height="128"/>
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aO0-k2-kZo">
                                                         <rect key="frame" x="64" y="20" width="286" height="46"/>

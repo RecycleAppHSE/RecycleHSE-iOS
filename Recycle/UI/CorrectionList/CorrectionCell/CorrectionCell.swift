@@ -70,9 +70,8 @@ class CorrectionCell: UITableViewCell {
         likeButton.isSelected = isLiked
         dislikeButton.isSelected = isDisliked
         
-        let isSelf = correction.isSelf
-        likeButton.isEnabled = isSelf
-        dislikeButton.isEnabled = isSelf
+        likeButton.isEnabled = service.wasLiked(id: correction.id)
+        dislikeButton.isEnabled = service.wasUnliked(id: correction.id)
         
         let isStatusMode = correction.isStatusMode
         typesContainer.isHiddenInStackView = isStatusMode

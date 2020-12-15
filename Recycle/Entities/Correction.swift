@@ -64,8 +64,4 @@ struct Correction: Decodable {
     var isStatusMode: Bool {
         changeTo.status != nil
     }
-    
-    var isSelf: Bool {
-        false
-    }
 }

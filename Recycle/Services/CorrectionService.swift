@@ -7,7 +7,13 @@
 
 import Foundation
 
+
+
 protocol CorrectionService {
+    
+    func wasLiked(id: Int) -> Bool
+    func wasUnliked(id: Int) -> Bool
+    
     
     func suggestCorrection(id: Int,
                            types: [WasteType],
@@ -31,9 +37,20 @@ protocol CorrectionService {
 struct CorrectionServiceImp {
     
     let api: ApiClient
+    
+    static var liked: [Int] = []
+    static var unliked: [Int] = []
 }
 
 extension CorrectionServiceImp: CorrectionService {
+    
+    func wasLiked(id: Int) -> Bool {
+        Self.liked.contains(id)
+    }
+    
+    func wasUnliked(id: Int) -> Bool {
+        Self.unliked.contains(id)
+    }
     
     func suggestCorrection(id: Int, types: [WasteType], callback: @escaping ResultCallback<Int>) {
         let body = TypesCorrectionBody(pointId: id, changeTo: types)
@@ -110,6 +127,21 @@ extension CorrectionServiceImp: CorrectionService {
             (result: Result<EmptyResponse, Error>) in
             switch result {
             case .success:
+                if isLiked == 1 {
+                    Self.liked.append(id)
+                    Self.unliked.removeAll { $0 == id }
+                }
+                
+                if isLiked == -1  {
+                    Self.unliked.append(id)
+                    Self.liked.removeAll { $0 == id }
+                }
+                
+                if isLiked == 0 {
+                    Self.liked.removeAll { $0 == id }
+                    Self.unliked.removeAll { $0 == id }
+                }
+                
                 callback(.success)
             case .failure(let error):
                 callback(.failure(error))
