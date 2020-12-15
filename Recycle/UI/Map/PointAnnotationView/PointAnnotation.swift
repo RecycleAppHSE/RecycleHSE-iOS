@@ -25,7 +25,8 @@ class PointAnnotation: NSObject, MKAnnotation {
     
     init(point: RecyclePoint, filterTypes: [WasteType]) {
         id = point.id
-        wasteImages = point.wasteTypes.map {
+        let types = point.wasteTypes.filter { !$0.isUnknown }
+        wasteImages = types.map {
             let image = WasteTypeModel(type: $0).image
             let isSelected = filterTypes.contains($0)
             return WasteImageModel(

@@ -23,5 +23,14 @@ enum WasteType: String, Codable, CaseIterable {
     tires, // шины
     caps, 
     other
+    
+    var isUnknown: Bool {
+        switch self {
+        case .tires, .caps, .other:
+            return true
+        default:
+            return false
+        }
+    }
 }
 

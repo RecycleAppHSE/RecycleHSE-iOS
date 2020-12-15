@@ -71,7 +71,7 @@ class WasteTypesView: UIView {
     }
     
     func configure(with cellModels: [WasteTypeCellModel]) {
-        self.cellModels = cellModels
+        self.cellModels = cellModels.filter { !$0.type.isUnknown }
         collectionView.reloadData()
         
         collectionView.invalidateIntrinsicContentSize()
