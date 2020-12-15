@@ -18,6 +18,7 @@ class TipsContainerViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
         dataSource = self
         
         if let first = controllers.first {
