@@ -7,21 +7,19 @@
 
 import UIKit
 
-class TipsContainerViewController: UIPageViewController {
+class TipsContainerViewController: UIViewController {
     
+    var pageController: UIPageViewController?
     var orderedViewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let first = orderedViewControllers.first {
-            setViewControllers([first], direction: .forward, animated: true, completion: nil)
-            
-        }
+        setupPageController()
     }
 }
 
-extension TipsContainerViewController: UIPageViewControllerDataSource {
+extension TipsContainerViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
             return nil
@@ -61,5 +59,25 @@ extension TipsContainerViewController: UIPageViewControllerDataSource {
         }
         
         return orderedViewControllers[nextIndex]
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        orderedViewControllers.count
+    }
+    
+    private func setupPageController() {
+        self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        self.pageController?.dataSource = self
+        self.pageController?.delegate = self
+        self.pageController?.view.backgroundColor = .clear
+        self.pageController?.view.frame = CGRect(x: 0,y: 0,width: self.view.frame.width,height: self.view.frame.height)
+        self.addChild(self.pageController!)
+        self.view.addSubview(self.pageController!.view)
+        
+        if let first = orderedViewControllers.first {
+            pageController?.setViewControllers([first], direction: .forward, animated: true, completion: nil)
+            
+        }
+        self.pageController?.didMove(toParent: self)
     }
 }
