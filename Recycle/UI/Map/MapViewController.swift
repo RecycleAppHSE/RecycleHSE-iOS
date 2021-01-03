@@ -191,8 +191,8 @@ private extension MapViewController {
             searchResultsController: resultsController
         )
         searchController.searchResultsUpdater = resultsController
-        searchController.searchBar.placeholder = "Поиск места или адреса"
-        searchController.searchBar.setValue("Отменить", forKey: "cancelButtonText")
+        searchController.searchBar.placeholder = "Search for place or address"
+        searchController.searchBar.setValue("Cancel", forKey: "cancelButtonText")
         searchController.searchBar.tintColor = .main
         
         resultsController.delegate = self

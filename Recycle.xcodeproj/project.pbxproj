@@ -17,6 +17,7 @@
 		B00FD2382536224800225771 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B00FD2372536224800225771 /* SnapKit */; };
 		B0103B6925765F2900EC83B9 /* PointFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0103B6825765F2900EC83B9 /* PointFilterViewController.swift */; };
 		B0103B7125765F3500EC83B9 /* PointFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0103B7025765F3500EC83B9 /* PointFilter.storyboard */; };
+		B033266925A1D21800D5F28A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B033266B25A1D21800D5F28A /* Localizable.strings */; };
 		B03BCD8725631E8F00214F79 /* SearchPointController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD8625631E8F00214F79 /* SearchPointController.swift */; };
 		B03BCD9025631F6D00214F79 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD8F25631F6D00214F79 /* SearchCell.swift */; };
 		B03BCD9825631F9500214F79 /* SearchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03BCD9725631F9500214F79 /* SearchCellModel.swift */; };
@@ -120,6 +121,7 @@
 		B00FD22E2536219B00225771 /* WasteTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasteTypesView.swift; sourceTree = "<group>"; };
 		B0103B6825765F2900EC83B9 /* PointFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointFilterViewController.swift; sourceTree = "<group>"; };
 		B0103B7025765F3500EC83B9 /* PointFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PointFilter.storyboard; sourceTree = "<group>"; };
+		B033266A25A1D21800D5F28A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B03BCD8625631E8F00214F79 /* SearchPointController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPointController.swift; sourceTree = "<group>"; };
 		B03BCD8F25631F6D00214F79 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		B03BCD9725631F9500214F79 /* SearchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellModel.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				B066542425358601001C17A8 /* Main.storyboard */,
 				B066542925358604001C17A8 /* LaunchScreen.storyboard */,
 				B066542C25358604001C17A8 /* Info.plist */,
+				B033266B25A1D21800D5F28A /* Localizable.strings */,
 			);
 			path = Recycle;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				B06457722536464A00A2CA6E /* PointInfo.storyboard in Resources */,
 				B043CBEB2538FD2000807EA8 /* Profile.storyboard in Resources */,
 				B066542B25358604001C17A8 /* LaunchScreen.storyboard in Resources */,
+				B033266925A1D21800D5F28A /* Localizable.strings in Resources */,
 				B0F7268625882A2600DFEF31 /* TipPage.storyboard in Resources */,
 				B0F72668258822C900DFEF31 /* TipsTable.storyboard in Resources */,
 				B0852A9E2586B20A007ABCEC /* CorrectionList.storyboard in Resources */,
@@ -852,6 +856,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B033266B25A1D21800D5F28A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B033266A25A1D21800D5F28A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B066542425358601001C17A8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

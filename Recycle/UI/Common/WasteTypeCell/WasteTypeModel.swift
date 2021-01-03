@@ -22,34 +22,35 @@ struct WasteTypeModel {
     // MARK: Computed properties
     
     var title: String {
-        switch type {
-        case .paper:
-            return "Бумага"
-        case .glass:
-            return "Стекло"
-        case .plastic:
-            return "Пластик"
-        case .metal:
-            return "Метал"
-        case .clothes:
-            return "Одежда"
-        case .lamps:
-            return "Лампы"
-        case .toxic:
-            return "Опасные\nотходы"
-        case .appliances:
-            return "Бытовая\nтехника"
-        case .tetraPack:
-            return "Tetra\nPak"
-        case .batteries:
-            return "Батарейки"
-        case .tires:
-            return "Шины"
-        case .caps:
-            return "Крышки"
-        case .other:
-            return "Прочее"
-        }
+        return type.rawValue.capitalized.replacingOccurrences(of: "_", with: " ")
+//        switch type {
+//        case .paper:
+//            return "Бумага"
+//        case .glass:
+//            return "Стекло"
+//        case .plastic:
+//            return "Пластик"
+//        case .metal:
+//            return "Метал"
+//        case .clothes:
+//            return "Одежда"
+//        case .lamps:
+//            return "Лампы"
+//        case .toxic:
+//            return "Опасные\nотходы"
+//        case .appliances:
+//            return "Бытовая\nтехника"
+//        case .tetraPack:
+//            return "Tetra\nPak"
+//        case .batteries:
+//            return "Батарейки"
+//        case .tires:
+//            return "Шины"
+//        case .caps:
+//            return "Крышки"
+//        case .other:
+//            return "Прочее"
+//        }
     }
     
     var image: UIImage {

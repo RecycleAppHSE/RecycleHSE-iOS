@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Коллекции-->
+        <!--Advices-->
         <scene sceneID="QjW-bo-FnP">
             <objects>
-                <viewController storyboardIdentifier="TipsTableViewController" title="Коллекции" id="Qha-cC-o5k" customClass="TipsTableViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipsTableViewController" title="Advices" id="Qha-cC-o5k" customClass="TipsTableViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hHT-Hn-dXN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,8 +88,8 @@
                             <constraint firstItem="zC5-xH-XoV" firstAttribute="trailing" secondItem="JOz-MK-0Yn" secondAttribute="trailing" id="vm7-Od-vLV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Коллекции" id="usO-DV-nqN">
-                        <barButtonItem key="backBarButtonItem" title="Коллекции" id="29f-B0-YCZ"/>
+                    <navigationItem key="navigationItem" title="Advices" id="usO-DV-nqN">
+                        <barButtonItem key="backBarButtonItem" title="Advices" id="29f-B0-YCZ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="JOz-MK-0Yn" id="cCL-GV-oQP"/>

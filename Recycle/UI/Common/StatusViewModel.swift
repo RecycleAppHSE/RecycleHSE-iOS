@@ -26,11 +26,11 @@ struct StatusViewModel {
         
         switch status {
         case .open:
-            text = "Функционирует нормально!"
+            text = "Functions normally!"
         case .broken:
-            text = "Сломан!"
+            text = "Broken!"
         case .closed:
-            text = "Больше не работает!"
+            text = "Closed!"
         }
     }
 }

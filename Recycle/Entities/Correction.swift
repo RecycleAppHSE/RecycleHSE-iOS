@@ -30,11 +30,11 @@ struct Correction: Decodable {
         var text: String {
             switch self {
             case .inProgress:
-                return "Не подтверждены"
+                return "In progress"
             case .approved:
-                return "Подтверждены"
+                return "Approved"
             case .declined:
-                return "Не подтверждены"
+                return "Declined"
             }
         }
         

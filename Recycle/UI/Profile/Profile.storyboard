@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Учетная запись-->
+        <!--Profile-->
         <scene sceneID="bjW-8L-4TM">
             <objects>
-                <viewController title="Учетная запись" id="vYE-jm-4ev" customClass="ProfileViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile" id="vYE-jm-4ev" customClass="ProfileViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Sz-4n-UBd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laI-dI-FLG">
                                         <rect key="frame" x="0.0" y="136" width="414" height="61"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Внесенные исправления" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDH-q8-GOO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proposed corrections" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDH-q8-GOO">
                                                 <rect key="frame" x="19" y="0.0" width="375" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                                 <nil key="textColor"/>
@@ -167,7 +167,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="G3b-3h-Rzk">
-                        <barButtonItem key="backBarButtonItem" title="Профиль" id="sG5-DV-D4a"/>
+                        <barButtonItem key="backBarButtonItem" title="Profile" id="sG5-DV-D4a"/>
                     </navigationItem>
                     <connections>
                         <outlet property="allButton" destination="Id4-A1-INZ" id="jLe-fb-owP"/>

@@ -92,9 +92,9 @@ private extension ProfileViewController {
         
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         
-        notConfirmedButton.title = "Не подтверждены"
-        confirmedButton.title = "Подтверждены"
-        allButton.title = "Все"
+        notConfirmedButton.title = "Not approved"
+        confirmedButton.title = "Approved"
+        allButton.title = "All"
     }
     
     func loadUser() {

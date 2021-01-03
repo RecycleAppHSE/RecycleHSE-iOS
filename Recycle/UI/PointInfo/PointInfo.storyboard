@@ -104,7 +104,7 @@
                                                         <color key="textColor" name="main"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обновлено более недели назад" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6e-5j-oj1">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated more than month ago" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6e-5j-oj1">
                                                         <rect key="frame" x="36" y="30" width="366" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" name="main"/>
@@ -128,8 +128,8 @@
                                             <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="193.5" translatesAutoresizingMaskIntoConstraints="NO" id="k0l-vX-WlV">
                                                 <rect key="frame" x="0.0" y="125.5" width="414" height="214.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Принимает:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O58-i0-P4t">
-                                                        <rect key="frame" x="14" y="21" width="125.5" height="32"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accepts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O58-i0-P4t">
+                                                        <rect key="frame" x="14" y="21" width="88.5" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="32" id="eWC-He-uiv"/>
                                                         </constraints>
@@ -298,7 +298,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="46" id="dev-Mc-yL8"/>
                                                         </constraints>
-                                                        <state key="normal" title="Исправить неточность">
+                                                        <state key="normal" title="Correct the inaccuracy">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <userDefinedRuntimeAttributes>
@@ -311,12 +311,12 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0B-Y7-Hhs">
-                                                        <rect key="frame" x="54" y="74" width="306" height="46"/>
+                                                        <rect key="frame" x="130" y="74" width="154" height="46"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="46" id="aoz-3G-Gl3"/>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="m9K-bo-5t0"/>
                                                         </constraints>
-                                                        <state key="normal" title="История исправлений (2 актуальых)">
+                                                        <state key="normal" title="Corrections history">
                                                             <color key="titleColor" name="main"/>
                                                         </state>
                                                         <connections>
@@ -360,7 +360,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q2m-uS-QES">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="9xe-Di-kGy"/>
+                        <barButtonItem key="backBarButtonItem" id="9xe-Di-kGy"/>
                     </navigationItem>
                     <connections>
                         <outlet property="correctionsButton" destination="s0B-Y7-Hhs" id="hl2-fU-zwZ"/>

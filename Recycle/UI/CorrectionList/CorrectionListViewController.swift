@@ -48,7 +48,7 @@ class CorrectionListViewController: UIViewController {
         let isEditing = !tableView.isEditing
         tableView.setEditing(isEditing, animated: true)
         
-        let title = tableView.isEditing ? "Готово" : "Править"
+        let title = tableView.isEditing ? "Done" : "Edit"
         editButton.title = title
     }
     
@@ -114,7 +114,7 @@ extension CorrectionListViewController: UITableViewDataSource, UITableViewDelega
         }
         
         
-        let delete = UITableViewRowAction(style: .destructive, title: "Удалить\nисправление") { [weak self] (action, indexPath) in
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete\ncorrection") { [weak self] (action, indexPath) in
             
             self?.service.delete(id: correction.id) { result in
                 switch result {

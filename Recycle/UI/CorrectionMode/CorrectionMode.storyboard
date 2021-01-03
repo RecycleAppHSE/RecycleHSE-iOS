@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите область для перехода к редактированию:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixn-1c-N8N">
-                                <rect key="frame" x="12" y="82" width="352" height="40.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select area for moving to correction screen" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ixn-1c-N8N">
+                                <rect key="frame" x="12" y="82" width="352" height="20.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="textGray"/>
                                 <nil key="highlightedColor"/>
@@ -48,10 +48,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bri-Wt-kfH">
-                                <rect key="frame" x="0.0" y="137.66666666666666" width="414" height="155.99999999999997"/>
+                                <rect key="frame" x="0.0" y="117.33333333333331" width="414" height="156"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Принимает:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AZ-ZR-KAV">
-                                        <rect key="frame" x="12" y="12" width="370" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accepts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AZ-ZR-KAV">
+                                        <rect key="frame" x="12" y="12.000000000000014" width="370" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="s9M-rl-KIl"/>
                                         </constraints>
@@ -60,11 +60,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="b4b-ub-cVA" customClass="WasteTypesView" customModule="Recycle" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="56.000000000000014" width="414" height="99.999999999999986"/>
                                         <color key="backgroundColor" name="wasteBackground"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightArrow-template" translatesAutoresizingMaskIntoConstraints="NO" id="bWa-yM-Pcr">
-                                        <rect key="frame" x="386" y="68" width="16" height="20"/>
+                                        <rect key="frame" x="386" y="68.000000000000014" width="16" height="20"/>
                                         <color key="tintColor" name="textGray"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Dq2-gj-3Id"/>
@@ -95,7 +95,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPo-UZ-AHq">
-                                <rect key="frame" x="0.0" y="305.66666666666669" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="285.33333333333331" width="414" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="E7H-sA-Chd">
                                         <rect key="frame" x="12" y="41" width="18" height="18"/>
@@ -146,7 +146,7 @@
                                     <constraint firstAttribute="trailing" secondItem="w2k-IW-BlC" secondAttribute="trailing" id="tj0-pG-UfI"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Режим исправления" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNC-iu-rU5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correction mode" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNC-iu-rU5">
                                 <rect key="frame" x="12" y="22" width="352" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Fwr-Kw-Ixb"/>

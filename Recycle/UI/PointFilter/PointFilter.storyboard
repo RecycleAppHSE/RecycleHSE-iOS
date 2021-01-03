@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Фильтр-->
+        <!--Filter-->
         <scene sceneID="Gxx-rV-GkI">
             <objects>
                 <viewController storyboardIdentifier="PointFilterViewController" id="iJB-Hy-FuX" customClass="PointFilterViewController" customModule="Recycle" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,14 +32,14 @@
                             <constraint firstItem="xeD-Xe-acS" firstAttribute="leading" secondItem="vwB-zd-0FC" secondAttribute="leading" id="eLN-be-H5G"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Фильтр" id="ify-WT-C3f">
-                        <barButtonItem key="leftBarButtonItem" title="Сбросить" id="OW9-Hr-qvE">
+                    <navigationItem key="navigationItem" title="Filter" id="ify-WT-C3f">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="OW9-Hr-qvE">
                             <color key="tintColor" name="main"/>
                             <connections>
                                 <action selector="resetTapped:" destination="iJB-Hy-FuX" id="seK-5v-TkQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Готово" id="zhZ-Sd-0Fj">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="zhZ-Sd-0Fj">
                             <color key="tintColor" name="main"/>
                             <connections>
                                 <action selector="doneTapped:" destination="iJB-Hy-FuX" id="Dtu-ok-BHC"/>

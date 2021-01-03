@@ -18,6 +18,6 @@ class TipsTableViewCell: UITableViewCell {
         tipsImageView.image = UIImage(named: "tipsCollection-\(tips.id)")
         
         nameLabel.text = tips.title
-        countLabel.text = "\(tips.tipsNumber) советов"
+        countLabel.text = "\(tips.tipsNumber) advices"
     }
 }

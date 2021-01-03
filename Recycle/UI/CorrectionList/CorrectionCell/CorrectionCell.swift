@@ -60,7 +60,7 @@ class CorrectionCell: UITableViewCell {
         let date = Date(timeIntervalSince1970: correction.submitTime)
         let dateText = Self.formatter.string(from: date)
         let status = correction.status
-        dateLabel.text = "Исправления внесены \(dateText). \(status.text)."
+        dateLabel.text = "Corrections were done \(dateText). \(status.text)."
         statusImageView.image = status.image
         
         let likeText = " \(correction.likeCount)"
@@ -201,7 +201,7 @@ class CorrectionCell: UITableViewCell {
     
     static let formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.M.yyyy в HH:mm"
+        formatter.dateFormat = "dd.M.yyyy at HH:mm"
         return formatter
     }()
 }

@@ -90,11 +90,12 @@ extension PointInfoViewController {
     func loadTitle() {
         organizationLabel.text = point.name
         
-        if let address = point.address {
-            titleLabel.text = address
-        } else {
-            loadAddress()
-        }
+        loadAddress()
+//        if let address = point.address {
+//            titleLabel.text = address
+//        } else {
+//            loadAddress()
+//        }
     }
     
     func configureWasteTypes() {
@@ -132,7 +133,7 @@ extension PointInfoViewController {
             }
         }
         
-        let correctionsTitle = "История исправлений (\(point.correctionsCount) актуальных)"
+        let correctionsTitle = "Corrections history\n (\(point.correctionsCount) in progress)"
         correctionsButton.setTitle(correctionsTitle, for: .normal)
     }
 }
@@ -161,7 +162,8 @@ private extension PointInfoViewController {
             longitude: point.longitude
         )
 
-        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks, error) in
+        let locale = Locale(identifier: "en_US")
+        geocoder.reverseGeocodeLocation(location, preferredLocale: locale) { [weak self] (placemarks, error) in
             guard let placemark = placemarks?.first,
                   error == nil else {
                 self?.titleLabel.text = self?.point.address

@@ -33,11 +33,11 @@
             </objects>
             <point key="canvasLocation" x="-770" y="682"/>
         </scene>
-        <!--Карты-->
+        <!--Map-->
         <scene sceneID="Opw-xg-VVL">
             <objects>
                 <navigationController id="jXS-zr-ion" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Карты" image="tabmap" id="JbZ-xD-0ya"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="tabmap" id="JbZ-xD-0ya"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zpk-Um-vPQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -60,11 +60,11 @@
             </objects>
             <point key="canvasLocation" x="622" y="360"/>
         </scene>
-        <!--Профиль-->
+        <!--Profile-->
         <scene sceneID="64B-NP-qEs">
             <objects>
                 <navigationController id="g1X-WG-Yr2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Профиль" image="tabprofile" id="YlT-YM-4Kb"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="tabprofile" id="YlT-YM-4Kb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Fy9-jf-8GK">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -87,11 +87,11 @@
             </objects>
             <point key="canvasLocation" x="622" y="1621"/>
         </scene>
-        <!--Советы-->
+        <!--Advices-->
         <scene sceneID="hL2-R9-fha">
             <objects>
                 <navigationController id="ZMf-0a-HA7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Советы" image="tabtip" id="h3O-EM-Mfx"/>
+                    <tabBarItem key="tabBarItem" title="Advices" image="tabtip" id="h3O-EM-Mfx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="BLh-oL-RG3">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -16,7 +16,7 @@ class ApiClientImp {
     let encoder: JSONEncoder
     let store: KeyValueStore
     
-    let baseUrl = "http://165.227.166.231:8080/"
+    let baseUrl = "http://167.99.35.83:8080/"
     
     init(decoder: JSONDecoder,
          encoder: JSONEncoder,
