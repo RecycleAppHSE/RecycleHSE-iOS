@@ -72,10 +72,6 @@ extension TipsTableViewController: UITableViewDataSource, UITableViewDelegate {
             return page
         }
         
-        let test: TipPageViewController = create()
-        test.tip = tips.first
-        vc.controllers.append(test)
-        
         navigationController?.pushViewController(vc, animated: true)
     }
 }
